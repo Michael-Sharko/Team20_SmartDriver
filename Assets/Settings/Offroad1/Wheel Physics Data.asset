@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e41315e30eab174885f54e66af27976, type: 3}
+  m_Name: Wheel Physics Data
+  m_EditorClassIdentifier: 
+  mass: 39
+  wheelDampingRate: 0.5
+  suspensionDistance: 0.3
+  forceAppPointDistance: 0
+  suspensionSpring:
+    spring: 49303
+    damper: 4500
+    targetPosition: 0.5
+  forwardFiction:
+    extremumSlip: 0.4
+    extremumValue: 1
+    asymptoteSlip: 0.8
+    asymptoteValue: 0.5
+    stiffness: 1
+  sidewaysFiction:
+    extremumSlip: 0.2
+    extremumValue: 1
+    asymptoteSlip: 0.5
+    asymptoteValue: 0.75
+    stiffness: 1

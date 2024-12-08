@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: 627978bf670706542b8ac49cd572062b
+timeCreated: 1470663302
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Offroad_2
+    100004: Offroad_2_Door_FL
+    100006: Offroad_2_Door_FR
+    100008: Offroad_2_Door_RL
+    100010: Offroad_2_Door_RR
+    100012: Offroad_2_Hood
+    100014: Offroad_2_Roof
+    100016: Offroad_2_Suspension
+    100018: Offroad_2_Trunk
+    100020: Offroad_2_Window_F
+    100022: Offroad_2_Window_FL
+    100024: Offroad_2_Window_FR
+    100026: Offroad_2_Window_ML
+    100028: Offroad_2_Window_MR
+    100030: Offroad_2_Window_R
+    100032: Offroad_2_Window_RL
+    100034: Offroad_2_Window_RR
+    100036: Offroad_Dashboard
+    100038: Offroad_Dashboard_Speedometer
+    100040: Offroad_Dashboard_SteeringWheelq
+    400000: //RootNode
+    400002: Offroad_2
+    400004: Offroad_2_Door_FL
+    400006: Offroad_2_Door_FR
+    400008: Offroad_2_Door_RL
+    400010: Offroad_2_Door_RR
+    400012: Offroad_2_Hood
+    400014: Offroad_2_Roof
+    400016: Offroad_2_Suspension
+    400018: Offroad_2_Trunk
+    400020: Offroad_2_Window_F
+    400022: Offroad_2_Window_FL
+    400024: Offroad_2_Window_FR
+    400026: Offroad_2_Window_ML
+    400028: Offroad_2_Window_MR
+    400030: Offroad_2_Window_R
+    400032: Offroad_2_Window_RL
+    400034: Offroad_2_Window_RR
+    400036: Offroad_Dashboard
+    400038: Offroad_Dashboard_Speedometer
+    400040: Offroad_Dashboard_SteeringWheelq
+    2300000: Offroad_2
+    2300002: Offroad_2_Door_FL
+    2300004: Offroad_2_Door_FR
+    2300006: Offroad_2_Door_RL
+    2300008: Offroad_2_Door_RR
+    2300010: Offroad_2_Hood
+    2300012: Offroad_2_Roof
+    2300014: Offroad_2_Suspension
+    2300016: Offroad_2_Trunk
+    2300018: Offroad_2_Window_F
+    2300020: Offroad_2_Window_FL
+    2300022: Offroad_2_Window_FR
+    2300024: Offroad_2_Window_ML
+    2300026: Offroad_2_Window_MR
+    2300028: Offroad_2_Window_R
+    2300030: Offroad_2_Window_RL
+    2300032: Offroad_2_Window_RR
+    2300034: Offroad_Dashboard
+    2300036: Offroad_Dashboard_Speedometer
+    2300038: Offroad_Dashboard_SteeringWheelq
+    3300000: Offroad_2
+    3300002: Offroad_2_Door_FL
+    3300004: Offroad_2_Door_FR
+    3300006: Offroad_2_Door_RL
+    3300008: Offroad_2_Door_RR
+    3300010: Offroad_2_Hood
+    3300012: Offroad_2_Roof
+    3300014: Offroad_2_Suspension
+    3300016: Offroad_2_Trunk
+    3300018: Offroad_2_Window_F
+    3300020: Offroad_2_Window_FL
+    3300022: Offroad_2_Window_FR
+    3300024: Offroad_2_Window_ML
+    3300026: Offroad_2_Window_MR
+    3300028: Offroad_2_Window_R
+    3300030: Offroad_2_Window_RL
+    3300032: Offroad_2_Window_RR
+    3300034: Offroad_Dashboard
+    3300036: Offroad_Dashboard_Speedometer
+    3300038: Offroad_Dashboard_SteeringWheelq
+    4300000: Offroad_Dashboard_SteeringWheelq
+    4300002: Offroad_Dashboard_Speedometer
+    4300004: Offroad_Dashboard
+    4300006: Offroad_2_Window_RL
+    4300008: Offroad_2
+    4300010: Offroad_2_Roof
+    4300012: Offroad_2_Hood
+    4300014: Offroad_2_Trunk
+    4300016: Offroad_2_Door_RR
+    4300018: Offroad_2_Door_FR
+    4300020: Offroad_2_Door_FL
+    4300022: Offroad_2_Door_RL
+    4300024: Offroad_2_Suspension
+    4300026: Offroad_2_Window_F
+    4300028: Offroad_2_Window_FR
+    4300030: Offroad_2_Window_MR
+    4300032: Offroad_2_Window_RR
+    4300034: Offroad_2_Window_R
+    4300036: Offroad_2_Window_FL
+    4300038: Offroad_2_Window_ML
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
