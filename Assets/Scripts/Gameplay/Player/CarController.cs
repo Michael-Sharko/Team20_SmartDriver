@@ -1,19 +1,11 @@
 using Shark.Gameplay.Physics;
 using System;
-using System.Threading;
 using UnityEngine;
 
 namespace Shark.Gameplay.Player
 {
     public class CarController : MonoBehaviour
     {
-        public enum CarDriveType
-        {
-            FrontWheelDrive,
-            RearWheelDrive,
-            AllWheelDrive
-        }
-
         private const string INPUT_HORIZONTAL = "Horizontal";
         private const string INPUT_VERTICAL = "Vertical";
 
@@ -22,6 +14,15 @@ namespace Shark.Gameplay.Player
         private bool _isBreaking;
 
         private Rigidbody _rb;
+
+        [field: SerializeField]
+        public float fuelCapacity { get; private set; }
+
+        [HideInInspector]
+        public float currentFuel { get; private set; }
+
+        [SerializeField]
+        private float _fuelConsuptionMultiplier = 0.01f;
 
         [SerializeField]
         private CarPhysicsData _data;
@@ -41,9 +42,13 @@ namespace Shark.Gameplay.Player
         public float SpeedKmh => Speed * 3.6f;
         public float SpeedMph => Speed * 2.23694f;
 
+        private bool hasFuel => currentFuel > 0;
+        private bool isDriving => _vInput != 0;
+
         private void Start()
         {
             Initialize();
+            Refuel(fuelCapacity);
         }
 
         private void OnValidate()
@@ -61,53 +66,68 @@ namespace Shark.Gameplay.Player
         private void ApplyCarData()
         {
             _rb.mass = _data.mass;
+            _rb.centerOfMass = _data.centerOfMass;
+
             _rb.drag = _data.drag;
             _rb.angularDrag = _data.angularDrag;
 
             _wheels.ApplyWheelData();
+
+#if UNITY_EDITOR
+            Refuel(fuelCapacity);
+#endif
         }
+
+#if UNITY_EDITOR
+        public void ApplyCarDataEditor()
+        {
+            ApplyCarData();
+        }
+#endif
 
         void FixedUpdate()
         {
-            HandleInput();
+            HandleOutOfFuel();
+            HandleInputOnFuelCheck();
             HandleMotor();
             HandleSteering();
+            HandleFuelConsumption();
             UpdateWheels();
         }
 
-        void HandleInput()
+        void HandleInputOnFuelCheck()
         {
             _hInput = Input.GetAxis(INPUT_HORIZONTAL);
-            _vInput = Input.GetAxis(INPUT_VERTICAL);
+            _vInput = hasFuel ? Input.GetAxis(INPUT_VERTICAL) : 0;
             _isBreaking = Input.GetKey(KeyCode.Space);
         }
 
         void HandleMotor()
         {
             ApplyDrive(_vInput * _data.motorForce);
-            ApplyBrakingIfPressed();
+            ApplyBreaking();
         }
 
         void ApplyDrive(float motorTorque)
         {
             switch (_data.driveType)
             {
-            case CarDriveType.FrontWheelDrive: ApplyFWD(motorTorque); break;
-            case CarDriveType.RearWheelDrive: ApplyRWD(motorTorque); break;
-            case CarDriveType.AllWheelDrive: ApplyAWD(motorTorque); break;
+            case CarPhysicsData.CarDriveType.FrontWheelDrive: ApplyFWD(motorTorque); break;
+            case CarPhysicsData.CarDriveType.RearWheelDrive: ApplyRWD(motorTorque); break;
+            case CarPhysicsData.CarDriveType.AllWheelDrive: ApplyAWD(motorTorque); break;
             }
         }
 
         void ApplyFWD(float torque)
         {
-            ApplyMotorTorque(_wheels[Wheel.Part.FL].collider, torque);
-            ApplyMotorTorque(_wheels[Wheel.Part.FR].collider, torque);
+            ApplyMotorTorque(_wheels[Wheel.Part.FL].whellCollider, torque);
+            ApplyMotorTorque(_wheels[Wheel.Part.FR].whellCollider, torque);
         }
 
         void ApplyRWD(float torque)
         {
-            ApplyMotorTorque(_wheels[Wheel.Part.RL].collider, torque);
-            ApplyMotorTorque(_wheels[Wheel.Part.RR].collider, torque);
+            ApplyMotorTorque(_wheels[Wheel.Part.RL].whellCollider, torque);
+            ApplyMotorTorque(_wheels[Wheel.Part.RR].whellCollider, torque);
         }
 
         void ApplyAWD(float torque)
@@ -121,25 +141,17 @@ namespace Shark.Gameplay.Player
             wheel.motorTorque = torque;
         }
 
-        private void ApplyBrakingIfPressed()
+        private float CalculateBreakForce()
         {
-            if (_isBreaking)
-            {
-                CalculateBreakForce();
-                ApplyBreaking();
-            }
-        }
-
-        private void CalculateBreakForce()
-        {
-            _currentBreakForce = _isBreaking ? _data.breakForce : 0f;
+            return _isBreaking ? _data.breakForce : 0f;
         }
 
         private void ApplyBreaking()
         {
+            _currentBreakForce = CalculateBreakForce();
             for (Wheel.Part wheelid = 0; wheelid < Wheel.Part.Count; ++wheelid)
             {
-                _wheels[wheelid].collider.brakeTorque = _currentBreakForce;
+                _wheels[wheelid].whellCollider.brakeTorque = _currentBreakForce;
             }
         }
 
@@ -153,21 +165,55 @@ namespace Shark.Gameplay.Player
 
         private void UpdateWheelPositionAndRotation(Wheel.WheelData wheel)
         {
-            wheel.collider.GetWorldPose(out var position, out var rotation);
+            wheel.whellCollider.GetWorldPose(out var position, out var rotation);
             wheel.transform.SetPositionAndRotation(position, rotation);
         }
 
         private void HandleSteering()
         {
-            CalculateSteeringAngle();
+            _currentSteerAngle = CalculateSteeringAngle();
 
-            _wheels[Wheel.Part.FL].collider.steerAngle = _currentSteerAngle;
-            _wheels[Wheel.Part.FR].collider.steerAngle = _currentSteerAngle;
+            _wheels[Wheel.Part.FL].whellCollider.steerAngle = _currentSteerAngle;
+            _wheels[Wheel.Part.FR].whellCollider.steerAngle = _currentSteerAngle;
         }
 
-        private void CalculateSteeringAngle()
+        private float CalculateSteeringAngle()
         {
-            _currentSteerAngle = _data.maxSteerAngle * _hInput;
+            return _data.maxSteerAngle * _hInput;
+        }
+
+        private void HandleFuelConsumption()
+        {
+            CalculateFuelConsumption();
+        }
+
+        private void CalculateFuelConsumption()
+        {
+            currentFuel -= Speed * _fuelConsuptionMultiplier * Time.fixedDeltaTime;
+        }
+
+        private void HandleOutOfFuel()
+        {
+            if (!hasFuel)
+            {
+                // todo: do something
+            }
+        }
+
+        public void Refuel(float value)
+        {
+            currentFuel = Math.Min(currentFuel + value, fuelCapacity);
+        }
+
+#if UNITY_EDITOR
+        void OnDrawGizmos()
+        {
+            for (Wheel.Part wheelid = 0; wheelid < Wheel.Part.Count; ++wheelid)
+            {
+                _wheels[wheelid].whellCollider.GetWorldPose(out var position, out var rotation);
+                Gizmos.DrawWireSphere(position, 0.1f); // Положение колес
+            }
         }
     }
+#endif
 }

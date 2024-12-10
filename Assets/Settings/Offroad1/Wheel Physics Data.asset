@@ -14,21 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 39
   wheelDampingRate: 0.5
-  suspensionDistance: 0.3
+  suspensionDistance: 0.4
   forceAppPointDistance: 0
   suspensionSpring:
-    spring: 49303
-    damper: 4500
+    spring: 50000
+    damper: 3000
     targetPosition: 0.5
   forwardFiction:
     extremumSlip: 0.4
     extremumValue: 1
     asymptoteSlip: 0.8
     asymptoteValue: 0.5
-    stiffness: 1
+    stiffness: 2
   sidewaysFiction:
     extremumSlip: 0.2
     extremumValue: 1
     asymptoteSlip: 0.5
     asymptoteValue: 0.75
-    stiffness: 1
+    stiffness: 1.5

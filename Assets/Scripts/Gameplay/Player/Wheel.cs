@@ -40,7 +40,7 @@ namespace Shark.Gameplay.Player
         {
             public Part partNumber;
 
-            public WheelCollider collider;
+            public WheelCollider whellCollider;
             public Transform transform;
         }
 
@@ -51,7 +51,7 @@ namespace Shark.Gameplay.Player
                 return new WheelData
                 {
                     partNumber = part,
-                    collider = _colliders[(int)part],
+                    whellCollider = _colliders[(int)part],
                     transform = _transforms[(int)part]
                 };
             }

@@ -9,17 +9,26 @@ namespace Shark.Gameplay.Physics
     [CreateAssetMenu(fileName = "Car Physics Data", menuName = "Gameplay/Player/Physics/Car Data"), Serializable]
     public class CarPhysicsData : ScriptableObject
     {
+        public enum CarDriveType
+        {
+            FrontWheelDrive,
+            RearWheelDrive,
+            AllWheelDrive
+        }
+
         public float mass;
+        public Vector3 centerOfMass;
+
         public float drag;
         public float angularDrag;
 
-        public CarController.CarDriveType driveType;
+        public CarDriveType driveType;
 
         public float motorForce;
         public float breakForce;
         public float maxSteerAngle;
 
         [HideInInspector, NonSerialized]
-        public bool foldout;
+        public bool foldout = true;
     }
 }

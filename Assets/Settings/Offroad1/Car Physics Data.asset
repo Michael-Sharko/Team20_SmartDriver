@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6a9db64fdd2e8144aeb2f6bffd01199, type: 3}
   m_Name: Car Physics Data
   m_EditorClassIdentifier: 
-  mass: 2800
-  drag: 0.65
-  angularDrag: 2
+  mass: 1600
+  centerOfMass: {x: 0, y: -0.5, z: 0}
+  drag: 2
+  angularDrag: 3
   driveType: 0
-  motorForce: 10000
-  breakForce: 2000
+  motorForce: 5000
+  breakForce: 3000
   maxSteerAngle: 38

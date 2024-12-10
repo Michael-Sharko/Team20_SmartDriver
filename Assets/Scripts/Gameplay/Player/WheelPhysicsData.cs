@@ -58,6 +58,6 @@ namespace Shark.Gameplay.Physics
         }
 
         [HideInInspector, NonSerialized]
-        public bool foldout;
+        public bool foldout = true;
     }
 }
