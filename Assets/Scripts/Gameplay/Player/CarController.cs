@@ -1,10 +1,11 @@
 using Shark.Gameplay.Physics;
+using Shark.Gameplay.WorldObjects;
 using System;
 using UnityEngine;
 
 namespace Shark.Gameplay.Player
 {
-    public class CarController : MonoBehaviour
+    public class CarController : MonoBehaviour, IPlayer
     {
         private const string INPUT_HORIZONTAL = "Horizontal";
         private const string INPUT_VERTICAL = "Vertical";
@@ -200,6 +201,15 @@ namespace Shark.Gameplay.Player
             }
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out IWorldObject worldObject))
+            {
+                (worldObject as IActivatable)?.Activate();
+                (worldObject as IPickupable)?.PickUp(this);
+            }
+        }
+
         public void Refuel(float value)
         {
             currentFuel = Math.Min(currentFuel + value, fuelCapacity);
@@ -211,9 +221,9 @@ namespace Shark.Gameplay.Player
             for (Wheel.Part wheelid = 0; wheelid < Wheel.Part.Count; ++wheelid)
             {
                 _wheels[wheelid].whellCollider.GetWorldPose(out var position, out var rotation);
-                Gizmos.DrawWireSphere(position, 0.1f); // Положение колес
+                Gizmos.DrawWireSphere(position, 0.1f);
             }
         }
-    }
 #endif
+    }
 }
