@@ -1,10 +1,11 @@
 using Shark.Gameplay.Physics;
+using Shark.Gameplay.WorldObjects;
 using System;
 using UnityEngine;
 
 namespace Shark.Gameplay.Player
 {
-    public class CarController : MonoBehaviour
+    public class CarController : MonoBehaviour, IPlayer
     {
         private const string INPUT_HORIZONTAL = "Horizontal";
         private const string INPUT_VERTICAL = "Vertical";
@@ -197,6 +198,15 @@ namespace Shark.Gameplay.Player
             if (!hasFuel)
             {
                 // todo: do something
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out IWorldObject worldObject))
+            {
+                (worldObject as IActivatable)?.Activate();
+                (worldObject as IPickupable)?.PickUp(this);
             }
         }
 
