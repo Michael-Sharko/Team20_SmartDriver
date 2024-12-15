@@ -211,9 +211,9 @@ namespace Shark.Gameplay.Player
             for (Wheel.Part wheelid = 0; wheelid < Wheel.Part.Count; ++wheelid)
             {
                 _wheels[wheelid].whellCollider.GetWorldPose(out var position, out var rotation);
-                Gizmos.DrawWireSphere(position, 0.1f); // Положение колес
+                Gizmos.DrawWireSphere(position, 0.1f);
             }
         }
-    }
 #endif
+    }
 }
