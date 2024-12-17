@@ -1,3 +1,4 @@
+using Shark.Gameplay.Miscelious;
 using Shark.Gameplay.Player;
 using TMPro;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Shark.Gameplay.UI
 {
-    public class UIControler : MonoBehaviour
+    public class UICarControler : MonoBehaviour
     {
         [SerializeField]
         private TextMeshProUGUI _speedometer;
@@ -14,6 +15,7 @@ namespace Shark.Gameplay.UI
         private Slider _fuel;
 
         private CarController _car;
+        private Canvas _canvas;
 
         private void Start()
         {
@@ -28,6 +30,7 @@ namespace Shark.Gameplay.UI
         private void Initialize()
         {
             _car = FindFirstObjectByType<CarController>();
+            _canvas = GetComponent<Canvas>();
         }
 
         private void Update()
