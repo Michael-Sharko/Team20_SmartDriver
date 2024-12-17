@@ -15,7 +15,6 @@ namespace Shark.Gameplay.UI
         private Slider _fuel;
 
         private CarController _car;
-        private Canvas _canvas;
 
         private void Start()
         {
@@ -30,11 +29,12 @@ namespace Shark.Gameplay.UI
         private void Initialize()
         {
             _car = FindFirstObjectByType<CarController>();
-            _canvas = GetComponent<Canvas>();
         }
 
         private void Update()
         {
+            if (!_car) return;
+
             UpdateSpeedometer();
             UpdateFuelSlider();
         }
