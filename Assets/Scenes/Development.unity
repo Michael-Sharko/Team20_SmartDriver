@@ -494,6 +494,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Offroad_1
       objectReference: {fileID: 0}
+    - target: {fileID: 2062440699978312946, guid: 913ffc81c67729d4298c534db76c3836, type: 3}
+      propertyPath: _fuelConsuptionMultiplier
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -586,6 +590,18 @@ PrefabInstance:
     - target: {fileID: 6875112015303082066, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010550503953617810, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
+      propertyPath: _fuelGauge._arrow
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010550503953617810, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
+      propertyPath: _fuelGauge._maxRotation
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010550503953617810, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
+      propertyPath: _fuelGauge._minRotation
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

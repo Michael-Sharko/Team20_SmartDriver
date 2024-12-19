@@ -1,4 +1,3 @@
-using Shark.Gameplay.Miscelious;
 using Shark.Gameplay.Player;
 using TMPro;
 using UnityEngine;
@@ -13,6 +12,9 @@ namespace Shark.Gameplay.UI
 
         [SerializeField]
         private Slider _fuel;
+
+        [SerializeField]
+        private FuelGaugeSystem _fuelGauge;
 
         private CarController _car;
 
@@ -37,6 +39,9 @@ namespace Shark.Gameplay.UI
 
             UpdateSpeedometer();
             UpdateFuelSlider();
+            
+            if (_fuelGauge != null)
+                _fuelGauge.SetFuelLevel(_fuel.value, _fuel.maxValue);
         }
 
         private void UpdateSpeedometer()
