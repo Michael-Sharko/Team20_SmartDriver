@@ -17,6 +17,11 @@ namespace Shark.Gameplay.Player
         private Rigidbody _rb;
 
         [field: SerializeField]
+        public float currentStrength { get; private set; }
+        [field: SerializeField]
+        public float maxStrength { get; private set; }
+
+        [field: SerializeField]
         public float fuelCapacity { get; private set; }
 
         [HideInInspector]
