@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wheel Physics Data
   m_EditorClassIdentifier: 
   mass: 39
-  wheelDampingRate: 0.5
+  wheelDampingRate: 0.1
   suspensionDistance: 0.4
   forceAppPointDistance: 0
   suspensionSpring:
