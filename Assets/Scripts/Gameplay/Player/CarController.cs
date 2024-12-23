@@ -28,11 +28,6 @@ namespace Shark.Gameplay.Player
         public bool IsBroken => currentStrength <= 0;
 
         [field: SerializeField]
-        public float currentStrength { get; private set; }
-        [field: SerializeField]
-        public float maxStrength { get; private set; }
-
-        [field: SerializeField]
         public float fuelCapacity { get; private set; }
 
         [HideInInspector]
