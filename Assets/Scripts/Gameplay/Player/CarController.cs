@@ -16,6 +16,17 @@ namespace Shark.Gameplay.Player
 
         private Rigidbody _rb;
 
+        public event Action OnDamageReceived;
+        public event Action OnFuelRanOut;
+        public event Action OnCarBroken;
+
+
+        [field: SerializeField]
+        public float maxStrength { get; private set; }
+        [field: SerializeField, HideInInspector]
+        public float currentStrength { get; private set; }
+        public bool IsBroken => currentStrength <= 0;
+
         [field: SerializeField]
         public float fuelCapacity { get; private set; }
 
@@ -89,10 +100,14 @@ namespace Shark.Gameplay.Player
         void FixedUpdate()
         {
             HandleOutOfFuel();
+            HandleBroken();
+
             HandleInputOnFuelCheck();
+
             HandleMotor();
             HandleSteering();
             HandleFuelConsumption();
+
             UpdateWheels();
         }
 
@@ -197,7 +212,15 @@ namespace Shark.Gameplay.Player
         {
             if (!hasFuel)
             {
-                // todo: do something
+                OnFuelRanOut?.Invoke();
+            }
+        }
+
+        private void HandleBroken()
+        {
+            if (IsBroken)
+            {
+                OnCarBroken?.Invoke();
             }
         }
 
@@ -213,6 +236,12 @@ namespace Shark.Gameplay.Player
         public void Refuel(float value)
         {
             currentFuel = Math.Min(currentFuel + value, fuelCapacity);
+        }
+
+        public void TakeDamage(float damage)
+        {
+            currentStrength -= damage;
+            OnDamageReceived?.Invoke();
         }
 
 #if UNITY_EDITOR

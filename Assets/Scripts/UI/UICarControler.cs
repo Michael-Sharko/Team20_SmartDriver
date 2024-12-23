@@ -1,4 +1,6 @@
 using Shark.Gameplay.Player;
+using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,11 +9,55 @@ namespace Shark.Gameplay.UI
 {
     public class UICarControler : MonoBehaviour
     {
+        [Serializable]
+        private class UICarStrength
+        {
+            [Serializable]
+            private struct StrengthState
+            {
+                [SerializeField]
+                public Texture texture;
+
+                [SerializeField]
+                public float checkpoint;
+            }
+
+            [SerializeField]
+            private StrengthState[] _states;
+
+            [SerializeField]
+            private RawImage _strengthIcon;
+
+            [SerializeField]
+            private float _rotationSpeed = 30;
+
+            public void UpdateStrengthIcon(float strength)
+            {
+                if (_strengthIcon == null || strength < 0) return;
+
+                foreach (var state in _states)
+                {
+                    if (strength >= state.checkpoint)
+                    {
+                        _strengthIcon.texture = state.texture;
+                        break;
+                    }
+                }
+                if (strength < 0) _rotationSpeed = 0;
+            }
+
+            public void UpdateStrengthRotation()
+            {
+                if (_strengthIcon == null) return;
+
+                _strengthIcon.transform.Rotate(new Vector3(0, 0, _rotationSpeed * Time.deltaTime));
+            }
+        }
         [SerializeField]
-        private TextMeshProUGUI _speedometer;
+        private UICarStrength _strength;
 
         [SerializeField]
-        private Slider _fuel;
+        private TextMeshProUGUI _speedometer;
 
         [SerializeField]
         private FuelGaugeSystem _fuelGauge;
@@ -28,6 +74,16 @@ namespace Shark.Gameplay.UI
             Initialize();
         }
 
+        private void OnEnable()
+        {
+            if (_car != null) _car.OnDamageReceived += OnUpdatedStrengthIcon;
+        }
+
+        private void OnDisable()
+        {
+            if (_car != null) _car.OnDamageReceived -= OnUpdatedStrengthIcon;
+        }
+
         private void Initialize()
         {
             _car = FindFirstObjectByType<CarController>();
@@ -38,21 +94,31 @@ namespace Shark.Gameplay.UI
             if (!_car) return;
 
             UpdateSpeedometer();
-            UpdateFuelSlider();
-            
-            if (_fuelGauge != null)
-                _fuelGauge.SetFuelLevel(_fuel.value, _fuel.maxValue);
+            UpdateFuelGauge();
+            UpdateStrength();
         }
 
         private void UpdateSpeedometer()
         {
-            _speedometer.text = $"Speedometer: {_car.SpeedKmh:F0} Km/h";
+            if (_speedometer != null)
+                _speedometer.text = $"Speedometer: {_car.SpeedKmh:F0} Km/h";
         }
 
-        private void UpdateFuelSlider()
+        private void UpdateFuelGauge()
         {
-            _fuel.maxValue = _car.fuelCapacity;
-            _fuel.value = _car.currentFuel;
+            if (_fuelGauge != null)
+                _fuelGauge.SetFuelLevel(_car.currentFuel, _car.fuelCapacity);
+        }
+        private void UpdateStrength()
+        {
+            if (_strength != null)
+                _strength.UpdateStrengthRotation();
+        }
+
+        private void OnUpdatedStrengthIcon()
+        {
+            if (_strength != null)
+                _strength.UpdateStrengthIcon(_car.currentStrength);
         }
     }
 }
