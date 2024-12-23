@@ -61,9 +61,16 @@ public class GameManager : MonoBehaviour
         _pauseManager?.TogglePause();
     }
 
+#if UNITY_EDITOR
     public void LoadScene(SceneAsset scene)
     {
-        SceneManager.LoadScene(scene.name);
+        LoadScene(scene.name);
+    }
+#endif
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     public void OnClickedExitButton()

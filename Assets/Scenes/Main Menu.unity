@@ -2997,6 +2997,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a543ac2b30f08614aa87e98bc8ab914c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pauseManager:
+    OnPauseActivated:
+      m_PersistentCalls:
+        m_Calls: []
+    OnPauseDeactivated:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &494723236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3083,13 +3090,13 @@ MonoBehaviour:
       - m_Target: {fileID: 490537367}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 2
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
+          m_ObjectArgument: {fileID: 102900000, guid: 0b230fc4cb680cc42b1a6648db0fc68e, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor.CoreModule
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1_Desert_1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &494723239
@@ -3628,13 +3635,13 @@ MonoBehaviour:
       - m_Target: {fileID: 490537367}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 2
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 102900000, guid: a0cf0ea1ce7b8084082318ec8eb0946a, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor.CoreModule
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1_Desert_2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &563300858
@@ -3866,13 +3873,13 @@ MonoBehaviour:
       - m_Target: {fileID: 490537367}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 2
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 102900000, guid: 882b4081aea554d4d8e034c1cebccdc1, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor.CoreModule
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1_Rock_1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &759663435
@@ -5646,13 +5653,13 @@ MonoBehaviour:
       - m_Target: {fileID: 490537367}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 2
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 102900000, guid: cd6d950477004074da9b2637ffdde887, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor.CoreModule
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1_Rock_2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1216424362
@@ -5779,13 +5786,13 @@ MonoBehaviour:
       - m_Target: {fileID: 490537367}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 2
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 102900000, guid: 111e8da5619021d40ba8da8f30aa5eb3, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor.CoreModule
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1_Forest_2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1231916844
@@ -8034,13 +8041,13 @@ MonoBehaviour:
       - m_Target: {fileID: 490537367}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 2
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 102900000, guid: 7d35591be8238894c8b36ab5d5f021cf, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor.CoreModule
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1_Forest_1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1598493033

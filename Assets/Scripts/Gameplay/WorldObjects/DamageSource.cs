@@ -17,8 +17,9 @@ public class DamageSource : MonoBehaviour, IDamageSource
 #if UNITY_EDITOR
     [field: SerializeField, Header("Debug-Constant")]
     private float LastCollisionForce { get; set; }
-    private float _lastCollisionForce;
 #endif
+
+    private float _lastCollisionForce;
 
 #if UNITY_EDITOR
     private void Update()
