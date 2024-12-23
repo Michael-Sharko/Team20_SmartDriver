@@ -16,7 +16,7 @@ namespace Shark.Gameplay.UI
 
         private float _fuelLevel;
 
-        public void FuelGaugeSystem2(RectTransform arrow, float minRotation, float maxRotation, float initialiFuel)
+        public FuelGaugeSystem(RectTransform arrow, float minRotation, float maxRotation, float initialiFuel)
         {
             _arrow = arrow;
             _minRotation = minRotation;

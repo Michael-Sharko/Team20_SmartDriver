@@ -17,9 +17,9 @@ namespace Shark.Gameplay.Player
         private Rigidbody _rb;
 
         public event Action OnDamageReceived;
-        public event Action OnFuelRanOut;
+        public event Action OnCarFuelRanOut;
         public event Action OnCarBroken;
-
+        private bool _endGameEventSended = false;
 
         [field: SerializeField]
         public float maxStrength { get; private set; }
@@ -99,10 +99,13 @@ namespace Shark.Gameplay.Player
 
         void FixedUpdate()
         {
-            HandleOutOfFuel();
-            HandleBroken();
+            if (!_endGameEventSended)
+            {
+                HandleOutOfFuel();
+                HandleBroken();
+            }
 
-            HandleInputOnFuelCheck();
+            HandleInputOnFuelAndBrokenCheck();
 
             HandleMotor();
             HandleSteering();
@@ -111,8 +114,10 @@ namespace Shark.Gameplay.Player
             UpdateWheels();
         }
 
-        void HandleInputOnFuelCheck()
+        void HandleInputOnFuelAndBrokenCheck()
         {
+            if (IsBroken) return;
+
             _hInput = Input.GetAxis(INPUT_HORIZONTAL);
             _vInput = hasFuel ? Input.GetAxis(INPUT_VERTICAL) : 0;
             _isBreaking = Input.GetKey(KeyCode.Space);
@@ -212,7 +217,8 @@ namespace Shark.Gameplay.Player
         {
             if (!hasFuel)
             {
-                OnFuelRanOut?.Invoke();
+                OnCarFuelRanOut?.Invoke();
+                _endGameEventSended = true;
             }
         }
 
@@ -221,6 +227,11 @@ namespace Shark.Gameplay.Player
             if (IsBroken)
             {
                 OnCarBroken?.Invoke();
+                _endGameEventSended = true;
+
+                _isBreaking = false;
+                ApplyDrive(_hInput = 0);
+                ApplyBreaking();
             }
         }
 
