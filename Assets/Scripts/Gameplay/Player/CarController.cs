@@ -73,6 +73,8 @@ namespace Shark.Gameplay.Player
             _rb = GetComponent<Rigidbody>();
 
             ApplyCarData();
+
+            currentStrength = maxStrength;
         }
 
         private void ApplyCarData()
