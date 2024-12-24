@@ -16,10 +16,16 @@ namespace Shark.Gameplay.Player
 
         private Rigidbody _rb;
 
-        [field: SerializeField]
-        public float currentStrength { get; private set; }
+        public event Action OnDamageReceived;
+        public event Action OnCarFuelRanOut;
+        public event Action OnCarBroken;
+        private bool _endGameEventSended = false;
+
         [field: SerializeField]
         public float maxStrength { get; private set; }
+        [field: SerializeField, HideInInspector]
+        public float currentStrength { get; private set; }
+        public bool IsBroken => currentStrength <= 0;
 
         [field: SerializeField]
         public float fuelCapacity { get; private set; }
@@ -67,6 +73,8 @@ namespace Shark.Gameplay.Player
             _rb = GetComponent<Rigidbody>();
 
             ApplyCarData();
+
+            currentStrength = maxStrength;
         }
 
         private void ApplyCarData()
@@ -93,16 +101,25 @@ namespace Shark.Gameplay.Player
 
         void FixedUpdate()
         {
-            HandleOutOfFuel();
-            HandleInputOnFuelCheck();
+            if (!_endGameEventSended)
+            {
+                HandleOutOfFuel();
+                HandleBroken();
+            }
+
+            HandleInputOnFuelAndBrokenCheck();
+
             HandleMotor();
             HandleSteering();
             HandleFuelConsumption();
+
             UpdateWheels();
         }
 
-        void HandleInputOnFuelCheck()
+        void HandleInputOnFuelAndBrokenCheck()
         {
+            if (IsBroken) return;
+
             _hInput = Input.GetAxis(INPUT_HORIZONTAL);
             _vInput = hasFuel ? Input.GetAxis(INPUT_VERTICAL) : 0;
             _isBreaking = Input.GetKey(KeyCode.Space);
@@ -202,7 +219,21 @@ namespace Shark.Gameplay.Player
         {
             if (!hasFuel)
             {
-                // todo: do something
+                OnCarFuelRanOut?.Invoke();
+                _endGameEventSended = true;
+            }
+        }
+
+        private void HandleBroken()
+        {
+            if (IsBroken)
+            {
+                OnCarBroken?.Invoke();
+                _endGameEventSended = true;
+
+                _isBreaking = false;
+                ApplyDrive(_hInput = 0);
+                ApplyBreaking();
             }
         }
 
@@ -218,6 +249,12 @@ namespace Shark.Gameplay.Player
         public void Refuel(float value)
         {
             currentFuel = Math.Min(currentFuel + value, fuelCapacity);
+        }
+
+        public void TakeDamage(float damage)
+        {
+            currentStrength -= damage;
+            OnDamageReceived?.Invoke();
         }
 
 #if UNITY_EDITOR

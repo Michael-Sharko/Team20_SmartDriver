@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Shark.Gameplay.Player
 {
-    public interface IPlayer : IRefuelable
+    public interface IPlayer : IRefuelable, IBreakable
     {
 
     }
