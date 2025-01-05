@@ -2,6 +2,7 @@ using Shark.Gameplay.Physics;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Shark.Gameplay.Player
@@ -24,6 +25,9 @@ namespace Shark.Gameplay.Player
         [Tooltip(WHEEL_TOOLTIP), SerializeField]
         private Transform[] _transforms;
 
+        private float[] _originalForwardStiffness;
+        private float[] _originalSidewaysStiffness;
+
 #if UNITY_EDITOR
         public WheelPhysicsData wheelPhysics => _data;
 #endif
@@ -42,6 +46,9 @@ namespace Shark.Gameplay.Player
 
             public WheelCollider whellCollider;
             public Transform transform;
+
+            public float originalForwardStiffness { get; set; }
+            public float originalSidewaysStiffness { get; set; }
         }
 
         public readonly WheelData this[Part part]
@@ -52,13 +59,20 @@ namespace Shark.Gameplay.Player
                 {
                     partNumber = part,
                     whellCollider = _colliders[(int)part],
-                    transform = _transforms[(int)part]
+                    transform = _transforms[(int)part],
+
+                    originalForwardStiffness = _originalForwardStiffness[(int)part],
+                    originalSidewaysStiffness = _originalSidewaysStiffness[(int)part],
                 };
             }
         }
 
         public void ApplyWheelData()
         {
+            _originalForwardStiffness = new float[_colliders.Length];
+            _originalSidewaysStiffness = new float[_colliders.Length];
+
+            int part = 0;
             foreach (var wheel in _colliders)
             {
                 wheel.mass = _data.mass;
@@ -69,6 +83,11 @@ namespace Shark.Gameplay.Player
                 wheel.suspensionSpring = _data.suspensionSpring;
                 wheel.forwardFriction = _data.forwardFiction;
                 wheel.sidewaysFriction = _data.sidewaysFiction;
+
+                _originalForwardStiffness[part] = wheel.forwardFriction.stiffness;
+                _originalSidewaysStiffness[part] = wheel.sidewaysFriction.stiffness;
+
+                ++part;
             }
         }
     }

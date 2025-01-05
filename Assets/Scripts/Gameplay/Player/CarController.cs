@@ -113,6 +113,7 @@ namespace Shark.Gameplay.Player
             HandleSteering();
             HandleFuelConsumption();
 
+            ApplyMaterialPhysicsOnWheels();
             UpdateWheels();
         }
 
@@ -175,6 +176,30 @@ namespace Shark.Gameplay.Player
             for (Wheel.Part wheelid = 0; wheelid < Wheel.Part.Count; ++wheelid)
             {
                 _wheels[wheelid].whellCollider.brakeTorque = _currentBreakForce;
+            }
+        }
+
+        private void ApplyMaterialPhysicsOnWheels()
+        {
+            for (Wheel.Part wheelid = 0; wheelid < Wheel.Part.Count; ++wheelid)
+            {
+                ApplyPhysicsMaterialOnWheel(_wheels[wheelid].whellCollider, _wheels[wheelid].originalForwardStiffness, _wheels[wheelid].originalSidewaysStiffness);
+            }
+        }
+
+        private void ApplyPhysicsMaterialOnWheel(WheelCollider wheel, float originalForwardStiffness, float originalSidewaysStiffness)
+        {
+            if (wheel.GetGroundHit(out WheelHit hit))
+            {
+                WheelFrictionCurve fFriction = wheel.forwardFriction;
+                fFriction.stiffness = hit.collider.material.staticFriction * originalForwardStiffness;
+                wheel.forwardFriction = fFriction;
+
+                print(wheel.forwardFriction.stiffness);
+
+                WheelFrictionCurve sFriction = wheel.sidewaysFriction;
+                sFriction.stiffness = hit.collider.material.staticFriction * originalSidewaysStiffness;
+                wheel.sidewaysFriction = sFriction;
             }
         }
 
@@ -244,6 +269,11 @@ namespace Shark.Gameplay.Player
                 (worldObject as IActivatable)?.Activate();
                 (worldObject as IPickupable)?.PickUp(this);
             }
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            print(collision.gameObject.layer);
         }
 
         public void Refuel(float value)
