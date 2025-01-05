@@ -22,13 +22,13 @@ namespace Shark.Gameplay.Player
         private bool _endGameEventSended = false;
 
         [field: SerializeField]
-        public float maxStrength { get; private set; }
+        public float maxStrength { get; private set; } = 100;
         [field: SerializeField, HideInInspector]
         public float currentStrength { get; private set; }
         public bool IsBroken => currentStrength <= 0;
 
         [field: SerializeField]
-        public float fuelCapacity { get; private set; }
+        public float fuelCapacity { get; private set; } = 100;
 
         [HideInInspector]
         public float currentFuel { get; private set; }
