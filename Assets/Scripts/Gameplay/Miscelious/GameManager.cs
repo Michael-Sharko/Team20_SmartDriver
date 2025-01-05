@@ -182,7 +182,7 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                SceneManager.LoadScene(_mainMenuSceneName);
+                LoadMainMenuScene();
             }
         }
     }
@@ -206,6 +206,11 @@ public class GameManager : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void LoadMainMenuScene()
+    {
+        LoadScene(_mainMenuSceneName);
     }
 
     public void OnClickedExitButton()
