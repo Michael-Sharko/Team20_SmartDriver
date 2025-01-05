@@ -191,15 +191,13 @@ namespace Shark.Gameplay.Player
         {
             if (wheel.GetGroundHit(out WheelHit hit))
             {
-                WheelFrictionCurve fFriction = wheel.forwardFriction;
-                fFriction.stiffness = hit.collider.material.staticFriction * originalForwardStiffness;
-                wheel.forwardFriction = fFriction;
+                WheelFrictionCurve forwardFriction = wheel.forwardFriction;
+                forwardFriction.stiffness = hit.collider.material.staticFriction * originalForwardStiffness;
+                wheel.forwardFriction = forwardFriction;
 
-                print(wheel.forwardFriction.stiffness);
-
-                WheelFrictionCurve sFriction = wheel.sidewaysFriction;
-                sFriction.stiffness = hit.collider.material.staticFriction * originalSidewaysStiffness;
-                wheel.sidewaysFriction = sFriction;
+                WheelFrictionCurve sidewaysFriction = wheel.sidewaysFriction;
+                sidewaysFriction.stiffness = hit.collider.material.staticFriction * originalSidewaysStiffness;
+                wheel.sidewaysFriction = sidewaysFriction;
             }
         }
 
