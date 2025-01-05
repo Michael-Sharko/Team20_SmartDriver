@@ -1,60 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class FollowCamera : MonoBehaviour
 {
-    public Transform target;
-    public Vector3 offset;
-    public float smoothSpeed = 0.125f;
-    public float multiplySmoothSpeed = 4f;
+    [SerializeField] private Transform objectToFollow;
+    [SerializeField] float sharpnessOfFollowing = 0.5f; //определяет насколько быстро камера будет принимать нужное положение. Для ощущения как Paris dakar rally нужно значение около 0.25f.
 
-    public float minDistanceToTarget = 25.0f;
-    public float maxDistanceToTarget = 30.0f;
+    private Transform cts;
 
-#if UNITY_EDITOR
-    [field: SerializeField, Header("Debug-Constant")]
-    public float DistanceToTarget { get; private set; }
-#endif
-
-    private void LateUpdate()
+    private void Start()
     {
-        float distanceToTarget = CalculateDistanceToTarget();
-        if (distanceToTarget > minDistanceToTarget)
+        if(objectToFollow == null)
         {
-            float currentSmoothSpeed = CalculateSmoothSpeedIfCameraIsCloserThanMaxDistance(distanceToTarget);
-            transform.position = CalculateSmoothPosition(currentSmoothSpeed);
+            Debug.LogError("Добавь машину в поле ObjectToFollow игрового объекта CameraHandle. Если не знаешь где CameraHandle - используй поиск в окне иерархии");
         }
-        transform.LookAt(target.position);
 
-#if UNITY_EDITOR
-        DistanceToTarget = distanceToTarget;
-#endif
+        cts = Camera.main.transform;
     }
 
-    private float CalculateDistanceToTarget()
+    private void Update()
     {
-        return Vector3.Distance(target.position, transform.position);
-    }
-
-    private float CalculateSmoothSpeedIfCameraIsCloserThanMaxDistance(float distanceToTarget)
-    {
-        return distanceToTarget < maxDistanceToTarget ? CalculateNormalSmoothSpeed() : CalculateAcceleratedSmoothSpeed();
-    }
-
-    private float CalculateNormalSmoothSpeed()
-    {
-        return Time.deltaTime * smoothSpeed;
-    }
-
-    private float CalculateAcceleratedSmoothSpeed()
-    {
-        return CalculateNormalSmoothSpeed() * multiplySmoothSpeed;
-    }
-
-    private Vector3 CalculateSmoothPosition(float smoothSpeed)
-    {
-        Vector3 positionToGo = new Vector3(target.position.x, 0, target.position.z) + offset;
-        return Vector3.Lerp(transform.position, positionToGo, smoothSpeed);
+        transform.position = (objectToFollow.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(objectToFollow.forward), sharpnessOfFollowing * Time.deltaTime);
+        cts.rotation = Quaternion.LookRotation(objectToFollow.position - cts.position);
     }
 }
