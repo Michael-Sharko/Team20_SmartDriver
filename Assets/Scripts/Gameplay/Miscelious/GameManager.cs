@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private string _mainMenuSceneName = "Main Menu";
+    [SerializeField]
+    private string _nextLevelSceneName;
 
     [Serializable]
     private class PauseManager
@@ -211,6 +213,23 @@ public class GameManager : MonoBehaviour
     public void LoadMainMenuScene()
     {
         LoadScene(_mainMenuSceneName);
+    }
+
+    public void LoadNextLevelScene()
+    {
+        if(string.IsNullOrEmpty(_nextLevelSceneName))
+        {
+            Debug.LogError("Ќе установлено им€ следующего уровн€ в Game Manager");
+        }
+        else
+        {
+            LoadScene(_nextLevelSceneName);
+        }
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void OnClickedExitButton()
