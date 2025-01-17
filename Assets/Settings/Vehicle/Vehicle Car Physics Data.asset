@@ -15,7 +15,7 @@ MonoBehaviour:
   mass: 450
   centerOfMass: {x: 0, y: -0.5, z: 0}
   drag: 0.3
-  angularDrag: 1
+  angularDrag: 1.85
   driveType: 2
   motorForce: 1200
   breakForce: 1700
