@@ -535,6 +535,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5139959584972569001, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
+      propertyPath: _nextLevelSceneName
+      value: 1_Forest_1
+      objectReference: {fileID: 0}
     - target: {fileID: 5448682452483478323, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
