@@ -6712,6 +6712,10 @@ PrefabInstance:
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 1884643802}
+    - target: {fileID: 4677303539123277998, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5510715615402426520, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_BackGroundColor.a
       value: 1
