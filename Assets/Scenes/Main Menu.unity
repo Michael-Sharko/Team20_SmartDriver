@@ -2998,6 +2998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainMenuSceneName: Main Menu
+  _nextLevelSceneName: 
   _pauseManager:
     OnPauseActivated:
       m_PersistentCalls:
