@@ -14,20 +14,18 @@ public class EngineSound : CarSounds
     [SerializeField, Range(0f, 1f)]
     private float volumeBack;
     [SerializeField, Range(0f, 1f)]
-    private float volumeIndling = 0.3f;
+    private float volumeIndling;
 
-    private float pitchForvard = 1f;
-    private float pitchIndlong = 0.9f;
-    private float pitchBack = 0.85f;    
+    private float defaultEnginePitch = 1f;
+    private float maxEnginePitch = 1.35f;
+    private float minEnginePitch = 0.75f;
+    private float indlingEnginePitch = 0.9f;
+    private float currentEnginePitch;
 
     private int audioClipState;
 
-    [Header("Audio curve")]
-    [SerializeField]
-    private AnimationCurve curve;
-
     private AudioSource audioSrc => gameObject.GetComponent<AudioSource>();
-
+    
     private void Update()
     {
        SoundStateDetection();
@@ -52,9 +50,25 @@ public class EngineSound : CarSounds
     {
         switch (state)
         {
-            case 0: audioSrc.volume = volumeForvard; audioSrc.pitch = curve.Evaluate(carController.vInput * 1.2f); break;
-            case 1: audioSrc.volume = volumeBack; audioSrc.pitch = curve.Evaluate(carController.vInput * -1f); break;
-            case 2: audioSrc.volume = volumeIndling; audioSrc.pitch = pitchIndlong; break;
+            case 0: 
+              audioSrc.volume = volumeForvard;
+              audioSrc.pitch = Mathf.Clamp(audioSrc.pitch += 0.08f * Time.deltaTime, audioSrc.pitch, maxEnginePitch );
+            break;
+
+            case 1: 
+              audioSrc.volume = volumeBack; 
+              audioSrc.pitch = Mathf.Clamp(audioSrc.pitch -= 0.08f *Time.deltaTime, minEnginePitch, audioSrc.pitch );
+            break;
+
+            case 2:
+              audioSrc.volume = volumeIndling;
+
+                if (audioSrc.pitch > indlingEnginePitch)
+                    audioSrc.pitch = Mathf.Clamp(audioSrc.pitch -= 0.3f * Time.deltaTime, indlingEnginePitch, maxEnginePitch);
+                else if (audioSrc.pitch < indlingEnginePitch)
+                    audioSrc.pitch = Mathf.Clamp(audioSrc.pitch += 0.3f * Time.deltaTime, audioSrc.pitch, indlingEnginePitch);
+               
+            break;
         }
     }    
 }

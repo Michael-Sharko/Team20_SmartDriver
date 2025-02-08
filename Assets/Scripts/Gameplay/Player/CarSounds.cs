@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class CarSounds : MonoBehaviour 
 {
-    [SerializeField] public AudioClip engineWorkClip;
-    [SerializeField] public AudioClip[] collisionClips;
-    [SerializeField] public AudioClip destroyClip;
+     public AudioClip engineWorkClip;
+     public AudioClip[] collisionClips;
+     public AudioClip destroyClip;
 
-    [SerializeField] public AudioClip[] roadClips;
-    [SerializeField] public AudioClip[] sandClips;
-    [SerializeField] public AudioClip[] stoneClips;
+     public AudioClip[] roadClips;
+     public AudioClip[] sandClips;
+     public AudioClip[] stoneClips;
 
 }
 
