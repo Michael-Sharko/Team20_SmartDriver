@@ -26,10 +26,10 @@ namespace Shark.Gameplay.UI
             private StrengthState[] _states;
 
             [SerializeField]
-            private RawImage _strengthIcon;
+            public RawImage _strengthIcon;
 
             [SerializeField]
-            private float _rotationSpeed = 30;
+            public float _rotationSpeed = 4;            
 
             public void UpdateStrengthIcon(float strength)
             {
@@ -46,12 +46,6 @@ namespace Shark.Gameplay.UI
                 if (strength < 0) _rotationSpeed = 0;
             }
 
-            public void UpdateStrengthRotation()
-            {
-                if (_strengthIcon == null) return;
-
-                _strengthIcon.transform.Rotate(new Vector3(0, 0, _rotationSpeed * Time.deltaTime));
-            }
         }
         [SerializeField]
         private UICarStrength _strength;
@@ -109,10 +103,17 @@ namespace Shark.Gameplay.UI
             if (_fuelGauge != null)
                 _fuelGauge.SetFuelLevel(_car.currentFuel, _car.fuelCapacity);
         }
+
+        public void UpdateStrengthRotation()
+        {
+            if (_strength._strengthIcon == null) return;
+
+            _strength._strengthIcon.transform.Rotate(new Vector3(0, 0, _car.SpeedKmh * _strength._rotationSpeed * Time.deltaTime));
+        }
         private void UpdateStrength()
         {
             if (_strength != null)
-                _strength.UpdateStrengthRotation();
+                UpdateStrengthRotation();
         }
 
         private void OnUpdatedStrengthIcon()
