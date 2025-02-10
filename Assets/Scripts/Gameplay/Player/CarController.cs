@@ -11,11 +11,11 @@ namespace Shark.Gameplay.Player
         private const string INPUT_VERTICAL = "Vertical";
 
         private float _hInput;
-        private float _vInput;
+        public float vInput { get; private set; }
         private bool _isBreaking;
 
         private Rigidbody _rb;
-
+            
         public event Action OnDamageReceived;
         public event Action OnCarFuelRanOut;
         public event Action OnCarBroken;
@@ -55,7 +55,7 @@ namespace Shark.Gameplay.Player
         public float SpeedMph => Speed * 2.23694f;
 
         private bool hasFuel => currentFuel > 0;
-        private bool isDriving => _vInput != 0;
+        private bool isDriving => vInput != 0;
 
         private void Start()
         {
@@ -122,13 +122,13 @@ namespace Shark.Gameplay.Player
             if (IsBroken) return;
 
             _hInput = Input.GetAxis(INPUT_HORIZONTAL);
-            _vInput = hasFuel ? Input.GetAxis(INPUT_VERTICAL) : 0;
+            vInput = hasFuel ? Input.GetAxis(INPUT_VERTICAL) : 0;
             _isBreaking = Input.GetKey(KeyCode.Space);
         }
 
         void HandleMotor()
         {
-            ApplyDrive(_vInput * _data.motorForce);
+            ApplyDrive(vInput * _data.motorForce);
             ApplyBreaking();
         }
 
