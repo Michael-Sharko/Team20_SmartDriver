@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5dac11f09de1d7f4db4fddec350f5fa3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,9 +129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d701211d3ca424e49bb8ccb0e771ce0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canisterColor: {r: 0.35818818, g: 0.49056602, b: 0.3262727, a: 1}
+  _canisterColor: {r: 0.6528301, g: 0.0057772584, b: 0, a: 1}
   amountOfFuel: 20
-  rotatingSpeed: 30
+  rotatingSpeed: 160
 --- !u!135 &5065363572169311575
 SphereCollider:
   m_ObjectHideFlags: 0

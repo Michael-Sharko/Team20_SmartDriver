@@ -1144,6 +1144,30 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9010550503953617810, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
+      propertyPath: _strength._rotationSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010550503953617810, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
+      propertyPath: _strength._states.Array.data[1].checkpoint
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010550503953617810, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
+      propertyPath: _strength._states.Array.data[2].checkpoint
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010550503953617810, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
+      propertyPath: _strength._states.Array.data[3].checkpoint
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010550503953617810, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
+      propertyPath: _strength._states.Array.data[4].checkpoint
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010550503953617810, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
+      propertyPath: _strength._states.Array.data[5].checkpoint
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -932,9 +932,9 @@ MonoBehaviour:
   sandClips: []
   stoneClips: []
   carController: {fileID: 4789932440345742510}
-  volumeForvard: 0.5
-  volumeBack: 0.55
-  volumeIndling: 0.5
+  volumeForvard: 0.4
+  volumeBack: 0.45
+  volumeIndling: 0.4
 --- !u!114 &8324262074074147085
 MonoBehaviour:
   m_ObjectHideFlags: 0
