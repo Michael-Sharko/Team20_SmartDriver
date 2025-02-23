@@ -1482,6 +1482,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8324262074074147085, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: engineWorkClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8825281476956746338, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
       propertyPath: m_Name
       value: Vehicle
@@ -6478,6 +6482,22 @@ PrefabInstance:
     - target: {fileID: 1401844301803531276, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_Name
       value: Nikitka Default Scene Properties Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728827938116112246, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728827938116112246, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728827938116112246, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728827938116112246, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 3786706751223260685, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchorMax.y
