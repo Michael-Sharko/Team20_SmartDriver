@@ -24,7 +24,7 @@ public class FuelCansiter : MonoBehaviour, IPickupable
 
     private void Update()
     {
-        transform.Rotate(Vector3.up, Time.deltaTime * rotatingSpeed);
+        transform.Rotate(Vector3.up, Time.deltaTime * rotatingSpeed, Space.World);
     }
 
     private void InitializeCanister()
