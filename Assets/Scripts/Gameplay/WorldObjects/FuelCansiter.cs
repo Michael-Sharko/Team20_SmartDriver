@@ -1,3 +1,4 @@
+using System;
 using Shark.Gameplay.Player;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ public class FuelCansiter : MonoBehaviour, IPickupable
     public float amountOfFuel = 20.0f;
 
     public float rotatingSpeed = 30.0f;
+
+    public event Action OnPickUp;
 
     private void Start()
     {
@@ -56,7 +59,13 @@ public class FuelCansiter : MonoBehaviour, IPickupable
 
     public void PickUp(IPlayer player)
     {
+        OnPickUp?.Invoke();
+
         player.Refuel(amountOfFuel);
-        gameObject.SetActive(false);
+
+        GetComponent<Collider>().enabled = false;
+        _canisterRenderer.enabled = false;
+
+        this.LateAndInvoke(2,() => Destroy(gameObject));
     }
 }
