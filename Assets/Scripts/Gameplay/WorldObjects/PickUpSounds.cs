@@ -1,23 +1,26 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
-public class PickUpSounds : MonoBehaviour {
+[Serializable]
+public class PickUpSounds {
 
     [SerializeField] private AudioClip pickUp;
     [SerializeField, Min(0)] private float volume = 1;
 
-    private IPickupable pickupable;
     private AudioSource audioSource;
+    private IPickupable pickupable;
 
-    private void Start() {
-        audioSource = GetComponent<AudioSource>();
-        if (TryGetComponent(out pickupable)) pickupable.OnPickUp += PlaySoundPickUp;
-    }
-    private void OnDestroy() {
-        if (pickupable != null) pickupable.OnPickUp -= PlaySoundPickUp;
-    }
+    public void Init(IPickupable pickupable, AudioSource audioSource) {
+        this.audioSource = audioSource;
 
-    public void PlaySoundPickUp() {
+        if (this.pickupable != null) {
+            this.pickupable.OnPickUp -= PlaySoundPickUp;
+        }
+
+        this.pickupable = pickupable;
+        pickupable.OnPickUp += PlaySoundPickUp;
+    }
+    private void PlaySoundPickUp() {
         audioSource.PlayOneShot(pickUp, volume);
     }
 }

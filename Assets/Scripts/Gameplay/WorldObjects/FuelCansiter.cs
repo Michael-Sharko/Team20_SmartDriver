@@ -2,6 +2,7 @@ using System;
 using Shark.Gameplay.Player;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class FuelCansiter : MonoBehaviour, IPickupable
 {
     private Renderer _canisterRenderer;
@@ -13,11 +14,15 @@ public class FuelCansiter : MonoBehaviour, IPickupable
 
     public float rotatingSpeed = 30.0f;
 
+    [SerializeField] private PickUpSounds pickUpSounds;
+
     public event Action OnPickUp;
 
     private void Start()
     {
         InitializeCanister();
+
+        pickUpSounds.Init(this, GetComponent<AudioSource>());
     }
 
     private void OnValidate()
