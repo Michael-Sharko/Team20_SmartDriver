@@ -42,6 +42,9 @@ namespace Shark.Gameplay.Player
         [SerializeField]
         private Wheel _wheels;
 
+        [SerializeField]
+        private TouchingSlidingSurfaceController _touchingSlidingSurface;
+
 #if UNITY_EDITOR
         public CarPhysicsData carPhysics => _data;
         public WheelPhysicsData wheelPhysics => _wheels.wheelPhysics;
@@ -183,22 +186,35 @@ namespace Shark.Gameplay.Player
         {
             for (Wheel.Part wheelid = 0; wheelid < Wheel.Part.Count; ++wheelid)
             {
-                ApplyPhysicsMaterialOnWheel(_wheels[wheelid].whellCollider, _wheels[wheelid].originalForwardStiffness, _wheels[wheelid].originalSidewaysStiffness);
+                ApplyPhysicsMaterialOnWheel(_wheels[wheelid], _wheels[wheelid].originalForwardStiffness, _wheels[wheelid].originalSidewaysStiffness);
             }
         }
 
-        private void ApplyPhysicsMaterialOnWheel(WheelCollider wheel, float originalForwardStiffness, float originalSidewaysStiffness)
+        private void ApplyPhysicsMaterialOnWheel(Wheel.WheelData wheelData, float originalForwardStiffness, float originalSidewaysStiffness)
         {
-            if (wheel.GetGroundHit(out WheelHit hit))
-            {
-                WheelFrictionCurve forwardFriction = wheel.forwardFriction;
-                forwardFriction.stiffness = hit.collider.material.staticFriction * originalForwardStiffness;
-                wheel.forwardFriction = forwardFriction;
+            var collider = wheelData.whellCollider;
 
-                WheelFrictionCurve sidewaysFriction = wheel.sidewaysFriction;
-                sidewaysFriction.stiffness = hit.collider.material.staticFriction * originalSidewaysStiffness;
-                wheel.sidewaysFriction = sidewaysFriction;
+            if (!collider.GetGroundHit(out WheelHit hit)) 
+                return;
+
+            var forwardFrictionStiffness = hit.collider.material.staticFriction * originalForwardStiffness;
+            var sidewaysFrictionStiffness = hit.collider.material.staticFriction * originalSidewaysStiffness;
+
+            if (_touchingSlidingSurface.TryCalculateSlidingToWheel(wheelData, hit, out var stiffness)) {
+
+                forwardFrictionStiffness = stiffness.forwardFrictionStiffness;
+                sidewaysFrictionStiffness = stiffness.sidewaysFrictionStiffness;
+
             }
+
+            WheelFrictionCurve forwardFriction = collider.forwardFriction;
+            forwardFriction.stiffness = forwardFrictionStiffness;
+            collider.forwardFriction = forwardFriction;
+
+            WheelFrictionCurve sidewaysFriction = collider.sidewaysFriction;
+            sidewaysFriction.stiffness = sidewaysFrictionStiffness;
+            collider.sidewaysFriction = sidewaysFriction;
+            
         }
 
         private void UpdateWheels()
