@@ -58,7 +58,7 @@ namespace Shark.Gameplay.UI
 
         private CarController _car;
 
-        private void Start()
+        private void Awake()
         {
             Initialize();
         }
