@@ -42,8 +42,8 @@ namespace Shark.Gameplay.Player
         [SerializeField]
         private Wheel _wheels;
 
-        [SerializeField]
-        private TouchingSlidingSurfaceController _touchingSlidingSurface;
+        private AudioSource _audioSource;
+        [SerializeField] private TouchingSlidingSurfaceController _touchingSlidingSurface;
 
 #if UNITY_EDITOR
         public CarPhysicsData carPhysics => _data;
@@ -63,7 +63,8 @@ namespace Shark.Gameplay.Player
         private void Start()
         {
             Initialize();
-            Refuel(fuelCapacity);
+            Refuel(fuelCapacity);            
+            _audioSource = GetComponent<AudioSource>();
         }
 
         private void OnValidate()
