@@ -136,8 +136,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2.836084
-  m_Center: {x: -1.2858126, y: -0.000000009018213, z: 0.05467054}
+  m_Radius: 3.93266
+  m_Center: {x: -1.9570403, y: -0.000000014534341, z: -0.37067464}
 --- !u!82 &8140341988898435266
 AudioSource:
   m_ObjectHideFlags: 0
