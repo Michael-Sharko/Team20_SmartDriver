@@ -9,16 +9,19 @@ namespace Shark.Gameplay.UI
     public class FuelGaugeSystem
     {
         [SerializeField]
-        private RectTransform _arrow;
+        private RectTransform _arrowAnchor;
+
+        [SerializeField, Range(0, 1)] 
+        private float _arrowRotationSmoothness = 0.05f;
 
         [SerializeField]
-        private float _minRotation = 60, _maxRotation = -60;
+        private float _minRotation = 90, _maxRotation = -90;
 
         private float _fuelLevel;
 
         public FuelGaugeSystem(RectTransform arrow, float minRotation, float maxRotation, float initialiFuel)
         {
-            _arrow = arrow;
+            _arrowAnchor = arrow;
             _minRotation = minRotation;
             _maxRotation = maxRotation;
             _fuelLevel = Mathf.Clamp01(initialiFuel);
@@ -41,10 +44,12 @@ namespace Shark.Gameplay.UI
 
         private void UpdateArrowRotation()
         {
-            if (_arrow == null) return;
+            if (_arrowAnchor == null) return;
 
-            float targetRotation = Mathf.Lerp(_minRotation, _maxRotation, _fuelLevel);
-            _arrow.localRotation = Quaternion.Euler(0, 0, targetRotation);
+            var rotationZ = Mathf.Lerp(_minRotation, _maxRotation, _fuelLevel);
+            var targetRotation = Quaternion.Euler(0, 0, rotationZ);
+            var lerpedRotation = Quaternion.Lerp(_arrowAnchor.rotation, targetRotation, _arrowRotationSmoothness);
+            _arrowAnchor.rotation = lerpedRotation;
         }
     }
 }
