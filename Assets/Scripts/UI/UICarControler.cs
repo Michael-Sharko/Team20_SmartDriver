@@ -117,13 +117,11 @@ namespace Shark.Gameplay.UI
         [Serializable]
         private class Speedometer
         {
-            [SerializeField] private TextMeshProUGUI _text;
             [SerializeField] private RectTransform _arrowAnchor;
             [SerializeField, Range(0, 1)] private float _arrowRotationSmoothness = 0.05f;
             [SerializeField] private float _minRotation = 101.5f;
             [SerializeField] private float _maxRotation = -101.5f;
 
-            public TextMeshProUGUI Text => _text;
             public RectTransform ArrowAnchor => _arrowAnchor;
             public float ArrowRotationSmoothness => _arrowRotationSmoothness;
             public float MinRotation => _minRotation;
@@ -184,9 +182,6 @@ namespace Shark.Gameplay.UI
             var targetRotation = Quaternion.Euler(0, 0, rotationZ);
             var lerpedRotation = Quaternion.Lerp(_speedometer.ArrowAnchor.rotation, targetRotation, _speedometer.ArrowRotationSmoothness);
             _speedometer.ArrowAnchor.rotation = lerpedRotation;
-
-            if (_speedometer != null)
-                _speedometer.Text.text = $"Speedometer: {_car.SpeedKmh:F0} Km/h";
         }
 
         private void UpdateFuelGauge()
