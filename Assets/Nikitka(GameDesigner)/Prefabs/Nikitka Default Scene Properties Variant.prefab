@@ -184,14 +184,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 848486966541423753, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: m_UVRect.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 848486966541423753, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: m_UVRect.width
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1174997437875233317, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1004,50 +996,6 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8096753950070737626, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.097
-      objectReference: {fileID: 0}
-    - target: {fileID: 8096753950070737626, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.9858519
-      objectReference: {fileID: 0}
-    - target: {fileID: 8096753950070737626, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.0067728134
-      objectReference: {fileID: 0}
-    - target: {fileID: 8096753950070737626, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.81581455
-      objectReference: {fileID: 0}
-    - target: {fileID: 8096753950070737626, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -73
-      objectReference: {fileID: 0}
-    - target: {fileID: 8096753950070737626, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -82
-      objectReference: {fileID: 0}
-    - target: {fileID: 8096753950070737626, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8096753950070737626, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8096753950070737626, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8096753950070737626, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 3.2200928
-      objectReference: {fileID: 0}
-    - target: {fileID: 8096753950070737626, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 3.3760986
-      objectReference: {fileID: 0}
     - target: {fileID: 8419031667767643884, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1147,26 +1095,6 @@ PrefabInstance:
     - target: {fileID: 9010550503953617810, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: _strength._rotationSpeed
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9010550503953617810, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: _strength._states.Array.data[1].checkpoint
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 9010550503953617810, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: _strength._states.Array.data[2].checkpoint
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 9010550503953617810, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: _strength._states.Array.data[3].checkpoint
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 9010550503953617810, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: _strength._states.Array.data[4].checkpoint
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 9010550503953617810, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
-      propertyPath: _strength._states.Array.data[5].checkpoint
-      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

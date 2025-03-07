@@ -1,6 +1,6 @@
-using Shark.Gameplay.Player;
 using System;
-using System.Collections.Generic;
+using System.Collections;
+using Shark.Gameplay.Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,17 +21,65 @@ namespace Shark.Gameplay.UI
                 [SerializeField]
                 public float checkpoint;
             }
+            [Serializable]
+            private struct StrengthArrowRotationState
+            {
 
-            [SerializeField]
-            private StrengthState[] _states;
+                public float rotation;
+                public float checkpoint;
+
+            }
 
             [SerializeField]
             public RawImage _strengthIcon;
 
             [SerializeField]
-            public float _rotationSpeed = 4;            
+            private Transform _strengthArrowAnchor;
 
-            public void UpdateStrengthIcon(float strength)
+            [SerializeField]
+            private Transform _strengthArrow;
+
+            [SerializeField]
+            private StrengthState[] _states;
+
+            [SerializeField]
+            private StrengthArrowRotationState[] _arrowStates;
+
+            [Header("Settings"), SerializeField]
+            public float _gearRotationSpeed = 4;
+
+            [SerializeField]
+            private float _arrowSpeed = 1;
+
+            private MonoBehaviour _monoBehaviour;
+            private Coroutine _animRoutine;
+
+            public void UpdateStrengthView(float strength)
+            {
+                UpdateStrengthArrow(strength);
+                UpdateStrengthIcon(strength);
+            }
+            private void UpdateStrengthArrow(float strength)
+            {
+                var rotation = -90f;
+                foreach (var state in _arrowStates)
+                {
+                    if (strength <= state.checkpoint)
+                    {
+                        rotation = state.rotation;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                var targetRotation = Quaternion.Euler(0, 0, rotation);
+
+                if (_animRoutine != null)
+                    _monoBehaviour.StopCoroutine(_animRoutine);
+                _animRoutine = _monoBehaviour.StartCoroutine(AnimateStrengthArrowRotation(targetRotation));
+            }
+            private void UpdateStrengthIcon(float strength)
             {
                 if (_strengthIcon == null || strength < 0) return;
 
@@ -43,9 +91,28 @@ namespace Shark.Gameplay.UI
                         break;
                     }
                 }
-                if (strength < 0) _rotationSpeed = 0;
+                if (strength < 0) _gearRotationSpeed = 0;
             }
+            private IEnumerator AnimateStrengthArrowRotation(Quaternion targetRotation)
+            {
+                var startRotation = _strengthArrowAnchor.rotation;
+                float lerp = 0;
 
+                do
+                {
+                    lerp += Time.deltaTime * _arrowSpeed;
+                    _strengthArrowAnchor.rotation = Quaternion.Lerp(startRotation, targetRotation, lerp);
+
+                    yield return null;
+
+                } while (lerp <= 1);
+
+                _animRoutine = null;
+            }
+            public void Init(MonoBehaviour monoBehaviour)
+            {
+                _monoBehaviour = monoBehaviour;
+            }
         }
         [SerializeField]
         private UICarStrength _strength;
@@ -81,6 +148,7 @@ namespace Shark.Gameplay.UI
         private void Initialize()
         {
             _car = FindFirstObjectByType<CarController>();
+            _strength.Init(this);
         }
 
         private void Update()
@@ -108,7 +176,7 @@ namespace Shark.Gameplay.UI
         {
             if (_strength._strengthIcon == null) return;
 
-            _strength._strengthIcon.transform.Rotate(new Vector3(0, 0, _car.SpeedKmh * _strength._rotationSpeed * Time.deltaTime));
+            _strength._strengthIcon.transform.Rotate(new Vector3(0, 0, _car.SpeedKmh * _strength._gearRotationSpeed * Time.deltaTime));
         }
         private void UpdateStrength()
         {
@@ -119,7 +187,7 @@ namespace Shark.Gameplay.UI
         private void OnUpdatedStrengthIcon()
         {
             if (_strength != null)
-                _strength.UpdateStrengthIcon(_car.currentStrength);
+                _strength.UpdateStrengthView(_car.currentStrength);
         }
     }
 }

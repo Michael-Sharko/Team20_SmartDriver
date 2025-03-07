@@ -2148,10 +2148,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 7.009094
       objectReference: {fileID: 0}
-    - target: {fileID: 4826772687598084881, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 3.2199707
-      objectReference: {fileID: 0}
     - target: {fileID: 5740595355951381081, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: _strength._rotationSpeed
       value: 3
