@@ -114,11 +114,27 @@ namespace Shark.Gameplay.UI
                 _monoBehaviour = monoBehaviour;
             }
         }
+        [Serializable]
+        private class Speedometer
+        {
+            [SerializeField] private TextMeshProUGUI _text;
+            [SerializeField] private RectTransform _arrowAnchor;
+            [SerializeField, Range(0, 1)] private float _arrowRotationSmoothness = 0.05f;
+            [SerializeField] private float _minRotation = 101.5f;
+            [SerializeField] private float _maxRotation = -101.5f;
+
+            public TextMeshProUGUI Text => _text;
+            public RectTransform ArrowAnchor => _arrowAnchor;
+            public float ArrowRotationSmoothness => _arrowRotationSmoothness;
+            public float MinRotation => _minRotation;
+            public float MaxRotation => _maxRotation;
+        }
+
         [SerializeField]
         private UICarStrength _strength;
 
         [SerializeField]
-        private TextMeshProUGUI _speedometer;
+        private Speedometer _speedometer;
 
         [SerializeField]
         private FuelGaugeSystem _fuelGauge;
@@ -150,7 +166,6 @@ namespace Shark.Gameplay.UI
             _car = FindFirstObjectByType<CarController>();
             _strength.Init(this);
         }
-
         private void Update()
         {
             if (!_car) return;
@@ -162,8 +177,16 @@ namespace Shark.Gameplay.UI
 
         private void UpdateSpeedometer()
         {
+            var min = _speedometer.MinRotation;
+            var max = _speedometer.MaxRotation;
+            var rotationZ = Mathf.Lerp(min, max, _car.SpeedKmh / 180);
+
+            var targetRotation = Quaternion.Euler(0, 0, rotationZ);
+            var lerpedRotation = Quaternion.Lerp(_speedometer.ArrowAnchor.rotation, targetRotation, _speedometer.ArrowRotationSmoothness);
+            _speedometer.ArrowAnchor.rotation = lerpedRotation;
+
             if (_speedometer != null)
-                _speedometer.text = $"Speedometer: {_car.SpeedKmh:F0} Km/h";
+                _speedometer.Text.text = $"Speedometer: {_car.SpeedKmh:F0} Km/h";
         }
 
         private void UpdateFuelGauge()
