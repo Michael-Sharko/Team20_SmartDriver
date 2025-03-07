@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using Shark.Gameplay.Player;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,14 +20,6 @@ namespace Shark.Gameplay.UI
                 [SerializeField]
                 public float checkpoint;
             }
-            [Serializable]
-            private struct StrengthArrowRotationState
-            {
-
-                public float rotation;
-                public float checkpoint;
-
-            }
 
             [SerializeField]
             public RawImage _strengthIcon;
@@ -42,38 +33,30 @@ namespace Shark.Gameplay.UI
             [SerializeField]
             private StrengthState[] _states;
 
-            [SerializeField]
-            private StrengthArrowRotationState[] _arrowStates;
-
             [Header("Settings"), SerializeField]
             public float _gearRotationSpeed = 4;
 
             [SerializeField]
             private float _arrowSpeed = 1;
 
+            [SerializeField]
+            private float _arrowMinRotation = -90;
+
+            [SerializeField]
+            private float _arrowMaxRotation = 90;
+
             private MonoBehaviour _monoBehaviour;
             private Coroutine _animRoutine;
 
-            public void UpdateStrengthView(float strength)
+            public void UpdateStrengthView(float strength, float maxStrength)
             {
-                UpdateStrengthArrow(strength);
+                UpdateStrengthArrow(strength, maxStrength);
                 UpdateStrengthIcon(strength);
             }
-            private void UpdateStrengthArrow(float strength)
+            private void UpdateStrengthArrow(float strength, float maxStrength)
             {
-                var rotation = -90f;
-                foreach (var state in _arrowStates)
-                {
-                    if (strength <= state.checkpoint)
-                    {
-                        rotation = state.rotation;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-                var targetRotation = Quaternion.Euler(0, 0, rotation);
+                var targetRotationZ = Mathf.Lerp(_arrowMaxRotation, _arrowMinRotation, strength / maxStrength);
+                var targetRotation = Quaternion.Euler(0, 0, targetRotationZ);
 
                 if (_animRoutine != null)
                     _monoBehaviour.StopCoroutine(_animRoutine);
@@ -205,7 +188,7 @@ namespace Shark.Gameplay.UI
         private void OnUpdatedStrengthIcon()
         {
             if (_strength != null)
-                _strength.UpdateStrengthView(_car.currentStrength);
+                _strength.UpdateStrengthView(_car.currentStrength, _car.maxStrength);
         }
     }
 }

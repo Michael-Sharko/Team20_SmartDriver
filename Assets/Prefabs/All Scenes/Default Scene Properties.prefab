@@ -2615,17 +2615,10 @@ MonoBehaviour:
       checkpoint: 40
     - texture: {fileID: 2800000, guid: ce45f9340031a5844bd38946194554f8, type: 3}
       checkpoint: 20
-    _arrowStates:
-    - rotation: -45
-      checkpoint: 80
-    - rotation: 0
-      checkpoint: 60
-    - rotation: 45
-      checkpoint: 20
-    - rotation: 90
-      checkpoint: 0
     _gearRotationSpeed: 3
     _arrowSpeed: 1
+    _arrowMinRotation: -90
+    _arrowMaxRotation: 90
   _speedometer:
     _arrowAnchor: {fileID: 6507585119250056114}
     _arrowRotationSmoothness: 0.05
