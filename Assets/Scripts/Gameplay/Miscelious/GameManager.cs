@@ -139,12 +139,16 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private EndGameManager _endGameManager;
 
+    private AudioController _audioController;
+
     private bool IsGameEnded => _endGameManager != null && _endGameManager.IsInvoked;
 
     private void Start()
     {
         _pauseManager?.TogglePause(false);
         RefreshCarController();
+
+        _audioController = new();
     }
 
     private void RefreshCarController()

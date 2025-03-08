@@ -1,7 +1,6 @@
-using Shark.Gameplay.Player;
 using System;
-using System.Collections.Generic;
-using TMPro;
+using System.Collections;
+using Shark.Gameplay.Player;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,15 +22,47 @@ namespace Shark.Gameplay.UI
             }
 
             [SerializeField]
-            private StrengthState[] _states;
-
-            [SerializeField]
             public RawImage _strengthIcon;
 
             [SerializeField]
-            public float _rotationSpeed = 4;            
+            private Transform _strengthArrowAnchor;
 
-            public void UpdateStrengthIcon(float strength)
+            [SerializeField]
+            private Transform _strengthArrow;
+
+            [SerializeField]
+            private StrengthState[] _states;
+
+            [Header("Settings"), SerializeField]
+            public float _gearRotationSpeed = 4;
+
+            [SerializeField]
+            private float _arrowSpeed = 1;
+
+            [SerializeField]
+            private float _arrowMinRotation = -90;
+
+            [SerializeField]
+            private float _arrowMaxRotation = 90;
+
+            private MonoBehaviour _monoBehaviour;
+            private Coroutine _animRoutine;
+
+            public void UpdateStrengthView(float strength, float maxStrength)
+            {
+                UpdateStrengthArrow(strength, maxStrength);
+                UpdateStrengthIcon(strength);
+            }
+            private void UpdateStrengthArrow(float strength, float maxStrength)
+            {
+                var targetRotationZ = Mathf.Lerp(_arrowMaxRotation, _arrowMinRotation, strength / maxStrength);
+                var targetRotation = Quaternion.Euler(0, 0, targetRotationZ);
+
+                if (_animRoutine != null)
+                    _monoBehaviour.StopCoroutine(_animRoutine);
+                _animRoutine = _monoBehaviour.StartCoroutine(AnimateStrengthArrowRotation(targetRotation));
+            }
+            private void UpdateStrengthIcon(float strength)
             {
                 if (_strengthIcon == null || strength < 0) return;
 
@@ -43,15 +74,48 @@ namespace Shark.Gameplay.UI
                         break;
                     }
                 }
-                if (strength < 0) _rotationSpeed = 0;
+                if (strength < 0) _gearRotationSpeed = 0;
             }
+            private IEnumerator AnimateStrengthArrowRotation(Quaternion targetRotation)
+            {
+                var startRotation = _strengthArrowAnchor.rotation;
+                float lerp = 0;
 
+                do
+                {
+                    lerp += Time.deltaTime * _arrowSpeed;
+                    _strengthArrowAnchor.rotation = Quaternion.Lerp(startRotation, targetRotation, lerp);
+
+                    yield return null;
+
+                } while (lerp <= 1);
+
+                _animRoutine = null;
+            }
+            public void Init(MonoBehaviour monoBehaviour)
+            {
+                _monoBehaviour = monoBehaviour;
+            }
         }
+        [Serializable]
+        private class Speedometer
+        {
+            [SerializeField] private RectTransform _arrowAnchor;
+            [SerializeField, Range(0, 1)] private float _arrowRotationSmoothness = 0.05f;
+            [SerializeField] private float _minRotation = 101.5f;
+            [SerializeField] private float _maxRotation = -101.5f;
+
+            public RectTransform ArrowAnchor => _arrowAnchor;
+            public float ArrowRotationSmoothness => _arrowRotationSmoothness;
+            public float MinRotation => _minRotation;
+            public float MaxRotation => _maxRotation;
+        }
+
         [SerializeField]
         private UICarStrength _strength;
 
         [SerializeField]
-        private TextMeshProUGUI _speedometer;
+        private Speedometer _speedometer;
 
         [SerializeField]
         private FuelGaugeSystem _fuelGauge;
@@ -81,8 +145,8 @@ namespace Shark.Gameplay.UI
         private void Initialize()
         {
             _car = FindFirstObjectByType<CarController>();
+            _strength.Init(this);
         }
-
         private void Update()
         {
             if (!_car) return;
@@ -94,8 +158,13 @@ namespace Shark.Gameplay.UI
 
         private void UpdateSpeedometer()
         {
-            if (_speedometer != null)
-                _speedometer.text = $"Speedometer: {_car.SpeedKmh:F0} Km/h";
+            var min = _speedometer.MinRotation;
+            var max = _speedometer.MaxRotation;
+            var rotationZ = Mathf.Lerp(min, max, _car.SpeedKmh / 180);
+
+            var targetRotation = Quaternion.Euler(0, 0, rotationZ);
+            var lerpedRotation = Quaternion.Lerp(_speedometer.ArrowAnchor.rotation, targetRotation, _speedometer.ArrowRotationSmoothness);
+            _speedometer.ArrowAnchor.rotation = lerpedRotation;
         }
 
         private void UpdateFuelGauge()
@@ -108,7 +177,7 @@ namespace Shark.Gameplay.UI
         {
             if (_strength._strengthIcon == null) return;
 
-            _strength._strengthIcon.transform.Rotate(new Vector3(0, 0, _car.SpeedKmh * _strength._rotationSpeed * Time.deltaTime));
+            _strength._strengthIcon.transform.Rotate(new Vector3(0, 0, _car.SpeedKmh * _strength._gearRotationSpeed * Time.deltaTime));
         }
         private void UpdateStrength()
         {
@@ -119,7 +188,7 @@ namespace Shark.Gameplay.UI
         private void OnUpdatedStrengthIcon()
         {
             if (_strength != null)
-                _strength.UpdateStrengthIcon(_car.currentStrength);
+                _strength.UpdateStrengthView(_car.currentStrength, _car.maxStrength);
         }
     }
 }

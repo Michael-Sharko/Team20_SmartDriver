@@ -826,7 +826,7 @@ AudioSource:
   m_GameObject: {fileID: 7766648499686081977}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5988070684098708890, guid: cda0fe62e3582ed439f01b3c4ee21580, type: 2}
   m_audioClip: {fileID: 8300000, guid: b233760b55b048c4591548f34204afdd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1099,6 +1099,10 @@ MonoBehaviour:
     - {fileID: 1033287225810955478}
     - {fileID: 7065951884520346880}
     - {fileID: 2390057027076410484}
+  _touchingSlidingSurface:
+    slidingSurfacesTextures: []
+    forwardFrictionStiffness: 0
+    sidewaysFrictionStiffness: 0
 --- !u!1 &8859440377667706107
 GameObject:
   m_ObjectHideFlags: 0
