@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
 public class AggressionTrigger : MonoBehaviour
 {
-    public bool onAtack {get; private set;} = false;
+    public bool IsTouching { get; private set; } = false;
 
     [SerializeField]
     private float aggressionRadius = 50f;
@@ -19,13 +17,14 @@ public class AggressionTrigger : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
-            onAtack = true;        
+        if (other.gameObject.CompareTag("Player"))
+            IsTouching = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
-            onAtack = false;
+        if (other.gameObject.CompareTag("Player"))
+            IsTouching = false;
+
     }
 }
