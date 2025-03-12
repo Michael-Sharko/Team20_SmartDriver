@@ -16,9 +16,8 @@ public class EngineSound : CarSounds
     [SerializeField, Range(0f, 1f)]
     private float volumeIndling;
 
-    private float defaultEnginePitch = 1f;
-    private float maxEnginePitch = 1.35f;
-    private float minEnginePitch = 0.75f;
+    [SerializeField]  private float maxEnginePitch = 1.35f;
+    [SerializeField]  private float minEnginePitch = 0.75f;
     private float indlingEnginePitch = 0.9f;
     private float currentEnginePitch;
 
