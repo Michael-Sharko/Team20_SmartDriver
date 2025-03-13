@@ -69,6 +69,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d738e5f7181204b4da2a67c459180a61, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1424528490004233272}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d738e5f7181204b4da2a67c459180a61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6672983544495421693}
   m_SourcePrefab: {fileID: 100100000, guid: d738e5f7181204b4da2a67c459180a61, type: 3}
 --- !u!1 &3122432423531919395 stripped
 GameObject:
@@ -114,32 +117,8 @@ MonoBehaviour:
   _multiplierDamageThresholdCollisionForce: 0
   soundsOnDamage:
     sound: {fileID: 8300000, guid: 2b8d17b3a8f9080479c0b18b89c2537a, type: 3}
-    volume: 0.5
+    volume: 0.4
   <LastCollisionForce>k__BackingField: 0
---- !u!205 &6672983544495421693
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3122432423531919395}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.156703, y: 3.713747, z: -0.86762476}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 3482944762437671414}
-  m_Enabled: 1
---- !u!23 &3482944762437671414 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: d738e5f7181204b4da2a67c459180a61, type: 3}
-  m_PrefabInstance: {fileID: 2852030285296764274}
-  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1424528490004233272
 AudioSource:
   m_ObjectHideFlags: 0
@@ -236,3 +215,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!205 &6672983544495421693
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3122432423531919395}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.156703, y: 3.713747, z: -0.86762476}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.01
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 3482944762437671414}
+  m_Enabled: 1
+--- !u!23 &3482944762437671414 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: d738e5f7181204b4da2a67c459180a61, type: 3}
+  m_PrefabInstance: {fileID: 2852030285296764274}
+  m_PrefabAsset: {fileID: 0}

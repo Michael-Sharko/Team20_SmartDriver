@@ -113,12 +113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbe6ef51de07e44b8990132ecbce319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 20
-  _damageThresholdCollisionForce: 1.2
-  _multiplierDamageThresholdCollisionForce: 10
+  _damage: 10
+  _damageThresholdCollisionForce: 0
+  _multiplierDamageThresholdCollisionForce: 0
   soundsOnDamage:
     sound: {fileID: 8300000, guid: 2b8d17b3a8f9080479c0b18b89c2537a, type: 3}
-    volume: 0.5
+    volume: 0.4
   <LastCollisionForce>k__BackingField: 0
 --- !u!54 &7287651403399844833
 Rigidbody:
