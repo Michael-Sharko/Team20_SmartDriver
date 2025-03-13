@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d9931a6ea1eb504fa93acd1f7d33486, type: 2}
+  - {fileID: 2100000, guid: a49f5c55487b20f4ba57d1bae207da45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -167,7 +167,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d9931a6ea1eb504fa93acd1f7d33486, type: 2}
+  - {fileID: 2100000, guid: a49f5c55487b20f4ba57d1bae207da45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -377,7 +377,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d9931a6ea1eb504fa93acd1f7d33486, type: 2}
+  - {fileID: 2100000, guid: a49f5c55487b20f4ba57d1bae207da45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -587,7 +587,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d9931a6ea1eb504fa93acd1f7d33486, type: 2}
+  - {fileID: 2100000, guid: a49f5c55487b20f4ba57d1bae207da45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1103,12 +1103,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbe6ef51de07e44b8990132ecbce319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 20
-  _damageThresholdCollisionForce: 1.2
-  _multiplierDamageThresholdCollisionForce: 1
+  _damage: 10
+  _damageThresholdCollisionForce: 0
+  _multiplierDamageThresholdCollisionForce: 0
   soundsOnDamage:
     sound: {fileID: 8300000, guid: 2b8d17b3a8f9080479c0b18b89c2537a, type: 3}
-    volume: 0.5
+    volume: 0.4
   <LastCollisionForce>k__BackingField: 0
 --- !u!114 &1252870041126296633
 MonoBehaviour:
@@ -1122,10 +1122,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9153a3815408cb4b8d3ef194743ba68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  rotationSpeed: 50
-  delayBeforeTurn: 3
-  delayAfterCollisionWithPlayer: 1
+  speed: 15
+  rotationSpeed: 250
+  delayBeforeTurn: 0.5
+  delayAfterCollisionWithPlayer: 1.5
   targetPosition: {fileID: 6604835349713878172}
 --- !u!54 &7508072443675264402
 Rigidbody:
@@ -1216,7 +1216,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d9931a6ea1eb504fa93acd1f7d33486, type: 2}
+  - {fileID: 2100000, guid: a49f5c55487b20f4ba57d1bae207da45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1457,7 +1457,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d9931a6ea1eb504fa93acd1f7d33486, type: 2}
+  - {fileID: 2100000, guid: a49f5c55487b20f4ba57d1bae207da45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

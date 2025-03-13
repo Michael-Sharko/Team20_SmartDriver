@@ -7641,11 +7641,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.51
+      value: 1.37
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.49
+      value: 18.19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7812,7 +7812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6569921603056832470, guid: 3d6e5f5710dd19149ae881dae49abd57, type: 3}
       propertyPath: amountOfFuel
-      value: 45
+      value: 55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14911,11 +14911,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.52
+      value: 1.42
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.72
+      value: 19.54
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
