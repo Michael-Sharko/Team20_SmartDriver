@@ -1,10 +1,40 @@
+using System;
 using Shark.Gameplay.Physics;
 using Shark.Gameplay.WorldObjects;
-using System;
 using UnityEngine;
 
 namespace Shark.Gameplay.Player
 {
+    [Serializable]
+    public class Immunable
+    {
+        [SerializeField] private float immunableTime = 0.5f;
+
+        private Coroutine _immunableRoutine;
+        private MonoBehaviour _monoBehaviour;
+
+        public bool IsImmunable { get; private set; }
+
+        public void Init(MonoBehaviour monoBehaviour)
+        {
+            _monoBehaviour = monoBehaviour;
+        }
+        public void MakeImmunable()
+        {
+            if (_immunableRoutine != null)
+            {
+                _monoBehaviour.StopCoroutine(_immunableRoutine);
+            }
+
+            IsImmunable = true;
+
+            _immunableRoutine = _monoBehaviour.LateAndInvoke(immunableTime, () =>
+            {
+                IsImmunable = false;
+                _immunableRoutine = null;
+            });
+        }
+    }
     public class CarController : MonoBehaviour, IPlayer
     {
         private const string INPUT_HORIZONTAL = "Horizontal";
@@ -15,7 +45,7 @@ namespace Shark.Gameplay.Player
         private bool _isBreaking;
 
         private Rigidbody _rb;
-            
+
         public event Action OnDamageReceived;
         public event Action OnCarFuelRanOut;
         public event Action OnCarBroken;
@@ -35,6 +65,9 @@ namespace Shark.Gameplay.Player
 
         [SerializeField]
         private float _fuelConsuptionMultiplier = 0.01f;
+
+        [SerializeField]
+        private Immunable immunable;
 
         [SerializeField]
         private CarPhysicsData _data;
@@ -63,7 +96,9 @@ namespace Shark.Gameplay.Player
         private void Start()
         {
             Initialize();
-            Refuel(fuelCapacity);            
+            Refuel(fuelCapacity);
+            immunable.Init(this);
+
             _audioSource = GetComponent<AudioSource>();
         }
 
@@ -140,9 +175,9 @@ namespace Shark.Gameplay.Player
         {
             switch (_data.driveType)
             {
-            case CarPhysicsData.CarDriveType.FrontWheelDrive: ApplyFWD(motorTorque); break;
-            case CarPhysicsData.CarDriveType.RearWheelDrive: ApplyRWD(motorTorque); break;
-            case CarPhysicsData.CarDriveType.AllWheelDrive: ApplyAWD(motorTorque); break;
+                case CarPhysicsData.CarDriveType.FrontWheelDrive: ApplyFWD(motorTorque); break;
+                case CarPhysicsData.CarDriveType.RearWheelDrive: ApplyRWD(motorTorque); break;
+                case CarPhysicsData.CarDriveType.AllWheelDrive: ApplyAWD(motorTorque); break;
             }
         }
 
@@ -195,13 +230,14 @@ namespace Shark.Gameplay.Player
         {
             var collider = wheelData.whellCollider;
 
-            if (!collider.GetGroundHit(out WheelHit hit)) 
+            if (!collider.GetGroundHit(out WheelHit hit))
                 return;
 
             var forwardFrictionStiffness = hit.collider.material.staticFriction * originalForwardStiffness;
             var sidewaysFrictionStiffness = hit.collider.material.staticFriction * originalSidewaysStiffness;
 
-            if (_touchingSlidingSurface.TryCalculateSlidingToWheel(wheelData, hit, out var stiffness)) {
+            if (_touchingSlidingSurface.TryCalculateSlidingToWheel(wheelData, hit, out var stiffness))
+            {
 
                 forwardFrictionStiffness = stiffness.forwardFrictionStiffness;
                 sidewaysFrictionStiffness = stiffness.sidewaysFrictionStiffness;
@@ -215,7 +251,7 @@ namespace Shark.Gameplay.Player
             WheelFrictionCurve sidewaysFriction = collider.sidewaysFriction;
             sidewaysFriction.stiffness = sidewaysFrictionStiffness;
             collider.sidewaysFriction = sidewaysFriction;
-            
+
         }
 
         private void UpdateWheels()
@@ -296,10 +332,17 @@ namespace Shark.Gameplay.Player
             currentFuel = Math.Min(currentFuel + value, fuelCapacity);
         }
 
-        public void TakeDamage(float damage)
+        public bool TakeDamage(float damage)
         {
+            if (immunable.IsImmunable)
+                return false;
+
+            immunable.MakeImmunable();
+
             currentStrength -= damage;
             OnDamageReceived?.Invoke();
+
+            return true;
         }
 
 #if UNITY_EDITOR
