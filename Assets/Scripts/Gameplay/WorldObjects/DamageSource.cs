@@ -63,9 +63,8 @@ public class DamageSource : MonoBehaviour, IDamageSource
 
     public void DealDamage(IBreakable breakable)
     {
-        OnDealDamage?.Invoke();
-
-        breakable.TakeDamage(_damage);
+        if (breakable.TakeDamage(_damage))
+            OnDealDamage?.Invoke();
     }
 
     private void OnCollisionEnter(Collision collision)

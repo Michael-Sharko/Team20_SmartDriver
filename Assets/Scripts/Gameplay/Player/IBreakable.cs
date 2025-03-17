@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IBreakable
 {
-    public void TakeDamage(float damage);
+    public bool TakeDamage(float damage);
     public bool IsBroken { get; }
 }
