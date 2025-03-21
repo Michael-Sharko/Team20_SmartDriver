@@ -8,9 +8,8 @@ using UnityEngine.AI;
 [SelectionBase]
 public class Varan : MonoBehaviour
 {
-
-    [SerializeField] private float walkAnimationSpeed = 1;
-    [SerializeField] private float attackAnimationSpeed = 1;
+    [SerializeField, Min(0)] private float walkAnimationSpeed = 1;
+    [SerializeField, Min(0)] private float attackAnimationSpeed = 1;
     [SerializeField, Min(0)] private float moveSpeed = 9f;
     [SerializeField, Min(0)] private float damage = 10;
     [SerializeField, Min(0)] private float attackDistance = 1;
@@ -18,13 +17,12 @@ public class Varan : MonoBehaviour
     [SerializeField] private LayerMask whatIsPlayer;
 
     [SerializeField] Transform attackAnchor;
-    [SerializeField] SeekingTrigger sTrigger;
-    [SerializeField] AggressionTrigger aTrigger;
+    [SerializeField] PlayerInTrigger sTrigger;
+    [SerializeField] PlayerInTrigger aTrigger;
 
 
     private static readonly int WalkKey = Animator.StringToHash("isWalking");
     private static readonly int AttackKey = Animator.StringToHash("attack");
-
 
     private NavMeshAgent agent;
     private GameObject target;
@@ -36,12 +34,17 @@ public class Varan : MonoBehaviour
     private bool playerLeaveSeekZone => !sTrigger.IsTouching;
 
 
+#if UNITY_EDITOR
     private void OnValidate()
     {
+        if (!UnityEditor.EditorApplication.isPlaying)
+            return;
+
         GetComponent<Animator>().SetFloat("walkSpeedMultiplier", walkAnimationSpeed);
         GetComponent<Animator>().SetFloat("attackAnimationSpeed", attackAnimationSpeed);
         GetComponent<NavMeshAgent>().speed = moveSpeed;
     }
+#endif
     private void Start()
     {
         animator = GetComponent<Animator>();

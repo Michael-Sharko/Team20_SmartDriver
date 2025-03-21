@@ -1,6 +1,4 @@
 using Shark.Gameplay.Player;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -16,19 +14,26 @@ public class EngineSound : CarSounds
     [SerializeField, Range(0f, 1f)]
     private float volumeIndling;
 
-    [SerializeField]  private float maxEnginePitch = 1.35f;
-    [SerializeField]  private float minEnginePitch = 0.75f;
+    [SerializeField] private float maxEnginePitch = 1.35f;
+    [SerializeField] private float minEnginePitch = 0.75f;
+
+
     private float indlingEnginePitch = 0.9f;
     private float currentEnginePitch;
 
     private int audioClipState;
 
-    private AudioSource audioSrc => gameObject.GetComponent<AudioSource>();
-    
+    private AudioSource audioSrc;
+
+    private void Awake()
+    {
+        audioSrc = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
-       SoundStateDetection();
-       AudioClipChang(audioClipState);
+        SoundStateDetection();
+        AudioClipChang(audioClipState);
 
         if (audioSrc.clip == null)
             Debug.Log("Не указана ссылка на скрипт со звуком, для двигателя");
@@ -37,7 +42,7 @@ public class EngineSound : CarSounds
     private int SoundStateDetection()
     {
         if (carController.vInput > 0f)
-            audioClipState = 0; 
+            audioClipState = 0;
         else if (carController.vInput < 0f)
             audioClipState = 1;
         else
@@ -49,25 +54,25 @@ public class EngineSound : CarSounds
     {
         switch (state)
         {
-            case 0: 
-              audioSrc.volume = volumeForvard;
-              audioSrc.pitch = Mathf.Clamp(audioSrc.pitch += 0.08f * Time.deltaTime, audioSrc.pitch, maxEnginePitch );
+            case 0:
+            audioSrc.volume = volumeForvard;
+            audioSrc.pitch = Mathf.Clamp(audioSrc.pitch += 0.08f * Time.deltaTime, audioSrc.pitch, maxEnginePitch);
             break;
 
-            case 1: 
-              audioSrc.volume = volumeBack; 
-              audioSrc.pitch = Mathf.Clamp(audioSrc.pitch -= 0.08f *Time.deltaTime, minEnginePitch, audioSrc.pitch );
+            case 1:
+            audioSrc.volume = volumeBack;
+            audioSrc.pitch = Mathf.Clamp(audioSrc.pitch -= 0.08f * Time.deltaTime, minEnginePitch, audioSrc.pitch);
             break;
 
             case 2:
-              audioSrc.volume = volumeIndling;
+            audioSrc.volume = volumeIndling;
 
-                if (audioSrc.pitch > indlingEnginePitch)
-                    audioSrc.pitch = Mathf.Clamp(audioSrc.pitch -= 0.3f * Time.deltaTime, indlingEnginePitch, maxEnginePitch);
-                else if (audioSrc.pitch < indlingEnginePitch)
-                    audioSrc.pitch = Mathf.Clamp(audioSrc.pitch += 0.3f * Time.deltaTime, audioSrc.pitch, indlingEnginePitch);
-               
+            if (audioSrc.pitch > indlingEnginePitch)
+                audioSrc.pitch = Mathf.Clamp(audioSrc.pitch -= 0.3f * Time.deltaTime, indlingEnginePitch, maxEnginePitch);
+            else if (audioSrc.pitch < indlingEnginePitch)
+                audioSrc.pitch = Mathf.Clamp(audioSrc.pitch += 0.3f * Time.deltaTime, audioSrc.pitch, indlingEnginePitch);
+
             break;
         }
-    }    
+    }
 }

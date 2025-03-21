@@ -5,15 +5,13 @@ using UnityEngine;
 [SelectionBase]
 public class Moose : MonoBehaviour
 {
-    private class State
+    private class Path
     {
-        public Vector3 targetRotation;
         public Vector3 startPosition;
         public Vector3 endPosition;
 
-        public void Init(Vector3 targetRotation, Vector3 startPosition, Vector3 endPosition)
+        public void Init(Vector3 startPosition, Vector3 endPosition)
         {
-            this.targetRotation = targetRotation;
             this.startPosition = startPosition;
             this.endPosition = endPosition;
         }
@@ -26,19 +24,19 @@ public class Moose : MonoBehaviour
     [Space]
     [SerializeField] private Transform targetPosition;
 
-    private State _state = new();
+    private Path _path = new();
     private bool _moveToTargetPosition = true;
     private bool _collisionWithPlayer;
     private Rigidbody _rigidbody;
-    private Vector3 _spaswnPos;
+    private Vector3 _startPos;
     private Vector3 _targetPos;
 
     private void Awake()
     {
-        _spaswnPos = transform.position;
+        _startPos = transform.position;
         _targetPos = targetPosition.position;
 
-        SwitchState();
+        SwitchPath();
 
         _rigidbody = GetComponent<Rigidbody>();
         GetComponent<DamageSource>().OnDealDamage += Moose_OnDealDamage;
@@ -56,21 +54,22 @@ public class Moose : MonoBehaviour
 
         StartCoroutine(AnimateTurn());
     }
-    private void SwitchState()
+    private void SwitchPath()
     {
         if (_moveToTargetPosition)
         {
-            _state.Init(_spaswnPos - _targetPos, _spaswnPos, _targetPos);
+            _path.Init(_startPos, _targetPos);
         }
         else
         {
-            _state.Init(_targetPos - _spaswnPos, _targetPos, _spaswnPos);
+            _path.Init(_targetPos, _startPos);
         }
         _moveToTargetPosition = !_moveToTargetPosition;
     }
     private IEnumerator AnimateTurn()
     {
-        var targetRotation = Quaternion.LookRotation(_state.targetRotation);
+        var directionToTarget = _path.startPosition - _path.endPosition;
+        var targetRotation = Quaternion.LookRotation(directionToTarget);
         while (transform.rotation != targetRotation)
         {
             if (_collisionWithPlayer)
@@ -85,13 +84,13 @@ public class Moose : MonoBehaviour
             yield return null;
         }
 
-        SwitchState();
+        SwitchPath();
 
         StartCoroutine(Move());
     }
     private IEnumerator Move()
     {
-        while (_rigidbody.position != _state.endPosition)
+        while (_rigidbody.position != _path.endPosition)
         {
             if (_collisionWithPlayer)
             {
@@ -99,7 +98,7 @@ public class Moose : MonoBehaviour
                 yield return new WaitForSeconds(delayAfterCollisionWithPlayer);
             }
 
-            var newPos = Vector3.MoveTowards(_rigidbody.position, _state.endPosition,
+            var newPos = Vector3.MoveTowards(_rigidbody.position, _path.endPosition,
                 speed * Time.fixedDeltaTime);
             _rigidbody.MovePosition(newPos);
 
@@ -116,7 +115,7 @@ public class Moose : MonoBehaviour
         Gizmos.color = Color.magenta;
 
         if (UnityEditor.EditorApplication.isPlaying)
-            Gizmos.DrawLine(_spaswnPos, _targetPos);
+            Gizmos.DrawLine(_startPos, _targetPos);
         else
             Gizmos.DrawLine(targetPosition.position, transform.position);
     }

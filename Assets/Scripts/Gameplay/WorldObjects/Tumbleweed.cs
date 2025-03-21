@@ -1,15 +1,26 @@
-﻿using Shark.Gameplay.Player;
+﻿using Shark.Gameplay.WorldObjects;
 using UnityEngine;
 
-public class Tumbleweed : MonoBehaviour
+public class Tumbleweed : MonoBehaviour, IActivatable
 {
     [SerializeField, Range(0, 360)] private float directionAngle;
     [SerializeField] private float speed;
 
     private bool _isTriggered;
+    private bool _isCollision;
     private Rigidbody _rigidbody;
     private ConstantForce _constantForce;
 
+    public void Activate()
+    {
+        if (_isTriggered)
+            return;
+
+        _isTriggered = true;
+        _rigidbody.isKinematic = false;
+
+        _constantForce.enabled = true;
+    }
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -23,21 +34,12 @@ public class Tumbleweed : MonoBehaviour
         _rigidbody.isKinematic = true;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (_isTriggered || !other.TryGetComponent(out IPlayer _))
-            return;
-
-        _isTriggered = true;
-        _rigidbody.isKinematic = false;
-
-        _constantForce.enabled = true;
-    }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider is TerrainCollider)
+        if (_isCollision || collision.collider is TerrainCollider)
             return;
 
+        _isCollision = true;
         _rigidbody.isKinematic = true;
     }
 

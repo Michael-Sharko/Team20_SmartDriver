@@ -1,17 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using Shark.Gameplay.WorldObjects;
 using UnityEngine;
 
-public class Finish : MonoBehaviour
+public class Finish : MonoBehaviour, IActivatable
 {
     [SerializeField] private GameObject finishMenu;
 
-    private void OnTriggerEnter(Collider other)
+    public void Activate()
     {
-        if(other.tag == "Player")
-        {
-            finishMenu.SetActive(true);
-        }
+        finishMenu.SetActive(true);
     }
 }
