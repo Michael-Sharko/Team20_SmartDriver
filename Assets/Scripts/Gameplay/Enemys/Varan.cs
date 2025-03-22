@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Shark.Gameplay.Player;
 using UnityEngine;
@@ -14,12 +15,16 @@ public class Varan : MonoBehaviour
     [SerializeField, Min(0)] private float damage = 10;
     [SerializeField, Min(0)] private float attackDistance = 1;
     [SerializeField, Min(0)] private float delayAfterAttack = 1f;
+
+    [SerializeField] SingleSound detectionPlayerSound;
+
     [SerializeField] private LayerMask whatIsPlayer;
 
     [SerializeField] Transform attackAnchor;
     [SerializeField] PlayerInTrigger sTrigger;
     [SerializeField] PlayerInTrigger aTrigger;
 
+    private Action _onAgroPlayer;
 
     private static readonly int WalkKey = Animator.StringToHash("isWalking");
     private static readonly int AttackKey = Animator.StringToHash("attack");
@@ -56,6 +61,9 @@ public class Varan : MonoBehaviour
 
         target = GameObject.FindGameObjectWithTag("Player");
 
+        detectionPlayerSound.Init(ref _onAgroPlayer);
+
+
         StartCoroutine(Idle());
     }
     private void UpdateSpeedByRotation()
@@ -78,12 +86,18 @@ public class Varan : MonoBehaviour
         {
             if (playerEnterAgroZone)
             {
-                StartCoroutine(Seek());
+                Agro();
                 yield break;
             }
 
             yield return null;
         }
+    }
+    private void Agro()
+    {
+        _onAgroPlayer?.Invoke();
+
+        StartCoroutine(Seek());
     }
     private IEnumerator Seek()
     {
