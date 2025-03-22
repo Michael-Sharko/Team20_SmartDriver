@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlaySoundsWhileConditionDestroy : MonoBehaviour
+public class PlaySoundsWhileConditionAndDestroy : MonoBehaviour
 {
     private AudioSource _source;
     private Func<bool> _soundWhileTrue;
