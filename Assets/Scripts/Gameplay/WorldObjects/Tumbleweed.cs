@@ -1,20 +1,26 @@
-﻿using Shark.Gameplay.WorldObjects;
+﻿using System;
+using Shark.Gameplay.WorldObjects;
 using UnityEngine;
+
 
 public class Tumbleweed : MonoBehaviour, IActivatable
 {
     [SerializeField, Range(0, 360)] private float directionAngle;
     [SerializeField] private float speed;
+    [SerializeField] private RandomSoundFromArray soundOnActivate;
 
     private bool _isTriggered;
-    private bool _isCollision;
     private Rigidbody _rigidbody;
     private ConstantForce _constantForce;
+
+    public event Action OnActivate;
 
     public void Activate()
     {
         if (_isTriggered)
             return;
+
+        OnActivate?.Invoke();
 
         _isTriggered = true;
         _rigidbody.isKinematic = false;
@@ -26,6 +32,8 @@ public class Tumbleweed : MonoBehaviour, IActivatable
         _rigidbody = GetComponent<Rigidbody>();
         _constantForce = GetComponent<ConstantForce>();
 
+        soundOnActivate.Init(ref OnActivate);
+
         var xDirection = Mathf.Cos(directionAngle * Mathf.Deg2Rad);
         var yDirection = Mathf.Sin(directionAngle * Mathf.Deg2Rad);
         var direction = new Vector3(xDirection, 0, yDirection);
@@ -36,10 +44,9 @@ public class Tumbleweed : MonoBehaviour, IActivatable
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (_isCollision || collision.collider is TerrainCollider)
+        if (collision.collider is TerrainCollider)
             return;
 
-        _isCollision = true;
         _rigidbody.isKinematic = true;
     }
 
