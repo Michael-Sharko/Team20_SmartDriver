@@ -17,6 +17,7 @@ public class Varan : MonoBehaviour
     [SerializeField, Min(0)] private float delayAfterAttack = 1f;
 
     [SerializeField] SingleSound detectionPlayerSound;
+    [SerializeField] SingleSound attackPlayerSound;
 
     [SerializeField] private LayerMask whatIsPlayer;
 
@@ -25,6 +26,7 @@ public class Varan : MonoBehaviour
     [SerializeField] PlayerInTrigger aTrigger;
 
     private Action _onAgroPlayer;
+    private Action _onAttackPlayer;
 
     private static readonly int WalkKey = Animator.StringToHash("isWalking");
     private static readonly int AttackKey = Animator.StringToHash("attack");
@@ -62,7 +64,7 @@ public class Varan : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
 
         detectionPlayerSound.Init(ref _onAgroPlayer);
-
+        attackPlayerSound.Init(ref _onAttackPlayer);
 
         StartCoroutine(Idle());
     }
@@ -122,13 +124,20 @@ public class Varan : MonoBehaviour
                 if (hit.transform.root.TryGetComponent(out IPlayer player))
                 {
                     this.player = player;
-                    animator.SetTrigger(AttackKey);
+
+                    Attack();
 
                     StartCoroutine(LateAfterAttack());
                     yield break;
                 }
             }
         }
+    }
+    private void Attack()
+    {
+        animator.SetTrigger(AttackKey);
+
+        _onAttackPlayer?.Invoke();
     }
     public void OnAttackAnimationEnd()
     {
