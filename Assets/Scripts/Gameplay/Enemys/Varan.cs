@@ -18,6 +18,7 @@ public class Varan : MonoBehaviour
 
     [SerializeField] SingleSound detectionPlayerSound;
     [SerializeField] SingleSound attackPlayerSound;
+    [SerializeField] SingleSoundWhile movementSound;
 
     [SerializeField] private LayerMask whatIsPlayer;
 
@@ -27,6 +28,7 @@ public class Varan : MonoBehaviour
 
     private Action _onAgroPlayer;
     private Action _onAttackPlayer;
+    private Action _onStartMovement;
 
     private static readonly int WalkKey = Animator.StringToHash("isWalking");
     private static readonly int AttackKey = Animator.StringToHash("attack");
@@ -35,6 +37,7 @@ public class Varan : MonoBehaviour
     private GameObject target;
     private Animator animator;
     private IPlayer player;
+    private bool _isMoving;
 
     private Vector3 targetPosition => target.transform.position;
     private bool playerEnterAgroZone => aTrigger.IsTouching;
@@ -65,6 +68,7 @@ public class Varan : MonoBehaviour
 
         detectionPlayerSound.Init(ref _onAgroPlayer);
         attackPlayerSound.Init(ref _onAttackPlayer);
+        movementSound.Init(ref _onStartMovement, () => _isMoving);
 
         StartCoroutine(Idle());
     }
@@ -84,19 +88,10 @@ public class Varan : MonoBehaviour
         animator.SetBool(WalkKey, false);
         sTrigger.gameObject.SetActive(false);
 
-        while (true)
-        {
-            if (playerEnterAgroZone)
-            {
-                Agro();
-                yield break;
-            }
+        _isMoving = false;
 
-            yield return null;
-        }
-    }
-    private void Agro()
-    {
+        yield return new WaitUntil(() => playerEnterAgroZone);
+
         _onAgroPlayer?.Invoke();
 
         StartCoroutine(Seek());
@@ -105,6 +100,13 @@ public class Varan : MonoBehaviour
     {
         animator.SetBool(WalkKey, true);
         sTrigger.gameObject.SetActive(true);
+
+        _isMoving = true;
+
+        _onStartMovement?.Invoke();
+
+        // чтобы триггеры обновились, иначе начинается вакханалия
+        yield return new WaitForFixedUpdate();
 
         while (true)
         {
@@ -145,6 +147,8 @@ public class Varan : MonoBehaviour
     }
     private IEnumerator LateAfterAttack()
     {
+        _isMoving = false;
+
         agent.destination = agent.transform.position;
         animator.SetBool(WalkKey, false);
 

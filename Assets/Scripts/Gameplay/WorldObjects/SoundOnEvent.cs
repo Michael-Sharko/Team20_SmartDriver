@@ -18,6 +18,26 @@ public abstract class SoundOnEvent
         sound.Init(GetClip(), volume);
     }
 }
+public abstract class SoundWhile
+{
+    [SerializeField, Range(0, 1)] private float volume = 1;
+
+    private Func<bool> _soundWhileTrue;
+
+    public void Init(ref Action @event, Func<bool> soundWhileTrue)
+    {
+        @event += OnActivate;
+        _soundWhileTrue = soundWhileTrue;
+    }
+    protected abstract AudioClip GetClip();
+
+    private void OnActivate()
+    {
+        var prefab = Resources.Load<PlaySoundsWhileConditionDestroy>("Prefabs/SoundWhile");
+        PlaySoundsWhileConditionDestroy sound = UnityEngine.Object.Instantiate(prefab);
+        sound.Init(GetClip(), _soundWhileTrue, volume);
+    }
+}
 [Serializable]
 public class RandomSoundFromArray : SoundOnEvent
 {
@@ -32,6 +52,16 @@ public class RandomSoundFromArray : SoundOnEvent
 
 [Serializable]
 public class SingleSound : SoundOnEvent
+{
+    [SerializeField] private AudioClip sound;
+
+    protected override AudioClip GetClip()
+    {
+        return sound;
+    }
+}
+[Serializable]
+public class SingleSoundWhile : SoundWhile
 {
     [SerializeField] private AudioClip sound;
 
