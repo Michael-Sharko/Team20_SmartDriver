@@ -1,145 +1,20 @@
 using Shark.Gameplay.Player;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private string _mainMenuSceneName = "Main Menu";
+
     [SerializeField]
     private string _nextLevelSceneName;
 
-    [Serializable]
-    private class PauseManager
-    {
-        [SerializeField] UnityEvent OnPauseActivated;
-        [SerializeField] UnityEvent OnPauseDeactivated;
-
-        private bool _isPaused = false;
-
-        public void TogglePause(bool isPaused)
-        {
-            Time.timeScale = isPaused ? 0 : 1;
-            (isPaused ? OnPauseActivated : OnPauseDeactivated)?.Invoke();
-
-            _isPaused = isPaused;
-        }
-
-        public void TogglePause()
-        {
-            TogglePause(!_isPaused);
-        }
-    }
     [SerializeField]
     private PauseManager _pauseManager;
 
-    [Serializable]
-    private class EndGameManager
-    {
-        public CarController Car { set; private get; }
-        public bool CarInitilized => Car != null;
-        public bool IsInvoked { get; private set; }
-
-        [SerializeField] UnityEvent OnEndGameInvoked;
-
-        [Serializable]
-        struct AnimationSettings
-        {
-            public float minAlpha, maxAlpha;
-            public float fadeFrequency;
-        } 
-        [SerializeField] 
-        private AnimationSettings settings;
-
-        [SerializeField] Transform _panel;
-        [SerializeField] TextMeshProUGUI _message;
-        [SerializeField] TextMeshProUGUI _hintToMenu;
-
-        public void SubscribeEvents()
-        {
-            if (CarInitilized)
-                SubscribeCarEvents();
-        } 
-
-        public void UnsubscribeEvents()
-        {
-            if (CarInitilized)
-                UnsubscribeCarEvents();
-        }
-
-        private void SubscribeCarEvents()
-        {
-            Car.OnCarBroken += HandleCarBroken;
-            Car.OnCarFuelRanOut += HandleCarFuelRanOut;
-        }
-
-        private void UnsubscribeCarEvents()
-        {
-            Car.OnCarBroken -= HandleCarBroken;
-            Car.OnCarFuelRanOut -= HandleCarFuelRanOut;
-        }
-
-        private void HandleCarFuelRanOut()
-        {
-            HandleCarEvent("Car fuel ran out!");
-        }
-
-        private void HandleCarBroken()
-        {
-            HandleCarEvent("Car broken!");
-        }
-
-        private void HandleCarEvent(string message)
-        {
-            SetMessage(message);
-
-            OnEndGameInvoked?.Invoke();
-            IsInvoked = true;
-        }
-
-        private void SetMessage(string message)
-        {
-            if (_message != null)
-                _message.text = message;
-        }
-
-        public void AnimateMessages()
-        {
-            if (_panel != null) 
-                UpdateAlphaRecursive(_panel, CalculateNewAlpha());
-        }
-
-        private void UpdateAlphaRecursive(Transform parent, float alpha)
-        {
-            if (parent.TryGetComponent(out CanvasRenderer renderer))
-                renderer.SetAlpha(alpha);
-
-            for (int index = 0; index < parent.childCount; ++index)
-            {
-                UpdateAlphaRecursive(parent.GetChild(index), alpha);
-            }
-        }
-
-        private float CalculateNewAlpha()
-        {
-            return Mathf.Lerp(settings.minAlpha, settings.maxAlpha, AnimationFormula(Time.time));
-        }
-
-        private float AnimationFormula(float time)
-        {
-            return (Mathf.Sin(2 * Mathf.PI * settings.fadeFrequency * time) + 1) / 2;
-        }
-    }
     [SerializeField]
-    private EndGameManager _endGameManager;
-
-    private AudioController _audioController;
+    private LossGameManager _endGameManager;
 
     private bool IsGameEnded => _endGameManager != null && _endGameManager.IsInvoked;
 
@@ -148,7 +23,8 @@ public class GameManager : MonoBehaviour
         _pauseManager?.TogglePause(false);
         RefreshCarController();
 
-        _audioController = new();
+        _endGameManager.Init(this);
+        new AudioVolumeController();
     }
 
     private void RefreshCarController()
@@ -172,8 +48,6 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         HandleInput();
-
-        _endGameManager?.AnimateMessages();
     }
 
     private void HandleInput()
@@ -221,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextLevelScene()
     {
-        if(string.IsNullOrEmpty(_nextLevelSceneName))
+        if (string.IsNullOrEmpty(_nextLevelSceneName))
         {
             Debug.LogError("Ќе установлено им€ следующего уровн€ в Game Manager");
         }

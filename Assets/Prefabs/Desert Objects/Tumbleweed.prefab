@@ -101,6 +101,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionAngle: 0
   speed: 7
+  soundOnActivate:
+    sounds:
+    - {fileID: 8300000, guid: 50fdcda35127e684fafa9397cf84bb04, type: 3}
+    - {fileID: 8300000, guid: 7c40c33fee057ea498fbf9c8e9d8ef2c, type: 3}
+    prefab: {fileID: 7498999638368738664, guid: 4e0328223d9e3314d95a38f6a1b5c8c3, type: 3}
 --- !u!114 &627796548068950162
 MonoBehaviour:
   m_ObjectHideFlags: 0

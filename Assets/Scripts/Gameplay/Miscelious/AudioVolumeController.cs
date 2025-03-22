@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class AudioController {
+public class AudioVolumeController
+{
 
     private AudioMixer mixer;
     private AudioSetting setting;
@@ -12,12 +13,14 @@ public class AudioController {
     private const string SETTING_PATH = "Audio/AudioSetting";
 
 
-    public void ChangeMusicVolume(float normalizeValue) {
+    public void ChangeMusicVolume(float normalizeValue)
+    {
 
         mixer.SetFloat(MUSIC_MIXER_GROUP_NAME, NormalizeValueToVolume(normalizeValue));
 
     }
-    public void ChangeSoundsVolume(float normalizeValue) {
+    public void ChangeSoundsVolume(float normalizeValue)
+    {
 
         mixer.SetFloat(SOUNDS_MIXER_GROUP_NAME, NormalizeValueToVolume(normalizeValue));
 
@@ -26,7 +29,8 @@ public class AudioController {
     private float NormalizeValueToVolume(float normalizeValue)
         => Mathf.Lerp(-80, 0, normalizeValue);
 
-    public AudioController() {
+    public AudioVolumeController()
+    {
 
         setting = Resources.Load<AudioSetting>(SETTING_PATH);
         mixer = Resources.Load<AudioMixer>(MIXER_PATH);

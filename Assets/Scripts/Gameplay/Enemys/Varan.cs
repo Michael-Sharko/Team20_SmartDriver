@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Shark.Gameplay.Player;
 using UnityEngine;
@@ -8,40 +9,52 @@ using UnityEngine.AI;
 [SelectionBase]
 public class Varan : MonoBehaviour
 {
-
-    [SerializeField] private float walkAnimationSpeed = 1;
-    [SerializeField] private float attackAnimationSpeed = 1;
+    [SerializeField, Min(0)] private float walkAnimationSpeed = 1;
+    [SerializeField, Min(0)] private float attackAnimationSpeed = 1;
     [SerializeField, Min(0)] private float moveSpeed = 9f;
     [SerializeField, Min(0)] private float damage = 10;
     [SerializeField, Min(0)] private float attackDistance = 1;
     [SerializeField, Min(0)] private float delayAfterAttack = 1f;
+
+    [SerializeField] SingleSound detectionPlayerSound;
+    [SerializeField] SingleSound attackPlayerSound;
+    [SerializeField] SingleSoundWhile movementSound;
+
     [SerializeField] private LayerMask whatIsPlayer;
 
     [SerializeField] Transform attackAnchor;
-    [SerializeField] SeekingTrigger sTrigger;
-    [SerializeField] AggressionTrigger aTrigger;
+    [SerializeField] PlayerInTrigger sTrigger;
+    [SerializeField] PlayerInTrigger aTrigger;
 
+    private Action _onAgroPlayer;
+    private Action _onAttackPlayer;
+    private Action _onStartMovement;
 
     private static readonly int WalkKey = Animator.StringToHash("isWalking");
     private static readonly int AttackKey = Animator.StringToHash("attack");
-
 
     private NavMeshAgent agent;
     private GameObject target;
     private Animator animator;
     private IPlayer player;
+    private bool _isMoving;
 
     private Vector3 targetPosition => target.transform.position;
     private bool playerEnterAgroZone => aTrigger.IsTouching;
     private bool playerLeaveSeekZone => !sTrigger.IsTouching;
 
 
+#if UNITY_EDITOR
     private void OnValidate()
     {
+        if (!UnityEditor.EditorApplication.isPlaying)
+            return;
+
         GetComponent<Animator>().SetFloat("walkSpeedMultiplier", walkAnimationSpeed);
         GetComponent<Animator>().SetFloat("attackAnimationSpeed", attackAnimationSpeed);
         GetComponent<NavMeshAgent>().speed = moveSpeed;
     }
+#endif
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -52,6 +65,10 @@ public class Varan : MonoBehaviour
         agent.speed = moveSpeed;
 
         target = GameObject.FindGameObjectWithTag("Player");
+
+        detectionPlayerSound.Init(ref _onAgroPlayer);
+        attackPlayerSound.Init(ref _onAttackPlayer);
+        movementSound.Init(ref _onStartMovement, () => _isMoving);
 
         StartCoroutine(Idle());
     }
@@ -71,21 +88,25 @@ public class Varan : MonoBehaviour
         animator.SetBool(WalkKey, false);
         sTrigger.gameObject.SetActive(false);
 
-        while (true)
-        {
-            if (playerEnterAgroZone)
-            {
-                StartCoroutine(Seek());
-                yield break;
-            }
+        _isMoving = false;
 
-            yield return null;
-        }
+        yield return new WaitUntil(() => playerEnterAgroZone);
+
+        _onAgroPlayer?.Invoke();
+
+        StartCoroutine(Seek());
     }
     private IEnumerator Seek()
     {
         animator.SetBool(WalkKey, true);
         sTrigger.gameObject.SetActive(true);
+
+        _isMoving = true;
+
+        _onStartMovement?.Invoke();
+
+        // чтобы триггеры обновились, иначе начинается вакханалия
+        yield return new WaitForFixedUpdate();
 
         while (true)
         {
@@ -105,7 +126,8 @@ public class Varan : MonoBehaviour
                 if (hit.transform.root.TryGetComponent(out IPlayer player))
                 {
                     this.player = player;
-                    animator.SetTrigger(AttackKey);
+
+                    Attack();
 
                     StartCoroutine(LateAfterAttack());
                     yield break;
@@ -113,12 +135,20 @@ public class Varan : MonoBehaviour
             }
         }
     }
+    private void Attack()
+    {
+        animator.SetTrigger(AttackKey);
+
+        _onAttackPlayer?.Invoke();
+    }
     public void OnAttackAnimationEnd()
     {
         player.TakeDamage(damage);
     }
     private IEnumerator LateAfterAttack()
     {
+        _isMoving = false;
+
         agent.destination = agent.transform.position;
         animator.SetBool(WalkKey, false);
 

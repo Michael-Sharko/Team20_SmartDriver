@@ -11,7 +11,7 @@ public class DamageSource : MonoBehaviour, IDamageSource
     {
         [FormerlySerializedAs("dealDamageSound")]
         [SerializeField] private AudioClip sound;
-        [SerializeField, Min(0)] private float volume = 1;
+        [SerializeField, Min(0)] private float volume = 0.4f;
 
         private AudioSource source;
 

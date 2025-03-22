@@ -294,6 +294,15 @@ MonoBehaviour:
   damage: 10
   attackDistance: 0.4
   delayAfterAttack: 1.5
+  detectionPlayerSound:
+    volume: 1
+    sound: {fileID: 8300000, guid: 279b1bdbffcf868438ec9371e3bf08e0, type: 3}
+  attackPlayerSound:
+    volume: 1
+    sound: {fileID: 8300000, guid: 64774dd3b967bf741a925aec5f455fca, type: 3}
+  movementSound:
+    volume: 1
+    sound: {fileID: 8300000, guid: 1e0b38af2912f654dad2f3c5b154ba1d, type: 3}
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 256

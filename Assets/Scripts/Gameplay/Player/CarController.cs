@@ -127,7 +127,7 @@ namespace Shark.Gameplay.Player
             _wheels.ApplyWheelData();
 
 #if UNITY_EDITOR
-            Refuel(fuelCapacity);
+            //Refuel(fuelCapacity);
 #endif
         }
 
