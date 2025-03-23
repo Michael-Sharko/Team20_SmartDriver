@@ -115,8 +115,8 @@ MonoBehaviour:
   amountOfFuel: 20
   rotatingSpeed: 160
   pickUpSounds:
-    pickUp: {fileID: 8300000, guid: 07aa23b5d4a98574482ffb00015e39dc, type: 3}
     volume: 1
+    getSound: {fileID: 11400000, guid: f04461aa3a16a0e43b40b55bd7d1b1d7, type: 2}
 --- !u!135 &2740585462348480303
 SphereCollider:
   m_ObjectHideFlags: 0

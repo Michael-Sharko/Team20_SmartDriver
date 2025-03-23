@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c354d9b5908cd8448a44d3c90326857, type: 3}
-  m_Name: Movement
+  m_Name: Collision
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: 1e0b38af2912f654dad2f3c5b154ba1d, type: 3}
+  sound: {fileID: 8300000, guid: 2b8d17b3a8f9080479c0b18b89c2537a, type: 3}

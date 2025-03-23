@@ -14,7 +14,7 @@ public class FuelCansiter : MonoBehaviour, IPickupable
 
     public float rotatingSpeed = 30.0f;
 
-    [SerializeField] private PickUpSounds pickUpSounds;
+    [SerializeField] private SoundOnEvent pickUpSounds;
 
     public event Action OnPickUp;
 
@@ -22,7 +22,7 @@ public class FuelCansiter : MonoBehaviour, IPickupable
     {
         InitializeCanister();
 
-        pickUpSounds.Init(this, GetComponent<AudioSource>());
+        pickUpSounds.Init(ref OnPickUp, GetComponent<AudioSource>());
     }
 
     private void OnValidate()
