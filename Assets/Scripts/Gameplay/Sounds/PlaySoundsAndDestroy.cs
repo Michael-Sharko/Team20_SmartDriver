@@ -5,7 +5,7 @@ public class PlaySoundsAndDestroy : MonoBehaviour
 {
     private AudioSource _source;
 
-    public void Init(AudioClip clip, float volume = 1)
+    public void Play(AudioClip clip, float volume = 1)
     {
         _source = GetComponent<AudioSource>();
 

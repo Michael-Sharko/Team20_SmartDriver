@@ -7,7 +7,7 @@ public class PlaySoundsWhileConditionAndDestroy : MonoBehaviour
     private AudioSource _source;
     private Func<bool> _soundWhileTrue;
 
-    public void Init(AudioClip clip, Func<bool> soundWhileTrue, float volume = 1)
+    public void Play(AudioClip clip, Func<bool> soundWhileTrue, float volume = 1)
     {
         _source = GetComponent<AudioSource>();
 

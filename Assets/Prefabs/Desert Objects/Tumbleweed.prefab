@@ -102,10 +102,8 @@ MonoBehaviour:
   directionAngle: 0
   speed: 7
   soundOnActivate:
-    sounds:
-    - {fileID: 8300000, guid: 50fdcda35127e684fafa9397cf84bb04, type: 3}
-    - {fileID: 8300000, guid: 7c40c33fee057ea498fbf9c8e9d8ef2c, type: 3}
-    prefab: {fileID: 7498999638368738664, guid: 4e0328223d9e3314d95a38f6a1b5c8c3, type: 3}
+    volume: 1
+    getSound: {fileID: 11400000, guid: 12c16dda211be6042989c741f39a25fc, type: 2}
 --- !u!114 &627796548068950162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,7 +226,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 30
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -263,7 +261,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

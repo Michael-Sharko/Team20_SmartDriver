@@ -4,8 +4,7 @@ using Shark.Gameplay.Player;
 using UnityEngine;
 using UnityEngine.AI;
 
-
-[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(NavMeshAgent), typeof(AudioSource))]
 [SelectionBase]
 public class Varan : MonoBehaviour
 {
@@ -16,9 +15,9 @@ public class Varan : MonoBehaviour
     [SerializeField, Min(0)] private float attackDistance = 1;
     [SerializeField, Min(0)] private float delayAfterAttack = 1f;
 
-    [SerializeField] SingleSound detectionPlayerSound;
-    [SerializeField] SingleSound attackPlayerSound;
-    [SerializeField] SingleSoundWhile movementSound;
+    [SerializeField] SoundOnEvent detectionPlayerSound;
+    [SerializeField] SoundOnEvent attackPlayerSound;
+    [SerializeField] SoundWhile movementSound;
 
     [SerializeField] private LayerMask whatIsPlayer;
 
@@ -66,9 +65,11 @@ public class Varan : MonoBehaviour
 
         target = GameObject.FindGameObjectWithTag("Player");
 
-        detectionPlayerSound.Init(ref _onAgroPlayer);
-        attackPlayerSound.Init(ref _onAttackPlayer);
-        movementSound.Init(ref _onStartMovement, () => _isMoving);
+        var audioSource = GetComponent<AudioSource>();
+
+        detectionPlayerSound.Init(ref _onAgroPlayer, audioSource);
+        attackPlayerSound.Init(ref _onAttackPlayer, audioSource);
+        movementSound.Init(ref _onStartMovement, () => _isMoving, audioSource, this);
 
         StartCoroutine(Idle());
     }
