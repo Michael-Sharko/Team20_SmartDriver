@@ -284,8 +284,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 20
-  _damageThresholdCollisionForce: 1.2
-  _multiplierDamageThresholdCollisionForce: 10
+  _damageThresholdCollisionForce: 0
+  _multiplierDamageThresholdCollisionForce: 0
   soundsOnDamage:
     volume: 0.4
     getSound: {fileID: 11400000, guid: 87274cbedb7b1a945af6c371776cae40, type: 2}
