@@ -20,7 +20,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        _pauseManager?.TogglePause(false);
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            _pauseManager?.TogglePause(true);
+        else
+            _pauseManager?.TogglePause(false);
+
         RefreshCarController();
 
         _endGameManager.Init(this);
@@ -80,7 +84,8 @@ public class GameManager : MonoBehaviour
 
     public void TogglePause()
     {
-        _pauseManager?.TogglePause();
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+            _pauseManager?.TogglePause();
     }
 
     public void LoadScene(string sceneName)
