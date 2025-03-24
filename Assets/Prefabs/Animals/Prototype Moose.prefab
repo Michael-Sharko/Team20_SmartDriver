@@ -1123,7 +1123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  rotationSpeed: 250
+  rotationSpeed: 300
   delayBeforeTurn: 0.5
   delayAfterCollisionWithPlayer: 1.5
   targetPosition: {fileID: 6604835349713878172}
