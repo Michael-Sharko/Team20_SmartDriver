@@ -99,7 +99,7 @@ AudioSource:
   m_GameObject: {fileID: 7334211287092940415}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5988070684098708890, guid: cda0fe62e3582ed439f01b3c4ee21580, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -202,8 +202,8 @@ MonoBehaviour:
   _damageThresholdCollisionForce: 0
   _multiplierDamageThresholdCollisionForce: 0
   soundsOnDamage:
-    sound: {fileID: 8300000, guid: 2b8d17b3a8f9080479c0b18b89c2537a, type: 3}
     volume: 0.4
+    getSound: {fileID: 11400000, guid: 87274cbedb7b1a945af6c371776cae40, type: 2}
   <LastCollisionForce>k__BackingField: 0
 --- !u!205 &7916800588103391686
 LODGroup:

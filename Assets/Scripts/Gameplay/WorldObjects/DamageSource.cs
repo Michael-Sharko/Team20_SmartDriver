@@ -1,33 +1,10 @@
 using System;
 using Shark.Gameplay.WorldObjects;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(AudioSource))]
 public class DamageSource : MonoBehaviour, IDamageSource
 {
-    [Serializable]
-    public class PlaySoundOnDamage
-    {
-        [FormerlySerializedAs("dealDamageSound")]
-        [SerializeField] private AudioClip sound;
-        [SerializeField, Min(0)] private float volume = 0.4f;
-
-        private AudioSource source;
-
-        public void Init(AudioSource source, ref Action onDamage)
-        {
-            this.source = source;
-            onDamage += Play;
-        }
-        private void Play()
-        {
-            if (!sound || !source)
-                return;
-
-            source.PlayOneShot(sound, volume);
-        }
-    }
     [SerializeField]
     private float _damage;
 
@@ -38,7 +15,7 @@ public class DamageSource : MonoBehaviour, IDamageSource
     private float _multiplierDamageThresholdCollisionForce = 10;
 
     [SerializeField]
-    private PlaySoundOnDamage soundsOnDamage;
+    private SoundOnEvent soundsOnDamage;
 
 #if UNITY_EDITOR
     [field: SerializeField, Header("Debug-Constant")]
@@ -58,7 +35,7 @@ public class DamageSource : MonoBehaviour, IDamageSource
 
     private void Awake()
     {
-        soundsOnDamage.Init(GetComponent<AudioSource>(), ref OnDealDamage);
+        soundsOnDamage.Init(ref OnDealDamage, GetComponent<AudioSource>());
     }
 
     public void DealDamage(IBreakable breakable)

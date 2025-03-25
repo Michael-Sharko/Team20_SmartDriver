@@ -1,9 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-public abstract class AbstractSoundWhile
+[Serializable]
+public class SoundWhileWithoutSource
 {
     [SerializeField, Range(0, 1)] private float volume = 1;
+    [SerializeField] private BaseGetSound getSound;
 
     private Func<bool> _soundWhileTrue;
 
@@ -12,12 +14,10 @@ public abstract class AbstractSoundWhile
         @event += OnActivate;
         _soundWhileTrue = soundWhileTrue;
     }
-    protected abstract AudioClip GetClip();
-
     private void OnActivate()
     {
         var prefab = Resources.Load<PlaySoundsWhileConditionAndDestroy>("Prefabs/SoundWhile");
         PlaySoundsWhileConditionAndDestroy sound = UnityEngine.Object.Instantiate(prefab);
-        sound.Init(GetClip(), _soundWhileTrue, volume);
+        sound.Play(getSound.GetClip(), _soundWhileTrue, volume);
     }
 }

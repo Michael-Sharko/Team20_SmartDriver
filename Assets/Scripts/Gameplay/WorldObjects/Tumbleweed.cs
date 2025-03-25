@@ -3,11 +3,12 @@ using Shark.Gameplay.WorldObjects;
 using UnityEngine;
 
 
+[RequireComponent(typeof(AudioSource))]
 public class Tumbleweed : MonoBehaviour, IActivatable
 {
     [SerializeField, Range(0, 360)] private float directionAngle;
     [SerializeField] private float speed;
-    [SerializeField] private RandomSoundFromArray soundOnActivate;
+    [SerializeField] private SoundOnEvent soundOnActivate;
 
     private bool _isTriggered;
     private Rigidbody _rigidbody;
@@ -32,7 +33,7 @@ public class Tumbleweed : MonoBehaviour, IActivatable
         _rigidbody = GetComponent<Rigidbody>();
         _constantForce = GetComponent<ConstantForce>();
 
-        soundOnActivate.Init(ref OnActivate);
+        soundOnActivate.Init(ref OnActivate, GetComponent<AudioSource>());
 
         var xDirection = Mathf.Cos(directionAngle * Mathf.Deg2Rad);
         var yDirection = Mathf.Sin(directionAngle * Mathf.Deg2Rad);

@@ -7824,8 +7824,8 @@ MonoBehaviour:
   _damageThresholdCollisionForce: 0
   _multiplierDamageThresholdCollisionForce: 0
   soundsOnDamage:
-    sound: {fileID: 8300000, guid: 2b8d17b3a8f9080479c0b18b89c2537a, type: 3}
     volume: 0.5
+    getSound: {fileID: 11400000, guid: 87274cbedb7b1a945af6c371776cae40, type: 2}
   <LastCollisionForce>k__BackingField: 0
 --- !u!82 &868616150
 AudioSource:
