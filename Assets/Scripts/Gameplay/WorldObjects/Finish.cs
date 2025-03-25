@@ -8,5 +8,6 @@ public class Finish : MonoBehaviour, IActivatable
     public void Activate()
     {
         finishMenu.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
     }
 }
