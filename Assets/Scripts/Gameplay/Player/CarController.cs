@@ -5,42 +5,13 @@ using UnityEngine;
 
 namespace Shark.Gameplay.Player
 {
-    [Serializable]
-    public class Immunable
-    {
-        [SerializeField] private float immunableTime = 0.5f;
-
-        private Coroutine _immunableRoutine;
-        private MonoBehaviour _monoBehaviour;
-
-        public bool IsImmunable { get; private set; }
-
-        public void Init(MonoBehaviour monoBehaviour)
-        {
-            _monoBehaviour = monoBehaviour;
-        }
-        public void MakeImmunable()
-        {
-            if (_immunableRoutine != null)
-            {
-                _monoBehaviour.StopCoroutine(_immunableRoutine);
-            }
-
-            IsImmunable = true;
-
-            _immunableRoutine = _monoBehaviour.LateAndInvoke(immunableTime, () =>
-            {
-                IsImmunable = false;
-                _immunableRoutine = null;
-            });
-        }
-    }
     public class CarController : MonoBehaviour, IPlayer
     {
         private const string INPUT_HORIZONTAL = "Horizontal";
         private const string INPUT_VERTICAL = "Vertical";
 
         private float _hInput;
+        private float _frontWheelsRotation;
         public float vInput { get; private set; }
         private bool _isBreaking;
 
@@ -67,6 +38,9 @@ namespace Shark.Gameplay.Player
         private float _fuelConsuptionMultiplier = 0.01f;
 
         [SerializeField]
+        private float _frontWheelsRotationSpeed = .1f;
+
+        [SerializeField]
         private Immunable immunable;
 
         [SerializeField]
@@ -75,7 +49,6 @@ namespace Shark.Gameplay.Player
         [SerializeField]
         private Wheel _wheels;
 
-        private AudioSource _audioSource;
         [SerializeField] private TouchingSlidingSurfaceController _touchingSlidingSurface;
 
 #if UNITY_EDITOR
@@ -98,8 +71,6 @@ namespace Shark.Gameplay.Player
             Initialize();
             Refuel(fuelCapacity);
             immunable.Init(this);
-
-            _audioSource = GetComponent<AudioSource>();
         }
 
         private void OnValidate()
@@ -127,7 +98,7 @@ namespace Shark.Gameplay.Player
             _wheels.ApplyWheelData();
 
 #if UNITY_EDITOR
-            //Refuel(fuelCapacity);
+            Refuel(fuelCapacity);
 #endif
         }
 
@@ -161,6 +132,9 @@ namespace Shark.Gameplay.Player
             if (IsBroken) return;
 
             _hInput = Input.GetAxis(INPUT_HORIZONTAL);
+
+            _frontWheelsRotation = Mathf.MoveTowards(_frontWheelsRotation, _hInput, _frontWheelsRotationSpeed);
+
             vInput = hasFuel ? Input.GetAxis(INPUT_VERTICAL) : 0;
             _isBreaking = Input.GetKey(KeyCode.Space);
         }
@@ -278,7 +252,7 @@ namespace Shark.Gameplay.Player
 
         private float CalculateSteeringAngle()
         {
-            return _data.maxSteerAngle * _hInput;
+            return _data.maxSteerAngle * _frontWheelsRotation;
         }
 
         private void HandleFuelConsumption()
