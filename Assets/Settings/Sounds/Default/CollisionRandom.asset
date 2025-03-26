@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec21f0863ac3c747b6236f2e89f2300, type: 3}
+  m_Name: CollisionRandom
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: c2272d3d95eef50459c5c74bfd08fbd2, type: 3}
+  - {fileID: 8300000, guid: 2d31c617d0b4c0242803b90ab2c7357a, type: 3}
+  - {fileID: 8300000, guid: 80ffa184ff285564eb4224e0aa755a8e, type: 3}
+  - {fileID: 8300000, guid: 34888473558a2cb47962da52c231df43, type: 3}
+  - {fileID: 8300000, guid: 2b8d17b3a8f9080479c0b18b89c2537a, type: 3}
