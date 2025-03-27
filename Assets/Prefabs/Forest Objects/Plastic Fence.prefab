@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plastic Fence
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f481e878fa0254247b531211033ee060, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -81,7 +85,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f481e878fa0254247b531211033ee060, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5417930029371777844}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f481e878fa0254247b531211033ee060, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7046793562085825798}
   m_SourcePrefab: {fileID: 100100000, guid: f481e878fa0254247b531211033ee060, type: 3}
+--- !u!23 &4718792392339996473 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: f481e878fa0254247b531211033ee060, type: 3}
+  m_PrefabInstance: {fileID: 6250170601778914237}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6520219254540869356 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f481e878fa0254247b531211033ee060, type: 3}
@@ -224,3 +236,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -153830957423991239, guid: f481e878fa0254247b531211033ee060, type: 3}
+--- !u!205 &-7046793562085825798
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6520219254540869356}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.16567826, y: 1.7187463, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.01
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 4718792392339996473}
+  m_Enabled: 1

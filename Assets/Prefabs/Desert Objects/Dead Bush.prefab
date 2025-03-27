@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dead Bush
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84a8a24db6dd75e4d8e5b5293e63b939, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -84,6 +88,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 84a8a24db6dd75e4d8e5b5293e63b939, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8127319522979511983}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 84a8a24db6dd75e4d8e5b5293e63b939, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7246675153743962301}
   m_SourcePrefab: {fileID: 100100000, guid: 84a8a24db6dd75e4d8e5b5293e63b939, type: 3}
 --- !u!1 &460529076582931679 stripped
 GameObject:
@@ -248,3 +255,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0005646, y: 2.0423203, z: 1.1139374}
   m_Center: {x: -0.0044021606, y: 1.0151408, z: -0.1158905}
+--- !u!205 &7246675153743962301
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460529076582931679}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.22392356, y: 1.0151408, z: -0.06084633}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.01
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2118060379230272778}
+  m_Enabled: 1
+--- !u!23 &2118060379230272778 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 84a8a24db6dd75e4d8e5b5293e63b939, type: 3}
+  m_PrefabInstance: {fileID: 767099647666413966}
+  m_PrefabAsset: {fileID: 0}
