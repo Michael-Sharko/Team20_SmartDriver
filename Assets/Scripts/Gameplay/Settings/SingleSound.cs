@@ -3,10 +3,12 @@
 [CreateAssetMenu(fileName = "SingleSound", menuName = "Settings/Sounds/SingleSound")]
 public class SingleSound : BaseGetSound
 {
-    [SerializeField] private AudioClip sound;
+    [SerializeField] private string soundPath;
+
+    private AudioClip clip;
 
     public override AudioClip GetClip()
     {
-        return sound;
+        return clip != null ? clip : clip = LoadClip(soundPath);
     }
 }

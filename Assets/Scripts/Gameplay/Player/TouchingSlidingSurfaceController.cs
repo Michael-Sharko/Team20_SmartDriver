@@ -42,7 +42,7 @@ public class TouchingSlidingSurfaceController
         TerrainData data = terrainCollider.terrainData;
 
 
-        var textureUnderWheel = data.terrainLayers[GetMainTexture(hit.point)].diffuseTexture;
+        var textureUnderWheel = data.terrainLayers[GetMainTextureIndex(hit.point)].diffuseTexture;
 
         if (IsSlidingTexture(textureUnderWheel))
         {
@@ -67,7 +67,7 @@ public class TouchingSlidingSurfaceController
         }
         return false;
     }
-    private int GetMainTexture(Vector3 worldPos)
+    private int GetMainTextureIndex(Vector3 worldPos)
     {
 
         float[] mix = GetTextureMix(worldPos);

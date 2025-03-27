@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec21f0863ac3c747b6236f2e89f2300, type: 3}
   m_Name: Wind
   m_EditorClassIdentifier: 
-  sounds:
-  - {fileID: 8300000, guid: 50fdcda35127e684fafa9397cf84bb04, type: 3}
-  - {fileID: 8300000, guid: 7c40c33fee057ea498fbf9c8e9d8ef2c, type: 3}
+  soundPaths:
+  - Sounds/Tumbleweed/Wind_1
+  - Sounds/Tumbleweed/Wind_2

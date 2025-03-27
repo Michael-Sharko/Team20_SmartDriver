@@ -124,7 +124,7 @@ MonoBehaviour:
   _multiplierDamageThresholdCollisionForce: 10
   soundsOnDamage:
     volume: 0.5
-    getSound: {fileID: 11400000, guid: 87274cbedb7b1a945af6c371776cae40, type: 2}
+    getSound: {fileID: 11400000, guid: f46efd85098233a4ca64bccefa4379ef, type: 2}
   <LastCollisionForce>k__BackingField: 0
 --- !u!82 &2313364934362500848
 AudioSource:
