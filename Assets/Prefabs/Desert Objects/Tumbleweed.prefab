@@ -103,7 +103,7 @@ MonoBehaviour:
   speed: 7
   soundOnActivate:
     volume: 1
-    getSound: {fileID: 11400000, guid: 12c16dda211be6042989c741f39a25fc, type: 2}
+    getSound: {fileID: 11400000, guid: 265414b2c8231814b95940ea5b2a0bbc, type: 2}
 --- !u!114 &627796548068950162
 MonoBehaviour:
   m_ObjectHideFlags: 0
