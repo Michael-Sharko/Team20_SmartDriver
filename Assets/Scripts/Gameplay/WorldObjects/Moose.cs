@@ -30,6 +30,7 @@ public class Moose : MonoBehaviour
     private Rigidbody _rigidbody;
     private Vector3 _startPos;
     private Vector3 _targetPos;
+    private Vector3 newPos;
 
     private void Awake()
     {
@@ -98,14 +99,17 @@ public class Moose : MonoBehaviour
                 yield return new WaitForSeconds(delayAfterCollisionWithPlayer);
             }
 
-            var newPos = Vector3.MoveTowards(_rigidbody.position, _path.endPosition,
-                speed * Time.fixedDeltaTime);
-            _rigidbody.MovePosition(newPos);
+            newPos = Vector3.MoveTowards(_rigidbody.position, _path.endPosition,
+               speed * Time.fixedDeltaTime);
 
-            yield return new WaitForFixedUpdate();
+            yield return null;
         }
 
         StartCoroutine(LateBeforeTurn());
+    }
+    private void FixedUpdate()
+    {
+        _rigidbody.MovePosition(newPos);
     }
 
 
