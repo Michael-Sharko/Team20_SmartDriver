@@ -16,7 +16,9 @@ public class PauseManager
         (isPaused ? OnPauseActivated : OnPauseDeactivated)?.Invoke();
 
         _isPaused = isPaused;
-        Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
+#if !UNITY_EDITOR
+        Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked; 
+#endif
     }
 
     public void TogglePause()
