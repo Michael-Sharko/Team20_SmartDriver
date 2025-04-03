@@ -21,6 +21,9 @@ public class Tumbleweed : MonoBehaviour, IActivatable
         if (_isTriggered)
             return;
 
+        // хоть я и удаляю коллайдер триггер, почему то при столкновении машинки вызывается этот метод
+        Destroy(GetComponent<SphereCollider>());
+
         OnActivate?.Invoke();
 
         _isTriggered = true;

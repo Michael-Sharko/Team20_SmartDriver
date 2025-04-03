@@ -24,6 +24,7 @@ public class TouchingSlidingSurfaceController
     [SerializeField] private float sidewaysFrictionStiffness;
 
     private TerrainCollider _terrainCollider;
+    private TerrainLayer[] _layers = new TerrainLayer[10];
 
     public bool TryCalculateSlidingToWheel(WheelData wheelData, WheelHit hit, out WheelFrictionStiffness stiffness)
     {
@@ -37,12 +38,14 @@ public class TouchingSlidingSurfaceController
         if (hit.collider is not TerrainCollider terrainCollider)
             return false;
 
-        _terrainCollider = terrainCollider;
 
-        TerrainData data = terrainCollider.terrainData;
+        if (_terrainCollider != terrainCollider)
+        {
+            _terrainCollider = terrainCollider;
+            _layers = terrainCollider.terrainData.terrainLayers;
+        }
 
-
-        var textureUnderWheel = data.terrainLayers[GetMainTextureIndex(hit.point)].diffuseTexture;
+        var textureUnderWheel = _layers[GetMainTextureIndex(hit.point)].diffuseTexture;
 
         if (IsSlidingTexture(textureUnderWheel))
         {
