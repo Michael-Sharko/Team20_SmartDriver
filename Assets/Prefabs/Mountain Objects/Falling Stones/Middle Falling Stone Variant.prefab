@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5139400605999082276, guid: 8f608ca21298b2f49b30a635623f82d9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 5139400605999082276, guid: 8f608ca21298b2f49b30a635623f82d9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 5139400605999082276, guid: 8f608ca21298b2f49b30a635623f82d9, type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 5139400605999082276, guid: 8f608ca21298b2f49b30a635623f82d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5506023162051901430, guid: 8f608ca21298b2f49b30a635623f82d9, type: 3}
       propertyPath: m_Name
-      value: middle Falling Stone Variant
+      value: Middle Falling Stone Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
