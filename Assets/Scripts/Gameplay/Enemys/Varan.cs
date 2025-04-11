@@ -27,7 +27,6 @@ public class Varan : MonoBehaviour
 
     private Action _onAgroPlayer;
     private Action _onAttackPlayer;
-    private Action _onStartMovement;
 
     private static readonly int WalkKey = Animator.StringToHash("isWalking");
     private static readonly int AttackKey = Animator.StringToHash("attack");
@@ -69,7 +68,10 @@ public class Varan : MonoBehaviour
 
         detectionPlayerSound.Init(ref _onAgroPlayer, audioSource);
         attackPlayerSound.Init(ref _onAttackPlayer, audioSource);
-        movementSound.Init(ref _onStartMovement, () => _isMoving, audioSource, this);
+        movementSound.Init(
+            () => _isMoving, 
+            audioSource, 
+            this);
 
         StartCoroutine(Idle());
     }
@@ -103,8 +105,6 @@ public class Varan : MonoBehaviour
         sTrigger.gameObject.SetActive(true);
 
         _isMoving = true;
-
-        _onStartMovement?.Invoke();
 
         // чтобы триггеры обновились, иначе начинается вакханалия
         yield return new WaitForFixedUpdate();
