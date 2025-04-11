@@ -38,6 +38,12 @@ namespace Shark.Gameplay.Player
         private float _fuelConsuptionMultiplier = 0.01f;
 
         [SerializeField]
+        private float _fuelValueForActivateLowLevelFuelSound = 30f;
+
+        [SerializeField]
+        private SoundWhile _lowLevelFuelSound;
+
+        [SerializeField]
         private float _frontWheelsRotationSpeed = .1f;
 
         [SerializeField]
@@ -71,6 +77,11 @@ namespace Shark.Gameplay.Player
             Initialize();
             Refuel(fuelCapacity);
             immunable.Init(this);
+
+            _lowLevelFuelSound.Init(
+                () => currentFuel <= _fuelValueForActivateLowLevelFuelSound,
+                GetComponent<AudioSource>(),
+                this);
         }
 
         private void OnValidate()
