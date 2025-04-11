@@ -119,6 +119,21 @@ namespace Shark.Gameplay.Player
         {
             ApplyCarData();
         }
+
+        //
+        // Debug
+        //
+
+        [ContextMenu("FuelOut")]
+        private void FuelOut()
+        {
+            currentFuel = 0;
+        }
+        [ContextMenu("Death")]
+        private void Death()
+        {
+            TakeDamage(float.MaxValue);
+        }
 #endif
 
         void FixedUpdate()
@@ -138,11 +153,7 @@ namespace Shark.Gameplay.Player
             ApplyMaterialPhysicsOnWheels();
             UpdateWheels();
         }
-        [ContextMenu("FuelOut")]
-        private void FuelOut()
-        {
-            currentFuel = 0;
-        }
+      
         void HandleInputOnFuelAndBrokenCheck()
         {
             if (IsBroken || _isFuelOut)

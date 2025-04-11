@@ -25,9 +25,8 @@ public class LossGameManager
 
     [SerializeField] CanvasGroup _panel;
     [SerializeField] TextMeshProUGUI _message;
-    [SerializeField] TextMeshProUGUI _hintToMenu;
 
-    private MonoBehaviour _monoBehaviour;
+    private MonoBehaviour _coroutineOwner;
 
     public void SubscribeEvents()
     {
@@ -41,9 +40,9 @@ public class LossGameManager
             UnsubscribeCarEvents();
     }
 
-    public void Init(MonoBehaviour monoBehaviour)
+    public void Init(MonoBehaviour coroutineOwner)
     {
-        _monoBehaviour = monoBehaviour;
+        _coroutineOwner = coroutineOwner;
     }
 
     private void SubscribeCarEvents()
@@ -72,7 +71,7 @@ public class LossGameManager
     {
         SetMessage(message);
 
-        _monoBehaviour.StartCoroutine(AnimateMessages());
+        _coroutineOwner.StartCoroutine(AnimateMessages());
 
         OnEndGameInvoked?.Invoke();
         IsInvoked = true;

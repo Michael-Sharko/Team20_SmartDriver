@@ -56,19 +56,7 @@ public class GameManager : MonoBehaviour
 
     private void HandleInput()
     {
-        ToggleBackMenuIfGameEnded();
         TogglePauseIfPressed();
-    }
-
-    private void ToggleBackMenuIfGameEnded()
-    {
-        if (IsGameEnded)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                LoadMainMenuScene();
-            }
-        }
     }
 
     private void TogglePauseIfPressed()
