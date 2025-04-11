@@ -27,6 +27,7 @@ namespace Shark.Gameplay.Player
         [field: SerializeField, HideInInspector]
         public float currentStrength { get; private set; }
         public bool IsBroken => currentStrength <= 0;
+        private bool _isFuelOut;
 
         [field: SerializeField]
         public float fuelCapacity { get; private set; } = 100;
@@ -137,16 +138,26 @@ namespace Shark.Gameplay.Player
             ApplyMaterialPhysicsOnWheels();
             UpdateWheels();
         }
-
+        [ContextMenu("FuelOut")]
+        private void FuelOut()
+        {
+            currentFuel = 0;
+        }
         void HandleInputOnFuelAndBrokenCheck()
         {
-            if (IsBroken) return;
+            if (IsBroken || _isFuelOut)
+            {
+                _hInput = 0;
+                vInput = 0;
+
+                return;
+            }
 
             _hInput = Input.GetAxis(INPUT_HORIZONTAL);
 
             _frontWheelsRotation = Mathf.MoveTowards(_frontWheelsRotation, _hInput, _frontWheelsRotationSpeed);
 
-            vInput = hasFuel ? Input.GetAxis(INPUT_VERTICAL) : 0;
+            vInput = Input.GetAxis(INPUT_VERTICAL);
             _isBreaking = Input.GetKey(KeyCode.Space);
         }
 
@@ -276,6 +287,11 @@ namespace Shark.Gameplay.Player
         private void CalculateFuelConsumption()
         {
             currentFuel -= Speed * _fuelConsuptionMultiplier * Time.fixedDeltaTime;
+
+            if (currentFuel < 0)
+            {
+                _isFuelOut = true;
+            }
         }
 
         private void HandleOutOfFuel()
