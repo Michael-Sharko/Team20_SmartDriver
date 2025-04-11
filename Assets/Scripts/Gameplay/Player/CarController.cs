@@ -197,10 +197,12 @@ namespace Shark.Gameplay.Player
         private void ApplyBreaking()
         {
             _currentBreakForce = CalculateBreakForce();
-            for (Wheel.Part wheelid = 0; wheelid < Wheel.Part.Count; ++wheelid)
-            {
-                _wheels[wheelid].whellCollider.brakeTorque = _currentBreakForce;
-            }
+
+            // торможение "ручником" применяется только к задним колесам для более правильной физики
+            // когда применялось ко всем колесам, то машинка не реагировала на поворот руля при торможении
+
+            _wheels[Wheel.Part.RL].whellCollider.brakeTorque = _currentBreakForce;
+            _wheels[Wheel.Part.RR].whellCollider.brakeTorque = _currentBreakForce;
         }
 
         private void ApplyMaterialPhysicsOnWheels()
