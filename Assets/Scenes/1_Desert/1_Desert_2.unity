@@ -17309,6 +17309,10 @@ PrefabInstance:
       propertyPath: _fuelConsuptionMultiplier
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: <CarFuel>k__BackingField._fuelConsuptionMultiplier
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5052698190086010104, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
       propertyPath: m_AngularDrag
       value: 1.5

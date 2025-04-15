@@ -1,17 +1,31 @@
+using System;
+using Shark.Gameplay.Player;
 using UnityEngine;
 
-
-public class CarSounds : MonoBehaviour 
+[Serializable]
+public class CarSounds
 {
-     public AudioClip engineWorkClip;
-     public AudioClip[] collisionClips;
-     public AudioClip destroyClip;
+    [SerializeField] private float _fuelValueForActivateLowLevelFuelSound = 30f;
+    [SerializeField] private SoundWhile _lowLevelFuelSound;
 
-     public AudioClip[] roadClips;
-     public AudioClip[] sandClips;
-     public AudioClip[] stoneClips;
+    public void Init(MonoBehaviour coroutineOwner, AudioSource source, Get<float> currentFuel)
+    {
+        _lowLevelFuelSound.Init(
+            () => currentFuel.Value <= _fuelValueForActivateLowLevelFuelSound,
+            source,
+            coroutineOwner);
+    }
+
+
+    //public AudioClip engineWorkClip;
+    //public AudioClip[] collisionClips;
+    //public AudioClip destroyClip;
+
+    //public AudioClip[] roadClips;
+    //public AudioClip[] sandClips;
+    //public AudioClip[] stoneClips;
 
 }
 
-    
+
 

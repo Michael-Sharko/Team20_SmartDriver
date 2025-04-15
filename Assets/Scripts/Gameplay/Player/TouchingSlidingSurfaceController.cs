@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using static Shark.Gameplay.Player.Wheel;
+using static Shark.Gameplay.Player.Wheels;
 
 [Serializable]
 public class TouchingSlidingSurfaceController

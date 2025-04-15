@@ -47,14 +47,14 @@ public class LossGameManager
 
     private void SubscribeCarEvents()
     {
-        Car.OnCarBroken += HandleCarBroken;
-        Car.OnCarFuelRanOut += HandleCarFuelRanOut;
+        Car.CarStrength.OnCarBroken += HandleCarBroken;
+        Car.CarFuel.OnCarFuelRanOut += HandleCarFuelRanOut;
     }
 
     private void UnsubscribeCarEvents()
     {
-        Car.OnCarBroken -= HandleCarBroken;
-        Car.OnCarFuelRanOut -= HandleCarFuelRanOut;
+        Car.CarStrength.OnCarBroken -= HandleCarBroken;
+        Car.CarFuel.OnCarFuelRanOut -= HandleCarFuelRanOut;
     }
 
     private void HandleCarFuelRanOut()

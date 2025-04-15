@@ -900,7 +900,6 @@ GameObject:
   - component: {fileID: 5240482119652152569}
   - component: {fileID: 6281478597711146256}
   - component: {fileID: 540800975758197578}
-  - component: {fileID: 8324262074074147085}
   m_Layer: 0
   m_Name: Engine
   m_TagString: Untagged
@@ -1031,36 +1030,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5f2db645fce054e89b1dafbedc6003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  engineWorkClip: {fileID: 0}
-  collisionClips: []
-  destroyClip: {fileID: 0}
-  roadClips: []
-  sandClips: []
-  stoneClips: []
   carController: {fileID: 4789932440345742510}
   volumeForvard: 0.4
   volumeBack: 0.45
   volumeIndling: 0.4
   maxEnginePitch: 1.35
   minEnginePitch: 0.75
---- !u!114 &8324262074074147085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7766648499686081977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97774b66acb8e07489113fca079b36f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  engineWorkClip: {fileID: 0}
-  collisionClips: []
-  destroyClip: {fileID: 0}
-  roadClips: []
-  sandClips: []
-  stoneClips: []
 --- !u!1 &8010027682945101343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,33 +1168,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e290918f8cd544ea64f16be80f2c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <maxStrength>k__BackingField: 100
-  <currentStrength>k__BackingField: 100
-  <fuelCapacity>k__BackingField: 100
-  _fuelConsuptionMultiplier: 0.01
-  _fuelValueForActivateLowLevelFuelSound: 30
-  _lowLevelFuelSound:
-    getSound: {fileID: 11400000, guid: a672c80b782101142bde4e19e5142286, type: 2}
-  _frontWheelsRotationSpeed: 0.1
-  immunable:
-    immunableTime: 0.5
-  _data: {fileID: 11400000, guid: 90da1bf93f421f14ca72fb1321d9f27f, type: 2}
-  _wheels:
-    _data: {fileID: 11400000, guid: d6988b95249f33645b66a15c9a76bd36, type: 2}
-    _colliders:
-    - {fileID: 1159706453449824137}
-    - {fileID: 177450544212134855}
-    - {fileID: 8776945135257547643}
-    - {fileID: 7493685319680488636}
-    _transforms:
-    - {fileID: 6427029862801463651}
-    - {fileID: 1033287225810955478}
-    - {fileID: 7065951884520346880}
-    - {fileID: 2390057027076410484}
-  _touchingSlidingSurface:
-    slidingSurfacesTextures: []
-    forwardFrictionStiffness: 0
-    sidewaysFrictionStiffness: 0
+  <CarFuel>k__BackingField:
+    <fuelCapacity>k__BackingField: 100
+    _fuelConsuptionMultiplier: 0.28
+  <CarStrength>k__BackingField:
+    <maxStrength>k__BackingField: 100
+    immunable:
+      immunableTime: 0.5
+  <CarPhysics>k__BackingField:
+    _frontWheelsRotationSpeed: 0.1
+    <wheels>k__BackingField:
+      _data: {fileID: 11400000, guid: 94a499a27d1e8d0488a03336fa1ad1bd, type: 2}
+      _colliders:
+      - {fileID: 1159706453449824137}
+      - {fileID: 177450544212134855}
+      - {fileID: 8776945135257547643}
+      - {fileID: 7493685319680488636}
+      _transforms:
+      - {fileID: 6427029862801463651}
+      - {fileID: 1033287225810955478}
+      - {fileID: 7065951884520346880}
+      - {fileID: 2390057027076410484}
+    <data>k__BackingField: {fileID: 11400000, guid: 9f9ed954450c9ee47a077f2a141a3a56, type: 2}
+    _touchingSlidingSurface:
+      slidingSurfacesTextures: []
+      forwardFrictionStiffness: 0
+      sidewaysFrictionStiffness: 0
+  <CarSounds>k__BackingField:
+    _fuelValueForActivateLowLevelFuelSound: 30
+    _lowLevelFuelSound:
+      getSound: {fileID: 11400000, guid: a672c80b782101142bde4e19e5142286, type: 2}
 --- !u!82 &4991246719008613194
 AudioSource:
   m_ObjectHideFlags: 0

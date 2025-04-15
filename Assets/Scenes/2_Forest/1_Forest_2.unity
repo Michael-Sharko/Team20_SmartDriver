@@ -1584,6 +1584,10 @@ PrefabInstance:
       value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: <CarFuel>k__BackingField._fuelConsuptionMultiplier
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
       propertyPath: _touchingSlidingSurface.slidingSurfacesTextures.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1593,6 +1597,14 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: dc978fc225b4035459cd999d2aa5738b, type: 3}
     - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
       propertyPath: _touchingSlidingSurface.slidingSurfacesTextures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: dc978fc225b4035459cd999d2aa5738b, type: 3}
+    - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: <CarPhysics>k__BackingField._touchingSlidingSurface.slidingSurfacesTextures.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: <CarPhysics>k__BackingField._touchingSlidingSurface.slidingSurfacesTextures.Array.data[0]
       value: 
       objectReference: {fileID: 2800000, guid: dc978fc225b4035459cd999d2aa5738b, type: 3}
     - target: {fileID: 7611377358372956911, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
