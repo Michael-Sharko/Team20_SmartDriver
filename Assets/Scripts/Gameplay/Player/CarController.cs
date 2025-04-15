@@ -11,6 +11,7 @@ namespace Shark.Gameplay.Player
         [field: SerializeField] public CarStrength CarStrength { get; private set; }
         [field: SerializeField] public CarPhysics CarPhysics { get; private set; }
         [field: SerializeField] public CarSounds CarSounds { get; private set; }
+        [field: SerializeField] public CarEffects CarEffects { get; private set; }
 
         public bool IsBroken => CarStrength.IsBroken;
         public void Refuel(float value) => CarFuel.Refuel(value);
@@ -23,19 +24,35 @@ namespace Shark.Gameplay.Player
 #endif
 
 
-        private void Start()
+        private void Awake()
         {
             InitInput();
             InitPhysics();
             InitStrength();
             InitFuel();
             InitSounds();
+            InitEffects();
         }
 
+#if UNITY_EDITOR
         private void OnValidate()
         {
+            if (!UnityEditor.EditorApplication.isPlaying)
+                return;
+
             InitPhysics();
+
+            // вызов кидает ошибку т.к. OnValidate вызывается еще до Awake и ссылка не установлена
+            // меня эта ошибка в консоли бесит), поэтому перехватываю 
+            try
+            {
+                CarEffects?.UpdateValues();
+            }
+            catch (System.Exception)
+            {
+            }
         }
+#endif
         private void InitInput()
         {
             CarInput = new();
@@ -55,6 +72,10 @@ namespace Shark.Gameplay.Player
         {
             CarFuel.SetFuelMax();
             CarFuel.OnCarFuelRanOut += OnOutOfFuel;
+        }
+        private void InitEffects()
+        {
+            CarEffects.Init(gameObject);
         }
         private void InitSounds()
         {
