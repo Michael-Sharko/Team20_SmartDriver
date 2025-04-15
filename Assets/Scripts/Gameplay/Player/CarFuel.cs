@@ -3,10 +3,6 @@ using UnityEngine;
 
 namespace Shark.Gameplay.Player
 {
-    public class Get<T>
-    {
-        public T Value { get; set; }
-    }
     [Serializable]
     public class CarFuel
     {
@@ -16,15 +12,16 @@ namespace Shark.Gameplay.Player
         [SerializeField] private float _fuelConsuptionMultiplier = 0.01f;
 
         // просто обертка, для того чтобы ее передать и у получателя были актуальные значения топлива
-        public Get<float> CurrentFuel { get; private set; } = new();
-        private float currentFuel
-        {
-            get => CurrentFuel.Value;
-            set => CurrentFuel.Value = value;
-        }
+        public Get<float> CurrentFuel { get; private set; }
         public bool HasFuel => currentFuel > 0;
+
+        private float currentFuel;
         private bool _isFuelOut;
 
+        public void Init()
+        {
+            CurrentFuel = new(() => currentFuel);
+        }
         public void SetFuelMax()
         {
             currentFuel = fuelCapacity;

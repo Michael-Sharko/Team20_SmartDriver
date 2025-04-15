@@ -16,20 +16,26 @@ namespace Shark.Gameplay.Player
 
         private Rigidbody _rb;
         private CarInput _carInput;
+        private TextureUnderWheelsCheker _textureChecker;
 
         private float _frontWheelsRotation;
         private float _currentBreakForce;
         private float _currentSteerAngle;
+
+        public Get<float> speed { get; private set; }
 
         public float Speed => _rb.velocity.magnitude;
         public float SpeedKmh => Speed * 3.6f;
         public float SpeedMph => Speed * 2.23694f;
 
 
-        public void Init(Rigidbody rigidbody, CarInput carInput)
+        public void Init(Rigidbody rigidbody, CarInput carInput, TextureUnderWheelsCheker textureCheker)
         {
             _rb = rigidbody;
             _carInput = carInput;
+            _textureChecker = textureCheker;
+
+            speed = new(() => Speed);
         }
         public void ApplyCarData()
         {
@@ -125,15 +131,18 @@ namespace Shark.Gameplay.Player
             if (!collider.GetGroundHit(out WheelHit hit))
                 return;
 
+            _textureChecker.Update(hit);
+
             var forwardFrictionStiffness = hit.collider.material.staticFriction * originalForwardStiffness;
             var sidewaysFrictionStiffness = hit.collider.material.staticFriction * originalSidewaysStiffness;
 
-            if (_touchingSlidingSurface.TryCalculateSlidingToWheel(wheelData, hit, out var stiffness))
+            if (_touchingSlidingSurface.TryCalculateSlidingToWheel(
+                _textureChecker.TextureUnderWheel,
+                wheelData,
+                out var stiffness))
             {
-
                 forwardFrictionStiffness = stiffness.forwardFrictionStiffness;
                 sidewaysFrictionStiffness = stiffness.sidewaysFrictionStiffness;
-
             }
 
             WheelFrictionCurve forwardFriction = collider.forwardFriction;
@@ -143,7 +152,6 @@ namespace Shark.Gameplay.Player
             WheelFrictionCurve sidewaysFriction = collider.sidewaysFriction;
             sidewaysFriction.stiffness = sidewaysFrictionStiffness;
             collider.sidewaysFriction = sidewaysFriction;
-
         }
 
         private void UpdateWheels()

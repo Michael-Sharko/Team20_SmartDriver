@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Shark.Gameplay.Player
 {
     [Serializable]
-    public class ExhaustPipeEffect
+    public class ExhaustPipeEffect : CarParticles
     {
         [SerializeField] private float _smokeLifeTime = 0.8f;
 
@@ -12,7 +12,7 @@ namespace Shark.Gameplay.Player
 
         public void Init(GameObject car)
         {
-            _smokeParticle = car.GetComponentInChildren<ParticleSystem>();
+            _smokeParticle = GetParticles(car, ParticleID.ExhaustPipe)[0];
 
             UpdateRateOfSmoke();
         }

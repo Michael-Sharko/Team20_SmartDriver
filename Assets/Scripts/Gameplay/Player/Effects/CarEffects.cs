@@ -7,14 +7,17 @@ namespace Shark.Gameplay.Player
     public class CarEffects
     {
         [SerializeField] private ExhaustPipeEffect exhaustPipeEffect;
+        [SerializeField] private DirtEffect dirtEffect;
 
-        public void Init(GameObject car)
+        public void Init(MonoBehaviour car, Get<float> speed, TextureUnderWheelsCheker textureChecker)
         {
-            exhaustPipeEffect.Init(car);
+            exhaustPipeEffect.Init(car.gameObject);
+            dirtEffect.Init(car, speed, textureChecker);
         }
         public void UpdateValues()
         {
             exhaustPipeEffect?.UpdateRateOfSmoke();
+            dirtEffect?.UpdateLifeTime();
         }
     }
 }

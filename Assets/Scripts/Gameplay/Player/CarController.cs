@@ -17,6 +17,8 @@ namespace Shark.Gameplay.Player
         public void Refuel(float value) => CarFuel.Refuel(value);
         public bool TakeDamage(float damage) => CarStrength.TakeDamage(damage);
 
+        private TextureUnderWheelsCheker _textureChecker;
+
 
 #if UNITY_EDITOR
         public CarPhysicsData carPhysics => CarPhysics.data;
@@ -59,7 +61,10 @@ namespace Shark.Gameplay.Player
         }
         private void InitPhysics()
         {
-            CarPhysics.Init(GetComponent<Rigidbody>(), CarInput);
+            CarPhysics.Init(
+                GetComponent<Rigidbody>(),
+                CarInput,
+                _textureChecker = new TextureUnderWheelsCheker());
             CarPhysics.ApplyCarData();
         }
         private void InitStrength()
@@ -70,12 +75,13 @@ namespace Shark.Gameplay.Player
         }
         private void InitFuel()
         {
+            CarFuel.Init();
             CarFuel.SetFuelMax();
             CarFuel.OnCarFuelRanOut += OnOutOfFuel;
         }
         private void InitEffects()
         {
-            CarEffects.Init(gameObject);
+            CarEffects.Init(this, CarPhysics.speed, _textureChecker);
         }
         private void InitSounds()
         {
@@ -130,8 +136,8 @@ namespace Shark.Gameplay.Player
         {
             for (Wheels.Part wheelid = 0; wheelid < Wheels.Part.Count; ++wheelid)
             {
-                CarPhysics.wheels[wheelid].whellCollider.GetWorldPose(out var position, out var rotation);
-                Gizmos.DrawWireSphere(position, 0.1f);
+                //CarPhysics.wheels[wheelid].whellCollider.GetWorldPose(out var position, out var rotation);
+                //Gizmos.DrawWireSphere(position, 0.1f);
             }
         }
 #endif
