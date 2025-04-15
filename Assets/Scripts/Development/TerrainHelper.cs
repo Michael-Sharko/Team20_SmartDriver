@@ -17,7 +17,7 @@ public class TerrainHelper
     /*
     private static bool IsSlidingTexture(Texture2D texture)
     {
-        foreach (var slidingTexture in dirtTextures)
+        foreach (var slidingTexture in textures)
         {
             if (texture == slidingTexture)
             {

@@ -1241,6 +1241,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2800000, guid: dc978fc225b4035459cd999d2aa5738b, type: 3}
     - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: <CarEffects>k__BackingField.dirtEffect.surfaceChecker.textures.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: <CarEffects>k__BackingField.dirtEffect.surfaceChecker.textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: c3eeabad0e49e504ca509e3dea49cf6c, type: 3}
+    - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
       propertyPath: <CarEffects>k__BackingField.dirtEffect.dirtSurfaceChecker.dirtTextures.Array.size
       value: 1
       objectReference: {fileID: 0}

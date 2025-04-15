@@ -1,5 +1,6 @@
 ﻿public enum ParticleID
 {
     ExhaustPipe,
-    Dirt
+    Dirt,
+    Sand
 }
