@@ -49,7 +49,7 @@ namespace Shark.Gameplay.Player
                 CreateCachedEditor(scriptable, null, ref editor);
                 editor.OnInspectorGUI();
 
-                _controller.ApplyCarDataEditor();
+                //_controller.CarPhysics.ApplyCarData();
             }
         }
     }

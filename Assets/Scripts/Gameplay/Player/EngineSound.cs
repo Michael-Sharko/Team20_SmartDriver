@@ -2,7 +2,7 @@ using Shark.Gameplay.Player;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class EngineSound : CarSounds
+public class EngineSound : MonoBehaviour
 {
     [SerializeField]
     private CarController carController;
@@ -41,9 +41,9 @@ public class EngineSound : CarSounds
 
     private int SoundStateDetection()
     {
-        if (carController.vInput > 0f)
+        if (carController.CarInput.vInput > 0f)
             audioClipState = 0;
-        else if (carController.vInput < 0f)
+        else if (carController.CarInput.vInput < 0f)
             audioClipState = 1;
         else
             audioClipState = 2;

@@ -1,14 +1,11 @@
-using Shark.Gameplay.Physics;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using Shark.Gameplay.Physics;
 using UnityEngine;
 
 namespace Shark.Gameplay.Player
 {
     [Serializable]
-    public struct Wheel
+    public class Wheels
     {
         [SerializeField]
         private WheelPhysicsData _data;
@@ -51,7 +48,7 @@ namespace Shark.Gameplay.Player
             public float originalSidewaysStiffness { get; set; }
         }
 
-        public readonly WheelData this[Part part]
+        public WheelData this[Part part]
         {
             get
             {

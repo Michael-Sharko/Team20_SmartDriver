@@ -28,12 +28,12 @@ namespace Shark.Gameplay.UI
 
         private void OnEnable()
         {
-            if (_car != null) _car.OnDamageReceived += OnUpdatedStrengthIcon;
+            if (_car != null) _car.CarStrength.OnDamageReceived += OnUpdatedStrengthIcon;
         }
 
         private void OnDisable()
         {
-            if (_car != null) _car.OnDamageReceived -= OnUpdatedStrengthIcon;
+            if (_car != null) _car.CarStrength.OnDamageReceived -= OnUpdatedStrengthIcon;
         }
 
         private void Initialize()
@@ -52,24 +52,24 @@ namespace Shark.Gameplay.UI
 
         private void UpdateSpeedometer()
         {
-            _speedometer.Update(_car.SpeedKmh);
+            _speedometer.Update(_car.CarPhysics.SpeedKmh);
         }
 
         private void UpdateFuelGauge()
         {
             if (_fuelGauge != null)
-                _fuelGauge.SetFuelLevel(_car.currentFuel, _car.fuelCapacity);
+                _fuelGauge.SetFuelLevel(_car.CarFuel.CurrentFuel.Value, _car.CarFuel.fuelCapacity);
         }
 
         private void UpdateStrength()
         {
-            _strength?.UpdateStrengthRotation(_car.SpeedKmh);
+            _strength?.UpdateStrengthRotation(_car.CarPhysics.SpeedKmh);
         }
 
         private void OnUpdatedStrengthIcon()
         {
             if (_strength != null)
-                _strength.UpdateStrengthView(_car.currentStrength, _car.maxStrength);
+                _strength.UpdateStrengthView(_car.CarStrength.currentStrength, _car.CarStrength.maxStrength);
         }
     }
 }

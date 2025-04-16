@@ -3759,6 +3759,22 @@ PrefabInstance:
       propertyPath: _fuelConsuptionMultiplier
       value: 0.18
       objectReference: {fileID: 0}
+    - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: <CarFuel>k__BackingField._fuelConsuptionMultiplier
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: <CarEffects>k__BackingField.sandEffect.surfaceChecker.textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: <CarEffects>k__BackingField.sandEffect.surfaceChecker.textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 1a1dd22ce7b1d1246b2d73853da92833, type: 3}
+    - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: <CarEffects>k__BackingField.sandEffect.surfaceChecker.textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: 2dba7c72d0ebeff40b5eea118dc2708c, type: 3}
     - target: {fileID: 5052698190086010104, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
       propertyPath: m_AngularDrag
       value: 1.5

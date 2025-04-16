@@ -1,4 +1,3 @@
-using System;
 using Shark.Gameplay.Physics;
 using Shark.Gameplay.WorldObjects;
 using UnityEngine;
@@ -7,295 +6,115 @@ namespace Shark.Gameplay.Player
 {
     public class CarController : MonoBehaviour, IPlayer
     {
-        private const string INPUT_HORIZONTAL = "Horizontal";
-        private const string INPUT_VERTICAL = "Vertical";
+        public CarInput CarInput { get; private set; }
+        [field: SerializeField] public CarFuel CarFuel { get; private set; }
+        [field: SerializeField] public CarStrength CarStrength { get; private set; }
+        [field: SerializeField] public CarPhysics CarPhysics { get; private set; }
+        [field: SerializeField] public CarSounds CarSounds { get; private set; }
+        [field: SerializeField] public CarEffects CarEffects { get; private set; }
 
-        private float _hInput;
-        private float _frontWheelsRotation;
-        public float vInput { get; private set; }
-        private bool _isBreaking;
+        public bool IsBroken => CarStrength.IsBroken;
+        public void Refuel(float value) => CarFuel.Refuel(value);
+        public bool TakeDamage(float damage) => CarStrength.TakeDamage(damage);
 
-        private Rigidbody _rb;
+        private TextureUnderWheelsCheker _textureChecker;
 
-        public event Action OnDamageReceived;
-        public event Action OnCarFuelRanOut;
-        public event Action OnCarBroken;
-        private bool _endGameEventSended = false;
-
-        [field: SerializeField]
-        public float maxStrength { get; private set; } = 100;
-        [field: SerializeField, HideInInspector]
-        public float currentStrength { get; private set; }
-        public bool IsBroken => currentStrength <= 0;
-
-        [field: SerializeField]
-        public float fuelCapacity { get; private set; } = 100;
-
-        [HideInInspector]
-        public float currentFuel { get; private set; }
-
-        [SerializeField]
-        private float _fuelConsuptionMultiplier = 0.01f;
-
-        [SerializeField]
-        private float _fuelValueForActivateLowLevelFuelSound = 30f;
-
-        [SerializeField]
-        private SoundWhile _lowLevelFuelSound;
-
-        [SerializeField]
-        private float _frontWheelsRotationSpeed = .1f;
-
-        [SerializeField]
-        private Immunable immunable;
-
-        [SerializeField]
-        private CarPhysicsData _data;
-
-        [SerializeField]
-        private Wheel _wheels;
-
-        [SerializeField] private TouchingSlidingSurfaceController _touchingSlidingSurface;
 
 #if UNITY_EDITOR
-        public CarPhysicsData carPhysics => _data;
-        public WheelPhysicsData wheelPhysics => _wheels.wheelPhysics;
+        public CarPhysicsData carPhysics => CarPhysics.data;
+        public WheelPhysicsData wheelPhysics => CarPhysics.wheels.wheelPhysics;
 #endif
 
-        private float _currentBreakForce;
-        private float _currentSteerAngle;
 
-        private float Speed => _rb.velocity.magnitude;
-        public float SpeedKmh => Speed * 3.6f;
-        public float SpeedMph => Speed * 2.23694f;
-
-        private bool hasFuel => currentFuel > 0;
-        private bool isDriving => vInput != 0;
-
-        private void Start()
+        private void Awake()
         {
-            Initialize();
-            Refuel(fuelCapacity);
-            immunable.Init(this);
-
-            _lowLevelFuelSound.Init(
-                () => currentFuel <= _fuelValueForActivateLowLevelFuelSound,
-                GetComponent<AudioSource>(),
-                this);
+            InitInput();
+            InitPhysics();
+            InitStrength();
+            InitFuel();
+            InitSounds();
+            InitEffects();
         }
 
+#if UNITY_EDITOR
         private void OnValidate()
         {
-            Initialize();
-        }
+            if (!UnityEditor.EditorApplication.isPlaying)
+                return;
 
-        private void Initialize()
-        {
-            _rb = GetComponent<Rigidbody>();
+            InitPhysics();
 
-            ApplyCarData();
-
-            currentStrength = maxStrength;
-        }
-
-        private void ApplyCarData()
-        {
-            _rb.mass = _data.mass;
-            _rb.centerOfMass = _data.centerOfMass;
-
-            _rb.drag = _data.drag;
-            _rb.angularDrag = _data.angularDrag;
-
-            _wheels.ApplyWheelData();
-
-#if UNITY_EDITOR
-            Refuel(fuelCapacity);
-#endif
-        }
-
-#if UNITY_EDITOR
-        public void ApplyCarDataEditor()
-        {
-            ApplyCarData();
+            // вызов кидает ошибку т.к. OnValidate вызывается еще до Awake и ссылка не установлена
+            // меня эта ошибка в консоли бесит), поэтому перехватываю 
+            try
+            {
+                CarEffects?.UpdateValues();
+            }
+            catch (System.Exception)
+            {
+            }
         }
 #endif
+        private void InitInput()
+        {
+            CarInput = new();
+        }
+        private void InitPhysics()
+        {
+            CarPhysics.Init(
+                GetComponent<Rigidbody>(),
+                CarInput,
+                _textureChecker = new TextureUnderWheelsCheker());
+            CarPhysics.ApplyCarData();
+        }
+        private void InitStrength()
+        {
+            CarStrength.Init(this);
+            CarStrength.SetStrengthMax();
+            CarStrength.OnCarBroken += OnBroken;
+        }
+        private void InitFuel()
+        {
+            CarFuel.Init();
+            CarFuel.SetFuelMax();
+            CarFuel.OnCarFuelRanOut += OnOutOfFuel;
+        }
+        private void InitEffects()
+        {
+            CarEffects.Init(this, CarPhysics.speed, _textureChecker);
+        }
+        private void InitSounds()
+        {
+            CarSounds.Init(this,
+                GetComponent<AudioSource>(),
+                CarFuel.CurrentFuel);
+        }
 
         void FixedUpdate()
         {
-            if (!_endGameEventSended)
-            {
-                HandleOutOfFuel();
-                HandleBroken();
-            }
-
-            HandleInputOnFuelAndBrokenCheck();
-
-            HandleMotor();
-            HandleSteering();
-            HandleFuelConsumption();
-
-            ApplyMaterialPhysicsOnWheels();
-            UpdateWheels();
+            CarInput.Update();
+            CarFuel.Update(CarPhysics.Speed);
+            CarPhysics.Update();
         }
 
-        void HandleInputOnFuelAndBrokenCheck()
+        private void OnOutOfFuel()
         {
-            if (IsBroken) return;
-
-            _hInput = Input.GetAxis(INPUT_HORIZONTAL);
-
-            _frontWheelsRotation = Mathf.MoveTowards(_frontWheelsRotation, _hInput, _frontWheelsRotationSpeed);
-
-            vInput = hasFuel ? Input.GetAxis(INPUT_VERTICAL) : 0;
-            _isBreaking = Input.GetKey(KeyCode.Space);
+            CarInput.Enabled = false;
         }
 
-        void HandleMotor()
+        private void OnBroken()
         {
-            ApplyDrive(vInput * _data.motorForce);
-            ApplyBreaking();
+            CarInput.Enabled = false;
         }
 
-        void ApplyDrive(float motorTorque)
+        //
+        // Debug
+        //
+
+        [ContextMenu("Death")]
+        private void Death()
         {
-            switch (_data.driveType)
-            {
-                case CarPhysicsData.CarDriveType.FrontWheelDrive: ApplyFWD(motorTorque); break;
-                case CarPhysicsData.CarDriveType.RearWheelDrive: ApplyRWD(motorTorque); break;
-                case CarPhysicsData.CarDriveType.AllWheelDrive: ApplyAWD(motorTorque); break;
-            }
-        }
-
-        void ApplyFWD(float torque)
-        {
-            ApplyMotorTorque(_wheels[Wheel.Part.FL].whellCollider, torque);
-            ApplyMotorTorque(_wheels[Wheel.Part.FR].whellCollider, torque);
-        }
-
-        void ApplyRWD(float torque)
-        {
-            ApplyMotorTorque(_wheels[Wheel.Part.RL].whellCollider, torque);
-            ApplyMotorTorque(_wheels[Wheel.Part.RR].whellCollider, torque);
-        }
-
-        void ApplyAWD(float torque)
-        {
-            ApplyFWD(torque * 0.5f);
-            ApplyRWD(torque * 0.5f);
-        }
-
-        void ApplyMotorTorque(WheelCollider wheel, float torque)
-        {
-            wheel.motorTorque = torque;
-        }
-
-        private float CalculateBreakForce()
-        {
-            return _isBreaking ? _data.breakForce : 0f;
-        }
-
-        private void ApplyBreaking()
-        {
-            _currentBreakForce = CalculateBreakForce();
-            for (Wheel.Part wheelid = 0; wheelid < Wheel.Part.Count; ++wheelid)
-            {
-                _wheels[wheelid].whellCollider.brakeTorque = _currentBreakForce;
-            }
-        }
-
-        private void ApplyMaterialPhysicsOnWheels()
-        {
-            for (Wheel.Part wheelid = 0; wheelid < Wheel.Part.Count; ++wheelid)
-            {
-                ApplyPhysicsMaterialOnWheel(_wheels[wheelid], _wheels[wheelid].originalForwardStiffness, _wheels[wheelid].originalSidewaysStiffness);
-            }
-        }
-
-        private void ApplyPhysicsMaterialOnWheel(Wheel.WheelData wheelData, float originalForwardStiffness, float originalSidewaysStiffness)
-        {
-            var collider = wheelData.whellCollider;
-
-            if (!collider.GetGroundHit(out WheelHit hit))
-                return;
-
-            var forwardFrictionStiffness = hit.collider.material.staticFriction * originalForwardStiffness;
-            var sidewaysFrictionStiffness = hit.collider.material.staticFriction * originalSidewaysStiffness;
-
-            if (_touchingSlidingSurface.TryCalculateSlidingToWheel(wheelData, hit, out var stiffness))
-            {
-
-                forwardFrictionStiffness = stiffness.forwardFrictionStiffness;
-                sidewaysFrictionStiffness = stiffness.sidewaysFrictionStiffness;
-
-            }
-
-            WheelFrictionCurve forwardFriction = collider.forwardFriction;
-            forwardFriction.stiffness = forwardFrictionStiffness;
-            collider.forwardFriction = forwardFriction;
-
-            WheelFrictionCurve sidewaysFriction = collider.sidewaysFriction;
-            sidewaysFriction.stiffness = sidewaysFrictionStiffness;
-            collider.sidewaysFriction = sidewaysFriction;
-
-        }
-
-        private void UpdateWheels()
-        {
-            for (Wheel.Part wheelid = 0; wheelid < Wheel.Part.Count; ++wheelid)
-            {
-                UpdateWheelPositionAndRotation(_wheels[wheelid]);
-            }
-        }
-
-        private void UpdateWheelPositionAndRotation(Wheel.WheelData wheel)
-        {
-            wheel.whellCollider.GetWorldPose(out var position, out var rotation);
-            wheel.transform.SetPositionAndRotation(position, rotation);
-        }
-
-        private void HandleSteering()
-        {
-            _currentSteerAngle = CalculateSteeringAngle();
-
-            _wheels[Wheel.Part.FL].whellCollider.steerAngle = _currentSteerAngle;
-            _wheels[Wheel.Part.FR].whellCollider.steerAngle = _currentSteerAngle;
-        }
-
-        private float CalculateSteeringAngle()
-        {
-            return _data.maxSteerAngle * _frontWheelsRotation;
-        }
-
-        private void HandleFuelConsumption()
-        {
-            CalculateFuelConsumption();
-        }
-
-        private void CalculateFuelConsumption()
-        {
-            currentFuel -= Speed * _fuelConsuptionMultiplier * Time.fixedDeltaTime;
-        }
-
-        private void HandleOutOfFuel()
-        {
-            if (!hasFuel)
-            {
-                OnCarFuelRanOut?.Invoke();
-                _endGameEventSended = true;
-            }
-        }
-
-        private void HandleBroken()
-        {
-            if (IsBroken)
-            {
-                OnCarBroken?.Invoke();
-                _endGameEventSended = true;
-
-                _isBreaking = false;
-                ApplyDrive(_hInput = 0);
-                ApplyBreaking();
-            }
+            CarStrength.TakeDamage(float.MaxValue);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -312,31 +131,13 @@ namespace Shark.Gameplay.Player
             print(collision.gameObject.layer);
         }
 
-        public void Refuel(float value)
-        {
-            currentFuel = Math.Min(currentFuel + value, fuelCapacity);
-        }
-
-        public bool TakeDamage(float damage)
-        {
-            if (immunable.IsImmunable)
-                return false;
-
-            immunable.MakeImmunable();
-
-            currentStrength -= damage;
-            OnDamageReceived?.Invoke();
-
-            return true;
-        }
-
 #if UNITY_EDITOR
         void OnDrawGizmos()
         {
-            for (Wheel.Part wheelid = 0; wheelid < Wheel.Part.Count; ++wheelid)
+            for (Wheels.Part wheelid = 0; wheelid < Wheels.Part.Count; ++wheelid)
             {
-                _wheels[wheelid].whellCollider.GetWorldPose(out var position, out var rotation);
-                Gizmos.DrawWireSphere(position, 0.1f);
+                //CarPhysics.wheels[wheelid].whellCollider.GetWorldPose(out var position, out var rotation);
+                //Gizmos.DrawWireSphere(position, 0.1f);
             }
         }
 #endif

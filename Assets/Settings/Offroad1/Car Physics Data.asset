@@ -18,5 +18,5 @@ MonoBehaviour:
   angularDrag: 1.5
   driveType: 2
   motorForce: 1200
-  breakForce: 1700
+  breakForce: 3400
   maxSteerAngle: 38
