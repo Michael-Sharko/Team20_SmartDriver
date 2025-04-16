@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2_Forest/1_Forest_2.unity
     guid: 111e8da5619021d40ba8da8f30aa5eb3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/3_Rock/1_Rock_1.unity
     guid: 882b4081aea554d4d8e034c1cebccdc1
   - enabled: 0

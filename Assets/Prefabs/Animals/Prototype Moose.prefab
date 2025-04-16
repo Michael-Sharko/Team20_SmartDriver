@@ -975,7 +975,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 787.74, y: 11.81, z: 209.02}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3245029097164439475}
@@ -1122,8 +1122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9153a3815408cb4b8d3ef194743ba68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
-  rotationSpeed: 300
+  speed: 8
+  rotationSpeed: 500
   delayBeforeTurn: 0.5
   delayAfterCollisionWithPlayer: 1.5
   targetPosition: {fileID: 6604835349713878172}

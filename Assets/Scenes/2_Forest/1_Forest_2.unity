@@ -522,15 +522,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.0788038
+      value: 0.82
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.479455
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.929876
+      value: 13.41
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1551,11 +1551,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.51
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.83
+      value: 12.06
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1582,6 +1582,14 @@ PrefabInstance:
     - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
       propertyPath: _fuelConsuptionMultiplier
       value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: _touchingSlidingSurface.forwardFrictionStiffness
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: _touchingSlidingSurface.sidewaysFrictionStiffness
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
       propertyPath: _touchingSlidingSurface.slidingSurfacesTextures.Array.size
@@ -2934,7 +2942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.58
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2942,7 +2950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.08
+      value: 11.36
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
