@@ -1249,6 +1249,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2800000, guid: c3eeabad0e49e504ca509e3dea49cf6c, type: 3}
     - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: <CarPhysics>k__BackingField._touchingSlidingSurface.forwardFrictionStiffness
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: <CarPhysics>k__BackingField._touchingSlidingSurface.sidewaysFrictionStiffness
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
       propertyPath: <CarEffects>k__BackingField.dirtEffect.dirtSurfaceChecker.dirtTextures.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3928,11 +3936,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 31.78
+      value: 20.67
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4250,7 +4258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.19
+      value: 14.28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7350,7 +7358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6604835349713878172, guid: d0e1551c8db577247a843d2ee804ac14, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.54
+      value: 15.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
