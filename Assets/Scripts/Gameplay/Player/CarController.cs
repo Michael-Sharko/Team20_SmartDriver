@@ -18,6 +18,7 @@ namespace Shark.Gameplay.Player
         public bool TakeDamage(float damage) => CarStrength.TakeDamage(damage);
 
         private TextureUnderWheelsCheker _textureChecker;
+        private Rigidbody _rigidbody;
 
 
 #if UNITY_EDITOR
@@ -28,6 +29,8 @@ namespace Shark.Gameplay.Player
 
         private void Awake()
         {
+            _rigidbody = GetComponent<Rigidbody>();
+
             InitInput();
             InitPhysics();
             InitStrength();
@@ -62,7 +65,7 @@ namespace Shark.Gameplay.Player
         private void InitPhysics()
         {
             CarPhysics.Init(
-                GetComponent<Rigidbody>(),
+                _rigidbody,
                 CarInput,
                 _textureChecker = new TextureUnderWheelsCheker());
             CarPhysics.ApplyCarData();
@@ -81,7 +84,12 @@ namespace Shark.Gameplay.Player
         }
         private void InitEffects()
         {
-            CarEffects.Init(this, CarPhysics.speed, _textureChecker);
+            var skid = new Skid(_rigidbody, CarInput);
+
+            CarEffects.Init(this,
+                CarPhysics.speed,
+                _textureChecker,
+                (minAngle, minSpeed) => skid.IsSkid(minAngle, minSpeed));
         }
         private void InitSounds()
         {
