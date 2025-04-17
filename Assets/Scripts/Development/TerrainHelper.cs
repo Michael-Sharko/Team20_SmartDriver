@@ -8,25 +8,16 @@ public class TerrainHelper
             return null;
 
         var layers = terrainCollider.terrainData.terrainLayers;
+
+        if (layers == null || layers.Length == 0)
+            return null;
+
         var textureIndex = layers[GetMainTextureIndex(hit.point, terrainCollider)];
 
         var textureUnderWheel = textureIndex.diffuseTexture;
 
         return textureUnderWheel;
     }
-    /*
-    private static bool IsSlidingTexture(Texture2D texture)
-    {
-        foreach (var slidingTexture in textures)
-        {
-            if (texture == slidingTexture)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-    */
     private static int GetMainTextureIndex(Vector3 hitWorldPos, TerrainCollider terrainCollider)
     {
         float[] mix = GetTextureMix(hitWorldPos, terrainCollider);
