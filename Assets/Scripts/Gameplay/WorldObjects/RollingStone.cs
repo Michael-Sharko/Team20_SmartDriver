@@ -58,6 +58,8 @@ public class RollingStone : MonoBehaviour, IActivatable
     {
         if (collision.collider is TerrainCollider)
             return;
+        if (!collision.rigidbody)
+            return;
 
         var point = collision.contacts[0].point;
         fixedUpdateTick = null;
