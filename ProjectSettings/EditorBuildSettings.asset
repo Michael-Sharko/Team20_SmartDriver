@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3_Rock/1_Rock_1.unity
     guid: 882b4081aea554d4d8e034c1cebccdc1
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/3_Rock/1_Rock_2.unity
     guid: cd6d950477004074da9b2637ffdde887
   - enabled: 0
