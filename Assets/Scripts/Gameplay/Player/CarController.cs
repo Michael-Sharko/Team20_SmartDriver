@@ -45,7 +45,10 @@ namespace Shark.Gameplay.Player
             if (!UnityEditor.EditorApplication.isPlaying)
                 return;
 
-            InitPhysics();
+            if (_rigidbody)
+            {
+                InitPhysics();
+            }
 
             // вызов кидает ошибку т.к. OnValidate вызывается еще до Awake и ссылка не установлена
             // меня эта ошибка в консоли бесит), поэтому перехватываю 

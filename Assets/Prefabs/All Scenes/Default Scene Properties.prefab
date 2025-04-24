@@ -1638,7 +1638,6 @@ MonoBehaviour:
       fadeFrequency: 1
     _panel: {fileID: 5454747321720587745}
     _message: {fileID: 2137000381966124472}
-    _hintToMenu: {fileID: 2433409542285538817}
 --- !u!1 &2595009336079598493
 GameObject:
   m_ObjectHideFlags: 0

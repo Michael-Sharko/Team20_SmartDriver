@@ -69,6 +69,8 @@ public class LossGameManager
 
     private void HandleCarEvent(string message)
     {
+        Cursor.lockState = CursorLockMode.None;
+
         SetMessage(message);
 
         _coroutineOwner.StartCoroutine(AnimateMessages());
