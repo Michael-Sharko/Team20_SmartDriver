@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
 
     private bool IsGameEnded => _endGameManager != null && _endGameManager.IsInvoked;
 
+    // если из SerializeField поля сделать field:SerializeField свойство
+    // значения установленные в инспекторе отвалятся)
+    public string NextLevelSceneName => _nextLevelSceneName;
+
     private void Start()
     {
         if (SceneManager.GetActiveScene().buildIndex == 0)
@@ -29,6 +33,7 @@ public class GameManager : MonoBehaviour
 
         _endGameManager.Init(this);
         new AudioVolumeController();
+        new LevelUnlocker(this);
     }
 
     private void RefreshCarController()
@@ -85,7 +90,6 @@ public class GameManager : MonoBehaviour
     {
         LoadScene(_mainMenuSceneName);
     }
-
     public void LoadNextLevelScene()
     {
         if (string.IsNullOrEmpty(_nextLevelSceneName))
