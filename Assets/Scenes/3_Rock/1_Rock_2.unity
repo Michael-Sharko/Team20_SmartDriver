@@ -3967,6 +3967,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nikitka Default Scene Properties Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2337862646936360913, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: finishMenu
+      value: 
+      objectReference: {fileID: 1840999603}
     - target: {fileID: 3786706751223260685, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4039,6 +4043,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7218817621044061380, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 23.77527
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218817621044061380, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 69.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218817621044061380, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 132.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218817621044061380, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 195.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218817621044061380, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8995352
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218817621044061380, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.4368483
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218817621044061380, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 51.806
+      objectReference: {fileID: 0}
     - target: {fileID: 7533284864688960783, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4054,6 +4086,14 @@ PrefabInstance:
     - target: {fileID: 7533284864688960783, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234911322802534757, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499868082687512674, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: _nextLevelSceneName
+      value: 1_Rock_2
       objectReference: {fileID: 0}
     - target: {fileID: 8612598139435117914, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11482,6 +11522,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1695161258}
   m_SourcePrefab: {fileID: 100100000, guid: 9dc12ed2dcb860e45afa37076a28067a, type: 3}
+--- !u!1 &1840999603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7712577980770242866, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+  m_PrefabInstance: {fileID: 667960859}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1868502257
 GameObject:
   m_ObjectHideFlags: 0
