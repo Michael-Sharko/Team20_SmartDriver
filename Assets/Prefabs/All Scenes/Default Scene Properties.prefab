@@ -1633,6 +1633,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    carPanel: {fileID: 3708709872130977330}
+    lossPanel1: {fileID: 8419031667767643884}
+    lossPanel2: {fileID: 0}
     settings:
       minAlpha: 0
       maxAlpha: 1

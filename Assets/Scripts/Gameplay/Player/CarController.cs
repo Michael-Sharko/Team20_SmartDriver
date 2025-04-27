@@ -127,6 +127,11 @@ namespace Shark.Gameplay.Player
         {
             CarStrength.TakeDamage(float.MaxValue);
         }
+        [ContextMenu("Fuel out")]
+        private void FuelOut()
+        {
+            CarFuel.Update(float.MaxValue);
+        }
 
         private void OnTriggerEnter(Collider other)
         {

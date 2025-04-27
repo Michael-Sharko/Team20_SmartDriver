@@ -13,6 +13,9 @@ public class LossGameManager
     public bool IsInvoked { get; private set; }
 
     [SerializeField] UnityEvent OnEndGameInvoked;
+    [SerializeField] GameObject carPanel;
+    [SerializeField] GameObject lossPanel1;
+    [SerializeField] GameObject lossPanel2;
 
     [Serializable]
     struct AnimationSettings
@@ -75,10 +78,21 @@ public class LossGameManager
 
         _coroutineOwner.StartCoroutine(AnimateMessages());
 
-        OnEndGameInvoked?.Invoke();
+        ShowLossPanel();
+
         IsInvoked = true;
     }
-
+    private void ShowLossPanel()
+    {
+        carPanel.Off();
+        lossPanel1.On();
+        lossPanel2.On();
+    }
+    public void HideLossPanel()
+    {
+        lossPanel1.Off();
+        lossPanel2.Off();
+    }
     private void SetMessage(string message)
     {
         if (_message != null)

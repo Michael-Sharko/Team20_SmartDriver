@@ -701,9 +701,9 @@ RectTransform:
   - {fileID: 3919583867475639558}
   m_Father: {fileID: 7867156323359907388}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -200, y: -180}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: -0.5, y: 0.5}
 --- !u!222 &1049821872199210027
@@ -1721,19 +1721,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 444804422998822854, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 444804422998822854, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 444804422998822854, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 444804422998822854, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -310
       objectReference: {fileID: 0}
     - target: {fileID: 483025536899877668, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: target
@@ -1937,7 +1937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2062682723089752238, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2189718210485029525, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_IsActive
@@ -2249,19 +2249,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4983037955273262225, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4983037955273262225, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4983037955273262225, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 4983037955273262225, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 5042137795097149635, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2275,6 +2275,10 @@ PrefabInstance:
       propertyPath: _nextLevelSceneName
       value: 1_Rock_1
       objectReference: {fileID: 0}
+    - target: {fileID: 5139959584972569001, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
+      propertyPath: _endGameManager.lossPanel2
+      value: 
+      objectReference: {fileID: 6463005671002787401}
     - target: {fileID: 5139959584972569001, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: _endGameManager.OnEndGameInvoked.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -2569,19 +2573,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6497230081973214404, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6497230081973214404, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6497230081973214404, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 6497230081973214404, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -440
       objectReference: {fileID: 0}
     - target: {fileID: 6732291883429000148, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_Colors.m_ColorMultiplier
