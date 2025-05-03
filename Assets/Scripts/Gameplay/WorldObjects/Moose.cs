@@ -28,6 +28,7 @@ public class Moose : MonoBehaviour
     private bool _moveToTargetPosition = true;
     private bool _collisionWithPlayer;
     private Rigidbody _rigidbody;
+    private Animator _animator;
     private Vector3 _startPos;
     private Vector3 _targetPos;
     private Vector3 newPos;
@@ -40,6 +41,7 @@ public class Moose : MonoBehaviour
         SwitchPath();
 
         _rigidbody = GetComponent<Rigidbody>();
+        _animator = GetComponentInChildren<Animator>();
         GetComponent<DamageSource>().OnDealDamage += Moose_OnDealDamage;
 
         StartCoroutine(Move());
@@ -51,6 +53,8 @@ public class Moose : MonoBehaviour
     }
     private IEnumerator LateBeforeTurn()
     {
+        _animator.SetTrigger("turn");
+
         yield return new WaitForSeconds(delayBeforeTurn);
 
         StartCoroutine(AnimateTurn());
@@ -70,22 +74,27 @@ public class Moose : MonoBehaviour
     private IEnumerator AnimateTurn()
     {
         var directionToTarget = _path.startPosition - _path.endPosition;
-        var targetRotation = Quaternion.LookRotation(directionToTarget);
-        while (transform.rotation != targetRotation)
+        directionToTarget.Normalize();
+
+        while (Vector3.Dot(directionToTarget, transform.forward) < .98f)
         {
             if (_collisionWithPlayer)
             {
                 _collisionWithPlayer = false;
                 yield return new WaitForSeconds(delayAfterCollisionWithPlayer);
             }
-            var newRotation = Quaternion.RotateTowards(_rigidbody.rotation, targetRotation,
-                rotationSpeed * Time.deltaTime);
-            _rigidbody.MoveRotation(newRotation);
+
+            var newRotation = Quaternion.Euler(0, rotationSpeed * Time.deltaTime, 0)
+                * transform.forward;
+
+            _rigidbody.MoveRotation(Quaternion.LookRotation(newRotation));
 
             yield return null;
         }
 
         SwitchPath();
+
+        //_animator.SetTrigger("turn-end");
 
         StartCoroutine(Move());
     }

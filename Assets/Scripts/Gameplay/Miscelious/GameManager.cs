@@ -24,16 +24,33 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-            _pauseManager?.TogglePause(true);
-        else
-            _pauseManager?.TogglePause(false);
+        IfMainMenuThen();
 
         RefreshCarController();
+
+        DisableLossManagerOnGameWin();
 
         _endGameManager.Init(this);
         new AudioVolumeController();
         new LevelUnlocker(this);
+    }
+    private void IfMainMenuThen()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            Cursor.lockState = CursorLockMode.None;
+        else
+            _pauseManager?.TogglePause(false);
+    }
+    private void DisableLossManagerOnGameWin()
+    {
+        var finish = FindObjectOfType<Finish>();
+
+        if (finish != null)
+            finish.OnActivate += () =>
+            {
+                _endGameManager.UnsubscribeEvents();
+                _endGameManager.HideLossPanel();
+            };
     }
 
     private void RefreshCarController()
