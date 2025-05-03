@@ -1,12 +1,13 @@
 using System;
 using Shark.Gameplay.WorldObjects;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(AudioSource))]
 public class DamageSource : MonoBehaviour, IDamageSource
 {
-    [SerializeField]
-    private float _damage;
+    [FormerlySerializedAs("_damage")]
+    public float damage;
 
     [SerializeField]
     private float _damageThresholdCollisionForce = 1.2f;
@@ -40,7 +41,7 @@ public class DamageSource : MonoBehaviour, IDamageSource
 
     public void DealDamage(IBreakable breakable)
     {
-        if (breakable.TakeDamage(_damage))
+        if (breakable.TakeDamage(damage))
             OnDealDamage?.Invoke();
     }
 
