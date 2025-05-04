@@ -3,27 +3,29 @@ using UnityEngine.Audio;
 
 public class AudioVolumeController
 {
-
-    private AudioMixer mixer;
-    private AudioSetting setting;
-
-    private const string MUSIC_MIXER_GROUP_NAME = "MusicVolume";
-    private const string SOUNDS_MIXER_GROUP_NAME = "SoundsVolume";
     private const string MIXER_PATH = "Audio/mixer";
     private const string SETTING_PATH = "Audio/AudioSetting";
 
+    private readonly AudioMixer mixer;
+    private readonly AudioSetting setting;
 
-    public void ChangeMusicVolume(float normalizeValue)
+
+    public AudioVolumeController()
     {
+        setting = Resources.Load<AudioSetting>(SETTING_PATH);
+        mixer = Resources.Load<AudioMixer>(MIXER_PATH);
 
-        mixer.SetFloat(MUSIC_MIXER_GROUP_NAME, NormalizeValueToVolume(normalizeValue));
-
+        for (AudioVolumeID i = 0; i < AudioVolumeID.Count; i++)
+        {
+            var parameter = setting.GetParameter(i);
+            UpdateMixerParameter(parameter);
+            parameter.OnChangeVolume += UpdateMixerParameter;
+        }
     }
-    public void ChangeSoundsVolume(float normalizeValue)
+
+    private void UpdateMixerParameter(AudioVolumeParameter obj)
     {
-
-        mixer.SetFloat(SOUNDS_MIXER_GROUP_NAME, NormalizeValueToVolume(normalizeValue));
-
+        mixer.SetFloat(obj.key, NormalizeValueToVolume(obj.Volume));
     }
 
     // громкость в миксере изменяется от -80 децибел(звука нет) до 0 децибел(нормальный звук)
@@ -48,19 +50,4 @@ public class AudioVolumeController
     //       0                                          1
     private float NormalizeValueToVolume(float normalizeValue)
         => Mathf.Lerp(-80, 0, Mathf.Pow(normalizeValue, .1f));
-
-
-    public AudioVolumeController()
-    {
-
-        setting = Resources.Load<AudioSetting>(SETTING_PATH);
-        mixer = Resources.Load<AudioMixer>(MIXER_PATH);
-
-        setting.OnChangeMusicVolume += ChangeMusicVolume;
-        setting.OnChangeSoundsVolume += ChangeSoundsVolume;
-
-        ChangeMusicVolume(setting.MusicVolume);
-        ChangeSoundsVolume(setting.SoundsVolume);
-
-    }
 }

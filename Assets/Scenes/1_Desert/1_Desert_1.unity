@@ -5266,10 +5266,6 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6281478597711146256, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -5988070684098708890, guid: cda0fe62e3582ed439f01b3c4ee21580, type: 2}
     - target: {fileID: 7611377358372956911, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
