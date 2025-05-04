@@ -62,12 +62,12 @@ public class LossGameManager
 
     private void HandleCarFuelRanOut()
     {
-        HandleCarEvent("Car fuel ran out!");
+        HandleCarEvent("Топливо закончилось!");
     }
 
     private void HandleCarBroken()
     {
-        HandleCarEvent("Car broken!");
+        HandleCarEvent("Машина сломана!");
     }
 
     private void HandleCarEvent(string message)
