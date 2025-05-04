@@ -18,21 +18,10 @@ public class DamageSource : MonoBehaviour, IDamageSource
     [SerializeField]
     private SoundOnEvent soundsOnDamage;
 
-#if UNITY_EDITOR
-    [field: SerializeField, Header("Debug-Constant")]
-    private float LastCollisionForce { get; set; }
-#endif
-
+    [SerializeField, Readonly]
     private float _lastCollisionForce;
 
     public event Action OnDealDamage;
-
-#if UNITY_EDITOR
-    private void Update()
-    {
-        LastCollisionForce = _lastCollisionForce;
-    }
-#endif
 
     private void Awake()
     {
