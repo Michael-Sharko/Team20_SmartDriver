@@ -1,36 +1,26 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using Scripts.UI.Widgets;
+using UnityEngine;
 
-public class SlidersAudioVolumeController : MonoBehaviour {
-
-    [SerializeField] private Slider musicSlider;
-    [SerializeField] private Slider soundsSlider;
-
+public class SlidersAudioVolumeController : MonoBehaviour
+{
     private const string AUDIO_SETTING_PATH = "Audio/AudioSetting";
+
+    [SerializeField] private AudioSliderWidget[] widgets;
 
     private AudioSetting setting;
 
 
-    private void Awake() {
-
+    private void Start()
+    {
         setting = Resources.Load<AudioSetting>(AUDIO_SETTING_PATH);
 
-        musicSlider.onValueChanged.AddListener(SetMusicVolume);
-        soundsSlider.onValueChanged.AddListener(SetSoundsVolume);
+        foreach (var widget in widgets)
+        {
+            widget.Slider.value = setting.GetParameter(widget.ID).Volume;
 
-        musicSlider.value = setting.MusicVolume;
-        soundsSlider.value = setting.SoundsVolume;
-
-    }
-
-    public void SetMusicVolume(float value) {
-
-        setting.MusicVolume = value;
-
-    }
-    public void SetSoundsVolume(float value) {
-
-        setting.SoundsVolume = value;
-
+            widget.Slider.onValueChanged.AddListener(
+                (value) =>
+                setting.GetParameter(widget.ID).Volume = value);
+        }
     }
 }

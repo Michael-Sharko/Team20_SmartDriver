@@ -1,60 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+
 
 [CreateAssetMenu(fileName = nameof(AudioSetting), menuName = "Game/AudioSetting")]
 public class AudioSetting : ScriptableObject
 {
+    private List<AudioVolumeParameter> _parameters;
 
-    public const string MUSIC_VOLUME_KEY = "musicVolume";
-    public const string SOUNDS_VOLUME_KEY = "soundsVolume";
-
-    public event Action<float> OnChangeMusicVolume;
-    public event Action<float> OnChangeSoundsVolume;
-
-
-#if UNITY_EDITOR
-    // чтобы в билд не попало по умолчанию значения меньше 1
-    private void OnDestroy()
+    public AudioVolumeParameter GetParameter(AudioVolumeID id)
     {
-        MusicVolume = 1;
-        SoundsVolume = 1;
+        if (_parameters == null)
+            InitParameters();
+
+        string key = Enum.GetName(typeof(AudioVolumeID), id);
+
+        return _parameters.
+            First((x) => x.key == key);
     }
-#endif
-
-    public float MusicVolume
+    private void InitParameters()
     {
-        get
-        {
-            if (PlayerPrefs.HasKey(MUSIC_VOLUME_KEY))
-            {
-                return PlayerPrefs.GetFloat(MUSIC_VOLUME_KEY);
-            }
-            return 1;
-        }
+        _parameters = new List<AudioVolumeParameter>();
 
-        set
+        foreach (var name in Enum.GetNames(typeof(AudioVolumeID)))
         {
-            PlayerPrefs.SetFloat(MUSIC_VOLUME_KEY, value);
-            OnChangeMusicVolume?.Invoke(value);
-        }
-    }
-
-    public float SoundsVolume
-    {
-        get
-        {
-            if (PlayerPrefs.HasKey(SOUNDS_VOLUME_KEY))
-            {
-                return PlayerPrefs.GetFloat(SOUNDS_VOLUME_KEY);
-            }
-
-            return 1;
-        }
-
-        set
-        {
-            PlayerPrefs.SetFloat(SOUNDS_VOLUME_KEY, value);
-            OnChangeSoundsVolume?.Invoke(value);
+            _parameters.Add(new(name));
         }
     }
 }
