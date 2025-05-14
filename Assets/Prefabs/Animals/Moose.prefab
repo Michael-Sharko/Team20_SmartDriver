@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 787.74, y: 11.81, z: 209.02}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3959743953948873560}
@@ -146,13 +146,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbe6ef51de07e44b8990132ecbce319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
+  damage: 10
   _damageThresholdCollisionForce: 0
   _multiplierDamageThresholdCollisionForce: 0
   soundsOnDamage:
     volume: 0.4
     getSound: {fileID: 11400000, guid: f46efd85098233a4ca64bccefa4379ef, type: 2}
-  <LastCollisionForce>k__BackingField: 0
+  _lastCollisionForce: 0
 --- !u!114 &1252870041126296633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,10 +165,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9153a3815408cb4b8d3ef194743ba68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  rotationSpeed: 500
-  delayBeforeTurn: 0.5
-  delayAfterCollisionWithPlayer: 1.5
+  speed: 6.5
+  rotationSpeed: 750
+  delayBeforeTurn: 0.3
+  delayAfterCollisionWithPlayer: 1.3
   targetPosition: {fileID: 6604835349713878172}
 --- !u!54 &7508072443675264402
 Rigidbody:
@@ -301,6 +301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: moose-walking
       objectReference: {fileID: 0}
+    - target: {fileID: 1255635816866383346, guid: d588987897fda1947b026377d110c9a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6e69a6ee808b33c47a038a335ec5f826, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
