@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelSelectWidget : MonoBehaviour
+public class LevelSelectButton : MonoBehaviour
 {
     [field: SerializeField] public string LevelName { get; private set; }
 
