@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using Scripts.Gameplay.Enemys.Animations;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,11 +8,19 @@ using UnityEngine.AI;
 [SelectionBase]
 public class Goat : MonoBehaviour
 {
+    public event Action OnDamage;
+    public event Action OnIdle;
+    public event Action OnSeeking;
+
+
     [SerializeField, Min(0)] private float moveSpeed = 9f;
     [SerializeField, Min(0)] private float rotationSpeed = 50f;
     [SerializeField, Min(0)] private float damage = 10;
     [SerializeField, Min(0)] private float delayAfterAttack = 1f;
     [SerializeField] private float forceToVehicleOnCollision = 10;
+    [SerializeField] private GoatAnimator goatAnimator;
+
+    [Space]
     [SerializeField] private LayerMask whatIsPlayer;
 
     [Space]
@@ -39,6 +49,8 @@ public class Goat : MonoBehaviour
 
         currentSpeed = moveSpeed;
 
+        goatAnimator.Init(this);
+
         damageSource = GetComponent<DamageSource>();
         damageSource.damage = damage;
         damageSource.OnDealDamage += DamageSource_OnDealDamage;
@@ -57,9 +69,18 @@ public class Goat : MonoBehaviour
         StartCoroutine(Idle());
     }
 
+#if UNITY_EDITOR
+    private void Update()
+    {
+        goatAnimator.UpdateValuesInEditor();
+    }
+#endif
+
     private void DamageSource_OnDealDamage()
     {
         isCollision = true;
+
+        OnDamage?.Invoke();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -92,6 +113,8 @@ public class Goat : MonoBehaviour
     }
     private IEnumerator Idle()
     {
+        OnIdle?.Invoke();
+
         seekingTrigger.gameObject.Off();
 
         yield return new WaitUntil(() => playerEnterAgroZone);
@@ -100,6 +123,8 @@ public class Goat : MonoBehaviour
     }
     private IEnumerator Seek()
     {
+        OnSeeking?.Invoke();
+
         seekingTrigger.gameObject.On();
 
         // чтобы триггеры обновились, иначе начинается вакханалия
