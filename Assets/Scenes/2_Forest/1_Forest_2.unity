@@ -1410,6 +1410,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2311900526158475585, guid: 334f584e2f6aa5c42bdacdd9b5619f88, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6e69a6ee808b33c47a038a335ec5f826, type: 2}
     - target: {fileID: 6260153312967691386, guid: 334f584e2f6aa5c42bdacdd9b5619f88, type: 3}
       propertyPath: m_Name
       value: Moose (2)
@@ -1842,7 +1846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
       propertyPath: <CarFuel>k__BackingField._fuelConsuptionMultiplier
-      value: 0.26
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
       propertyPath: _touchingSlidingSurface.slidingSurfacesTextures.Array.size
@@ -2483,6 +2487,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2311900526158475585, guid: 334f584e2f6aa5c42bdacdd9b5619f88, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6e69a6ee808b33c47a038a335ec5f826, type: 2}
     - target: {fileID: 6260153312967691386, guid: 334f584e2f6aa5c42bdacdd9b5619f88, type: 3}
       propertyPath: m_Name
       value: Moose (1)
@@ -2827,7 +2835,7 @@ MonoBehaviour:
   soundsOnDamage:
     volume: 0.4
     getSound: {fileID: 11400000, guid: f46efd85098233a4ca64bccefa4379ef, type: 2}
-  <LastCollisionForce>k__BackingField: 0
+  _lastCollisionForce: 0
 --- !u!82 &1140691899
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3192,6 +3200,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2311900526158475585, guid: 334f584e2f6aa5c42bdacdd9b5619f88, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6e69a6ee808b33c47a038a335ec5f826, type: 2}
     - target: {fileID: 6260153312967691386, guid: 334f584e2f6aa5c42bdacdd9b5619f88, type: 3}
       propertyPath: m_Name
       value: Moose
