@@ -1,11 +1,18 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelInMainMenuUnlocker : MonoBehaviour
 {
+    [Serializable]
+    private class LevelSelectWidget
+    {
+        [field: SerializeField] public LevelSelectButton LevelSelectButton { get; private set; }
+        [field: SerializeField] public Sprite LevelUnlockedButtonSprite { get; private set; }
+    }
+
     [SerializeField] private LevelSelectWidget[] levelSelectButtons;
     [SerializeField] private Sprite levelLockButtonSprite;
-    [SerializeField] private Sprite levelUnlockButtonSprite;
 
     private LevelLockStateSaver levelLockStateSaver;
 
@@ -17,22 +24,24 @@ public class LevelInMainMenuUnlocker : MonoBehaviour
         {
             var widget = levelSelectButtons[i];
 
-            SubscribeOnClick(widget);
+            SubscribeOnClick(widget.LevelSelectButton);
             SetLockState(widget);
         }
     }
     private void SetLockState(LevelSelectWidget widget)
     {
-        if (levelLockStateSaver.LevelIsUnlocked(widget.LevelName))
+        var button = widget.LevelSelectButton;
+
+        if (levelLockStateSaver.LevelIsUnlocked(button.LevelName))
         {
-            widget.UnlockLevelSelectButton(levelUnlockButtonSprite);
+            button.UnlockLevelSelectButton(widget.LevelUnlockedButtonSprite);
         }
         else
         {
-            widget.LockLevelSelectButton(levelLockButtonSprite);
+            button.LockLevelSelectButton(levelLockButtonSprite);
         }
     }
-    private void SubscribeOnClick(LevelSelectWidget widget)
+    private void SubscribeOnClick(LevelSelectButton widget)
     {
         widget.OnLevelSelect += (levelName) => SceneManager.LoadScene(levelName);
     }

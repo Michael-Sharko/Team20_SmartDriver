@@ -592,11 +592,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSelectButtons:
-  - {fileID: 563300860}
-  - {fileID: 1598493035}
-  - {fileID: 1231916846}
-  - {fileID: 759663437}
-  - {fileID: 1216424364}
+  - <LevelSelectButton>k__BackingField: {fileID: 563300860}
+    <LevelUnlockedSprite>k__BackingField: {fileID: 0}
+  - <LevelSelectButton>k__BackingField: {fileID: 1598493035}
+    <LevelUnlockedSprite>k__BackingField: {fileID: 0}
+  - <LevelSelectButton>k__BackingField: {fileID: 1231916846}
+    <LevelUnlockedSprite>k__BackingField: {fileID: 0}
+  - <LevelSelectButton>k__BackingField: {fileID: 759663437}
+    <LevelUnlockedSprite>k__BackingField: {fileID: 0}
+  - <LevelSelectButton>k__BackingField: {fileID: 1216424364}
+    <LevelUnlockedSprite>k__BackingField: {fileID: 0}
   levelLockButtonSprite: {fileID: 21300000, guid: f5ee3268786218d4e9eabe1d892528ce, type: 3}
   levelUnlockButtonSprite: {fileID: 21300000, guid: 7fcb42a16abb89d458512696240594a1, type: 3}
 --- !u!1 &69372573
