@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CollisionRandom
   m_EditorClassIdentifier: 
   soundPaths:
-  - Sounds/Crash/1 Crash
-  - Sounds/Crash/2 Crash
-  - Sounds/Crash/3 Crash
-  - Sounds/Crash/4 Crash
-  - Sounds/Crash/Crash
+  - Sounds/Crash/Crash1
+  - Sounds/Crash/Crash2
+  - Sounds/Crash/Crash3
+  - Sounds/Crash/Crash4
+  - Sounds/Crash/Crash5

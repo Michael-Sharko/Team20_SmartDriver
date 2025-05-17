@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c354d9b5908cd8448a44d3c90326857, type: 3}
   m_Name: Collision
   m_EditorClassIdentifier: 
-  soundPath: Sounds/Crash/Crash
+  soundPath: Sounds/Crash/Crash5
