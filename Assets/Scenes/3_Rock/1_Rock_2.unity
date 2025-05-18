@@ -4098,6 +4098,10 @@ PrefabInstance:
       propertyPath: finishMenu
       value: 
       objectReference: {fileID: 1840999603}
+    - target: {fileID: 2337862646936360913, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: finishSound.getSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 81fbe240ee00fed4eb2b7996d6399a8b, type: 2}
     - target: {fileID: 3786706751223260685, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

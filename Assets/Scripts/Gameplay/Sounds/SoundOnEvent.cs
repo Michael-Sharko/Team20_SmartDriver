@@ -9,7 +9,12 @@ public class SoundOnEvent
 
     private AudioSource _source;
 
-    public void Init(ref Action @event, AudioSource source)
+    public void Init(ref Action @event)
+    {
+        _source = PlaySound2D.Source;
+        @event += OnActivate;
+    }
+    public void Init(ref Action @event, AudioSource source = null)
     {
         _source = source;
         @event += OnActivate;

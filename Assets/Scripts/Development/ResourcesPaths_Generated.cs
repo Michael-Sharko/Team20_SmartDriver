@@ -56,6 +56,16 @@ public static readonly string Crash4 = "Sounds/Crash/Crash4";
 /// </summary>
 public static readonly string Crash5 = "Sounds/Crash/Crash5";
 }
+public static class Finish {
+/// <summary>
+/// wav
+/// </summary>
+public static readonly string Game_Complete_Sound = "Sounds/Finish/Game Complete Sound";
+/// <summary>
+/// wav
+/// </summary>
+public static readonly string Level_Complete_Sound = "Sounds/Finish/Level Complete Sound";
+}
 public static class PickUp {
 /// <summary>
 /// wav
@@ -183,6 +193,8 @@ public static readonly System.Collections.Generic.List<string> ALL_PATHS = new()
 "Sounds/Crash/Crash3",
 "Sounds/Crash/Crash4",
 "Sounds/Crash/Crash5",
+"Sounds/Finish/Game Complete Sound",
+"Sounds/Finish/Level Complete Sound",
 "Sounds/PickUp/Off-Road T5",
 "Sounds/Tumbleweed/Wind_1",
 "Sounds/Tumbleweed/Wind_2",
