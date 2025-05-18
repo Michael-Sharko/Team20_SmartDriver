@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private LossGameManager _endGameManager;
 
+    private bool showedWinPanel;
+
     private bool IsGameEnded => _endGameManager != null && _endGameManager.IsInvoked;
 
     // если из SerializeField поля сделать field:SerializeField свойство
@@ -50,6 +52,8 @@ public class GameManager : MonoBehaviour
             {
                 _endGameManager.UnsubscribeEvents();
                 _endGameManager.HideLossPanel();
+
+                showedWinPanel = true;
             };
     }
 
@@ -83,7 +87,7 @@ public class GameManager : MonoBehaviour
 
     private void TogglePauseIfPressed()
     {
-        if (IsGameEnded)
+        if (IsGameEnded || showedWinPanel)
             return;
 
         if (Input.GetKeyDown(KeyCode.Escape))
