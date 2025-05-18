@@ -16,7 +16,8 @@ public static class PathResourcesGenerator
     };
     private static readonly string generatedScriptPath = "Scripts/Development/ResourcesPaths_Generated.cs";
 
-    private static StringBuilder builder;
+    private static StringBuilder scriptBuilder;
+    private static StringBuilder resourcesPathListBuilder;
 
 
     [MenuItem("Tools/Refresh Path Resources", false, 0)]
@@ -24,9 +25,10 @@ public static class PathResourcesGenerator
     {
         var targetPath = Path.Combine(Application.dataPath, generatedScriptPath);
 
-        builder = new();
+        scriptBuilder = new();
+        resourcesPathListBuilder = new();
 
-        builder.Append($@"
+        scriptBuilder.Append($@"
 // =================================================================
 //
 //               THIS CODE IS GENERATED AUTOMATICALLY
@@ -37,8 +39,8 @@ public static class PathResourcesGenerator
 public static class PathResources {{
 ");
 
-        var resourceFolderPaths = Directory.GetDirectories("Assets", 
-            "Resources", 
+        var resourceFolderPaths = Directory.GetDirectories("Assets",
+            "Resources",
             SearchOption.AllDirectories);
 
         foreach (var path in resourceFolderPaths)
@@ -51,9 +53,14 @@ public static class PathResources {{
             RecursivelyFolder(path, true);
         }
 
-        builder.AppendLine("}");
+        scriptBuilder.AppendLine();
+        scriptBuilder.AppendLine($@"public static readonly System.Collections.Generic.List<string> ALL_PATHS = new() {{");
+        scriptBuilder.AppendLine(resourcesPathListBuilder.ToString());
+        scriptBuilder.AppendLine("};");
+        scriptBuilder.AppendLine("}");
 
-        File.WriteAllText(targetPath, builder.ToString());
+
+        File.WriteAllText(targetPath, scriptBuilder.ToString());
 
         AssetDatabase.Refresh();
     }
@@ -64,7 +71,7 @@ public static class PathResources {{
             var split = path.Split('\\');
             var directoryName = split[^1];
             directoryName = ReplaceIncorrectSymbolsTo_(directoryName);
-            builder.AppendLine($@"public static class {directoryName} {{");
+            scriptBuilder.AppendLine($@"public static class {directoryName} {{");
         }
 
         foreach (string dir in Directory.GetDirectories(path))
@@ -83,7 +90,8 @@ public static class PathResources {{
             var resourcePath = GetFileResourcesPath(filePath);
             var extension = GetFileExtension(filePath);
 
-            builder.Append($@"/// <summary>
+            resourcesPathListBuilder.AppendLine($"\"{resourcePath}\",");
+            scriptBuilder.Append($@"/// <summary>
 /// {extension}
 /// </summary>
 public static readonly string {name} = ""{resourcePath}"";
@@ -91,7 +99,7 @@ public static readonly string {name} = ""{resourcePath}"";
         }
 
         if (!root)
-            builder.AppendLine("}");
+            scriptBuilder.AppendLine("}");
     }
     private static string GetFileName(string path)
     {

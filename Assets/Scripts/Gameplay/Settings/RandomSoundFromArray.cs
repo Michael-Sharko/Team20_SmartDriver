@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "RandomSoundFromArray", menuName = "Settings/Sounds/RandomSoundFromArray")]
 public class RandomSoundFromArray : BaseGetSound
 {
-    [SerializeField] private string[] soundPaths;
+    [SerializeField, PathResources] private string[] soundPaths;
 
     private Dictionary<string, AudioClip> sounds = new();
 

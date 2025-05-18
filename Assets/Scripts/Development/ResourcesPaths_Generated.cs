@@ -171,4 +171,42 @@ public static readonly string New_Prefab_1 = "New Prefab 1";
 /// prefab
 /// </summary>
 public static readonly string New_Prefab = "New Prefab";
+
+public static readonly System.Collections.Generic.List<string> ALL_PATHS = new() {
+"Audio/AudioSetting",
+"Audio/mixer",
+"Prefabs/Sound",
+"Prefabs/SoundWhile",
+"Sounds/Car/Low Fuel",
+"Sounds/Crash/Crash1",
+"Sounds/Crash/Crash2",
+"Sounds/Crash/Crash3",
+"Sounds/Crash/Crash4",
+"Sounds/Crash/Crash5",
+"Sounds/PickUp/Off-Road T5",
+"Sounds/Tumbleweed/Wind_1",
+"Sounds/Tumbleweed/Wind_2",
+"Sounds/Varan/Varan Attack",
+"Sounds/Varan/Varan Chase",
+"Sounds/Varan/Varan Detection",
+"Sounds/Falling stones sound(test)",
+"Sounds/Rolling stone sound(test)",
+"UI/dashboard/arrow_fuel",
+"UI/dashboard/arrow_speed",
+"UI/dashboard/bar",
+"UI/dashboard/ind_fix",
+"UI/FuelGauge/fuel2",
+"UI/FuelGauge/fuel7",
+"UI/Strength/Strength 0",
+"UI/Strength/Strength 1",
+"UI/Strength/Strength 2",
+"UI/Strength/Strength 3",
+"UI/Strength/Strength 4",
+"UI/Strength/Strength 5",
+"AAA/Capsule",
+"AAA 1/Capsule",
+"New Prefab 1",
+"New Prefab",
+
+};
 }
