@@ -82,6 +82,16 @@ public static readonly string Wind_1 = "Sounds/Tumbleweed/Wind_1";
 /// </summary>
 public static readonly string Wind_2 = "Sounds/Tumbleweed/Wind_2";
 }
+public static class UI {
+/// <summary>
+/// wav
+/// </summary>
+public static readonly string Click = "Sounds/UI/Click";
+/// <summary>
+/// wav
+/// </summary>
+public static readonly string Highlighted = "Sounds/UI/Highlighted";
+}
 public static class Varan {
 /// <summary>
 /// wav
@@ -198,6 +208,8 @@ public static readonly System.Collections.Generic.List<string> ALL_PATHS = new()
 "Sounds/PickUp/Off-Road T5",
 "Sounds/Tumbleweed/Wind_1",
 "Sounds/Tumbleweed/Wind_2",
+"Sounds/UI/Click",
+"Sounds/UI/Highlighted",
 "Sounds/Varan/Varan Attack",
 "Sounds/Varan/Varan Chase",
 "Sounds/Varan/Varan Detection",
