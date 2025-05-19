@@ -45212,11 +45212,13 @@ MonoBehaviour:
   <CarSounds>k__BackingField:
     _fuelValueForActivateLowLevelFuelSound: 30
     _lowLevelFuelSound:
+      volume: 1
       getSound: {fileID: 11400000, guid: a672c80b782101142bde4e19e5142286, type: 2}
+    _skidSound:
+      volume: 0.2
+      getSound: {fileID: 11400000, guid: 496ec943455538e49b50166d779c2d0f, type: 2}
   <CarEffects>k__BackingField:
     brakeMark:
-      minAngle: 10
-      minSpeed: 3
       data: {fileID: 11400000, guid: c7bcaf6018525be42ab6384291c43cdf, type: 2}
     exhaustPipeEffect:
       _smokeLifeTime: 1.5
@@ -45230,6 +45232,8 @@ MonoBehaviour:
       emissionRateMultiplier: 3
       surfaceChecker:
         textures: []
+  minAngle: 10
+  minSpeed: 3
 --- !u!82 &4991246719008613194
 AudioSource:
   m_ObjectHideFlags: 0

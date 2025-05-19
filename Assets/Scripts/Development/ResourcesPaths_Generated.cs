@@ -33,6 +33,10 @@ public static class Car {
 /// wav
 /// </summary>
 public static readonly string Low_Fuel = "Sounds/Car/Low Fuel";
+/// <summary>
+/// wav
+/// </summary>
+public static readonly string Skidding = "Sounds/Car/Skidding";
 }
 public static class Crash {
 /// <summary>
@@ -202,6 +206,7 @@ public static readonly System.Collections.Generic.List<string> ALL_PATHS = new()
 "Prefabs/Sound",
 "Prefabs/SoundWhile",
 "Sounds/Car/Low Fuel",
+"Sounds/Car/Skidding",
 "Sounds/Crash/Crash1",
 "Sounds/Crash/Crash2",
 "Sounds/Crash/Crash3",

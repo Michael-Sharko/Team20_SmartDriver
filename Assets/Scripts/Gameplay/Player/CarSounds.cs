@@ -8,23 +8,18 @@ public class CarSounds
     [SerializeField] private float _fuelValueForActivateLowLevelFuelSound = 30f;
     [SerializeField] private SoundWhile _lowLevelFuelSound;
 
-    public void Init(MonoBehaviour coroutineOwner, AudioSource source, Get<float> currentFuel)
+    [SerializeField] private SoundWhile _skidSound;
+
+    public void Init(MonoBehaviour coroutineOwner, AudioSource source, Get<float> currentFuel,
+        Func<bool> whenToSound)
     {
         _lowLevelFuelSound.Init(
             () => currentFuel.Value <= _fuelValueForActivateLowLevelFuelSound,
             source,
             coroutineOwner);
+
+        _skidSound.Init(whenToSound, source, coroutineOwner, true, true);
     }
-
-
-    //public AudioClip engineWorkClip;
-    //public AudioClip[] collisionClips;
-    //public AudioClip destroyClip;
-
-    //public AudioClip[] roadClips;
-    //public AudioClip[] sandClips;
-    //public AudioClip[] stoneClips;
-
 }
 
 

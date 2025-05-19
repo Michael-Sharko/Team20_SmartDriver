@@ -9492,7 +9492,7 @@ MonoBehaviour:
   soundsOnDamage:
     volume: 0.5
     getSound: {fileID: 11400000, guid: f46efd85098233a4ca64bccefa4379ef, type: 2}
-  <LastCollisionForce>k__BackingField: 0
+  _lastCollisionForce: 0
 --- !u!82 &868616150
 AudioSource:
   m_ObjectHideFlags: 0

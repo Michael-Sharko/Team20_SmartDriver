@@ -13,6 +13,9 @@ namespace Shark.Gameplay.Player
         [field: SerializeField] public CarSounds CarSounds { get; private set; }
         [field: SerializeField] public CarEffects CarEffects { get; private set; }
 
+        [SerializeField, Min(0)] private float minAngle = 10f;
+        [SerializeField, Min(0)] private float minSpeed = 3f;
+
         public bool IsBroken => CarStrength.IsBroken;
         public void Refuel(float value) => CarFuel.Refuel(value);
         public bool TakeDamage(float damage) => CarStrength.TakeDamage(damage);
@@ -31,12 +34,15 @@ namespace Shark.Gameplay.Player
         {
             _rigidbody = GetComponent<Rigidbody>();
 
-            InitInput();
+            CarInput = new();
+
+            var skid = new Skid(_rigidbody, CarInput, minAngle, minSpeed);
+
             InitPhysics();
             InitStrength();
             InitFuel();
-            InitSounds();
-            InitEffects();
+            InitSounds(skid);
+            InitEffects(skid);
         }
 
 #if UNITY_EDITOR
@@ -61,10 +67,6 @@ namespace Shark.Gameplay.Player
             }
         }
 #endif
-        private void InitInput()
-        {
-            CarInput = new();
-        }
         private void InitPhysics()
         {
             CarPhysics.Init(
@@ -85,20 +87,19 @@ namespace Shark.Gameplay.Player
             CarFuel.SetFuelMax();
             CarFuel.OnCarFuelRanOut += OnOutOfFuel;
         }
-        private void InitEffects()
+        private void InitEffects(Skid skid)
         {
-            var skid = new Skid(_rigidbody, CarInput);
-
             CarEffects.Init(this,
                 CarPhysics.speed,
                 _textureChecker,
-                (minAngle, minSpeed) => skid.IsSkid(minAngle, minSpeed));
+                () => skid.IsSkid());
         }
-        private void InitSounds()
+        private void InitSounds(Skid skid)
         {
             CarSounds.Init(this,
                 GetComponent<AudioSource>(),
-                CarFuel.CurrentFuel);
+                CarFuel.CurrentFuel,
+                () => skid.IsSkid());
         }
 
         void FixedUpdate()
