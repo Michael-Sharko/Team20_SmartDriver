@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Shark.Gameplay.Physics
@@ -8,8 +6,8 @@ namespace Shark.Gameplay.Physics
     [CreateAssetMenu(fileName = "Wheel Physics Data", menuName = "Gameplay/Player/Physics/Wheel Data")]
     public class WheelPhysicsData : ScriptableObject
     {
-        public float mass;
-        public float wheelDampingRate;
+        [Min(.0001f)] public float mass;
+        [Min(.0001f)] public float wheelDampingRate;
         public float suspensionDistance;
         public float forceAppPointDistance;
 
@@ -20,8 +18,8 @@ namespace Shark.Gameplay.Physics
         [Serializable]
         public struct JointSpringData
         {
-            public float spring;
-            public float damper;
+            [Min(0f)] public float spring;
+            [Min(0f)] public float damper;
             public float targetPosition;
 
             public static implicit operator JointSpring(JointSpringData data)
@@ -38,11 +36,11 @@ namespace Shark.Gameplay.Physics
         [Serializable]
         public struct WheelFrictionCurveData
         {
-            public float extremumSlip;
-            public float extremumValue;
-            public float asymptoteSlip;
-            public float asymptoteValue;
-            public float stiffness;
+            [Min(.001f)] public float extremumSlip;
+            [Min(.001f)] public float extremumValue;
+            [Min(.001f)] public float asymptoteSlip;
+            [Min(.001f)] public float asymptoteValue;
+            [Min(0f)] public float stiffness;
 
             public static implicit operator WheelFrictionCurve(WheelFrictionCurveData data)
             {
