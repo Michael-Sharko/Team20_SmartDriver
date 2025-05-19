@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2541589103938121643}
   - component: {fileID: 8563896288914582192}
-  - component: {fileID: 5089291352434556139}
   - component: {fileID: 7834851103255552822}
   m_Layer: 0
   m_Name: _Trigger Falling Stone
@@ -54,27 +53,6 @@ MonoBehaviour:
   fallingSound:
     volume: 1
     getSound: {fileID: 11400000, guid: 9a3f726bc3f31c14d8973e80a7f98f87, type: 2}
---- !u!135 &5089291352434556139
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491234435019698386}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 10
-  m_Center: {x: 10.02, y: 1, z: -24.3}
 --- !u!82 &7834851103255552822
 AudioSource:
   m_ObjectHideFlags: 0

@@ -17,6 +17,18 @@ public static readonly string AudioSetting = "Audio/AudioSetting";
 /// </summary>
 public static readonly string mixer = "Audio/mixer";
 }
+public static class Materials {
+public static class Debug {
+/// <summary>
+/// mat
+/// </summary>
+public static readonly string TransparentRed30 = "Materials/Debug/TransparentRed30";
+/// <summary>
+/// mat
+/// </summary>
+public static readonly string TransparentYellow30 = "Materials/Debug/TransparentYellow30";
+}
+}
 public static class Prefabs {
 /// <summary>
 /// prefab
@@ -185,6 +197,8 @@ public static readonly string New_Prefab = "New Prefab";
 public static readonly System.Collections.Generic.List<string> ALL_PATHS = new() {
 "Audio/AudioSetting",
 "Audio/mixer",
+"Materials/Debug/TransparentRed30",
+"Materials/Debug/TransparentYellow30",
 "Prefabs/Sound",
 "Prefabs/SoundWhile",
 "Sounds/Car/Low Fuel",

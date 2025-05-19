@@ -6,7 +6,6 @@ public class BreakTree : MonoBehaviour, IActivatable
     [SerializeField] private float fallAnimationSpeed = 0.3f;
 
     private Animator _animator;
-    private bool _isTriggered;
 
     private void Awake()
     {
@@ -16,10 +15,7 @@ public class BreakTree : MonoBehaviour, IActivatable
     }
     public void Activate()
     {
-        if (_isTriggered) return;
-
         _animator.SetTrigger("fall");
-        _isTriggered = true;
     }
 
 #if UNITY_EDITOR

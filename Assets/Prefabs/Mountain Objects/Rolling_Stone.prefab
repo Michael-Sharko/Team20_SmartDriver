@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8424971008246119677}
   - component: {fileID: 7016673335225121311}
-  - component: {fileID: 6583398928930369392}
   - component: {fileID: 7912169242760441637}
   - component: {fileID: 4689005434535094692}
   - component: {fileID: 7744552449384386534}
@@ -56,27 +55,6 @@ MonoBehaviour:
   soundOnActivate:
     volume: 0.5
     getSound: {fileID: 11400000, guid: 85726fcf5a6b10c4e889a47c7223e4b6, type: 2}
---- !u!135 &6583398928930369392
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 229658683765121832}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &7912169242760441637
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -233,13 +211,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbe6ef51de07e44b8990132ecbce319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 20
+  damage: 20
   _damageThresholdCollisionForce: 0
   _multiplierDamageThresholdCollisionForce: 0
   soundsOnDamage:
     volume: 0.4
     getSound: {fileID: 11400000, guid: f46efd85098233a4ca64bccefa4379ef, type: 2}
-  <LastCollisionForce>k__BackingField: 0
+  _lastCollisionForce: 0
 --- !u!1001 &8337943616529577967
 PrefabInstance:
   m_ObjectHideFlags: 0
