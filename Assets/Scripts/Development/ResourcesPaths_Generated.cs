@@ -111,6 +111,10 @@ public static readonly string Varan_Detection = "Sounds/Varan/Varan Detection";
 /// </summary>
 public static readonly string Falling_stones_sound_test_ = "Sounds/Falling stones sound(test)";
 /// <summary>
+/// wav
+/// </summary>
+public static readonly string Moose = "Sounds/Moose";
+/// <summary>
 /// mp3
 /// </summary>
 public static readonly string Rolling_stone_sound_test_ = "Sounds/Rolling stone sound(test)";
@@ -214,6 +218,7 @@ public static readonly System.Collections.Generic.List<string> ALL_PATHS = new()
 "Sounds/Varan/Varan Chase",
 "Sounds/Varan/Varan Detection",
 "Sounds/Falling stones sound(test)",
+"Sounds/Moose",
 "Sounds/Rolling stone sound(test)",
 "UI/dashboard/arrow_fuel",
 "UI/dashboard/arrow_speed",
