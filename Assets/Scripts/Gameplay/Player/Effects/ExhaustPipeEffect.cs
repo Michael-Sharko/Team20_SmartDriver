@@ -1,4 +1,5 @@
 ﻿using System;
+using Scripts.Gameplay.Tags;
 using UnityEngine;
 
 namespace Shark.Gameplay.Player
@@ -12,7 +13,7 @@ namespace Shark.Gameplay.Player
 
         public void Init(GameObject car)
         {
-            _smokeParticle = GetParticles(car, ParticleID.ExhaustPipe)[0];
+            _smokeParticle = GetParticle<ExhaustPipeParticlesTag>(car);
 
             UpdateRateOfSmoke();
         }

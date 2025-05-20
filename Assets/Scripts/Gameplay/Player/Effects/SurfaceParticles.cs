@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Scripts.Gameplay.Tags;
 using UnityEngine;
 
 namespace Shark.Gameplay.Player
 {
     [Serializable]
-    public class SurfaceParticles : CarParticles
+    public class SurfaceParticles<T> : CarParticles 
+        where T : Tag
     {
         [SerializeField] private float _lifeTime = 0.8f;
         [SerializeField] private float emissionRateMultiplier = 1f;
         [SerializeField] private SurfaceChecker surfaceChecker;
-
-        protected virtual ParticleID GetId { get; }
 
         private List<ParticleSystem> _particles;
         private Get<float> _speed;
@@ -24,7 +24,7 @@ namespace Shark.Gameplay.Player
         {
             _speed = speed;
             _coroutineOwner = car;
-            _particles = GetParticles(car.gameObject, GetId);
+            _particles = GetParticles<T>(car.gameObject);
             surfaceChecker.Init(textureUnderWheelsCheker);
 
             car.StartCoroutine(DoEffect());
