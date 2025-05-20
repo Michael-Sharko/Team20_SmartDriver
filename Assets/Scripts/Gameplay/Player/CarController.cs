@@ -44,6 +44,10 @@ namespace Shark.Gameplay.Player
             InitSounds(skid);
             InitEffects(skid);
         }
+        private void OnDestroy()
+        {
+            CarInput.Dispose();
+        }
 
 #if UNITY_EDITOR
         private void OnValidate()
@@ -104,7 +108,6 @@ namespace Shark.Gameplay.Player
 
         void FixedUpdate()
         {
-            CarInput.Update();
             CarFuel.Update(CarPhysics.Speed);
             CarPhysics.Update();
         }

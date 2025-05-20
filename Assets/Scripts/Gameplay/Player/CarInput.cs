@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using Assets.Scripts.Development;
+using UnityEngine;
 
 namespace Shark.Gameplay.Player
 {
-    public class CarInput
+    public class CarInput : IDisposable
     {
         private const string INPUT_HORIZONTAL = "Horizontal";
         private const string INPUT_VERTICAL = "Vertical";
@@ -12,7 +14,16 @@ namespace Shark.Gameplay.Player
         public bool spaceInput { get; private set; }
         public bool Enabled { get; set; } = true;
 
-        public void Update()
+        public CarInput()
+        {
+            MonoEventSender.Events.OnUpdate += Update;
+        }
+        public void Dispose()
+        {
+            MonoEventSender.Events.OnUpdate -= Update;
+        }
+
+        private void Update()
         {
             if (!Enabled)
             {

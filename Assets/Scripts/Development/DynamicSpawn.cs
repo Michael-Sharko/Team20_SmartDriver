@@ -15,4 +15,19 @@ public static class DynamicSpawn
             return _parent;
         }
     }
+
+    private static Transform _dontDestroyOnLoadParent;
+
+    public static Transform DontDestroyOnLoadParent
+    {
+        get
+        {
+            if (_dontDestroyOnLoadParent == null)
+            {
+                _dontDestroyOnLoadParent = new GameObject("----  DontDestroyOnLoadParent  ----").transform;
+                Object.DontDestroyOnLoad(DontDestroyOnLoadParent);
+            }
+            return _dontDestroyOnLoadParent;
+        }
+    }
 }
