@@ -2,11 +2,19 @@ using UnityEngine;
 
 public class DeathTrigger : MonoBehaviour
 {
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out IBreakable breakable))
+        {
+            breakable.TakeDamage(float.MaxValue);
+        }
+    }
+
+#if !UNITY_EDITOR
+
     private void Awake()
     {
-#if !UNITY_EDITOR
         DestroyVisual(); 
-#endif
     }
 
     private void DestroyVisual()
@@ -20,12 +28,5 @@ public class DeathTrigger : MonoBehaviour
             Destroy(filter);
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent(out IBreakable breakable))
-        {
-            breakable.TakeDamage(float.MaxValue);
-        }
-    }
+#endif
 }

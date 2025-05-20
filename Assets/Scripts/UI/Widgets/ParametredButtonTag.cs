@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿using Scripts.Gameplay.Tags;
 
 namespace Scripts.UI.Widgets
 {
-    public class ParametredButtonTag : MonoBehaviour
+    public class ParametredButtonTag : Tag
     {
     }
 }

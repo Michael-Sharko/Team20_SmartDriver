@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Development
 {
+    [DefaultExecutionOrder(-100)]
     public class MonoEvents : MonoBehaviour
     {
         public event Action OnAwake;

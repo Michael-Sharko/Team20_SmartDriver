@@ -17,16 +17,6 @@ public static readonly string AudioSetting = "Audio/AudioSetting";
 /// </summary>
 public static readonly string mixer = "Audio/mixer";
 }
-public static class Prefabs {
-/// <summary>
-/// prefab
-/// </summary>
-public static readonly string Sound = "Prefabs/Sound";
-/// <summary>
-/// prefab
-/// </summary>
-public static readonly string SoundWhile = "Prefabs/SoundWhile";
-}
 public static class Sounds {
 public static class Car {
 /// <summary>
@@ -203,8 +193,6 @@ public static readonly string New_Prefab = "New Prefab";
 public static readonly System.Collections.Generic.List<string> ALL_PATHS = new() {
 "Audio/AudioSetting",
 "Audio/mixer",
-"Prefabs/Sound",
-"Prefabs/SoundWhile",
 "Sounds/Car/Low Fuel",
 "Sounds/Car/Skidding",
 "Sounds/Crash/Crash1",
