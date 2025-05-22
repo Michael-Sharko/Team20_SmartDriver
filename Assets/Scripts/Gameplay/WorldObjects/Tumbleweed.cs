@@ -10,7 +10,6 @@ public class Tumbleweed : MonoBehaviour, IActivatable
     [SerializeField] private float speed;
     [SerializeField] private SoundOnEvent soundOnActivate;
 
-    private bool _isTriggered;
     private Rigidbody _rigidbody;
     private ConstantForce _constantForce;
     private Vector3 currentDirection;
@@ -19,17 +18,9 @@ public class Tumbleweed : MonoBehaviour, IActivatable
 
     public void Activate()
     {
-        if (_isTriggered)
-            return;
-
-        // хоть я и удаляю коллайдер триггер, почему то при столкновении машинки вызывается этот метод
-        Destroy(GetComponent<SphereCollider>());
-
         OnActivate?.Invoke();
 
-        _isTriggered = true;
         _rigidbody.isKinematic = false;
-
         _constantForce.enabled = true;
     }
     private void Awake()

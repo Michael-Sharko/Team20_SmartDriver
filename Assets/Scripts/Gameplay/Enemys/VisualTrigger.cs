@@ -16,6 +16,7 @@ public class VisualTrigger : PlayerInTrigger
         {
             sphere.radius = 0.5f;
             sphere.center = Vector3.zero;
+            transform.localScale = new(radius, radius, radius);
         }
         else if (collider is BoxCollider box)
         {
