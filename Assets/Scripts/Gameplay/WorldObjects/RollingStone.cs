@@ -11,7 +11,6 @@ public class RollingStone : MonoBehaviour, IActivatable
     [SerializeField] private float forceToVehicleOnCollision = 10;
     [SerializeField] private SoundOnEvent soundOnActivate;
 
-    private bool _isTriggered;
     private Vector3 _forceDirection;
     private Rigidbody _rigidbody;
 
@@ -21,17 +20,10 @@ public class RollingStone : MonoBehaviour, IActivatable
     [ContextMenu(nameof(Activate))]
     public void Activate()
     {
-        if (_isTriggered)
-            return;
-
-        // хоть я и удаляю коллайдер триггер, почему то при столкновении машинки вызывается этот метод
-        Destroy(GetComponent<SphereCollider>());
-
         OnTriggered?.Invoke();
 
         fixedUpdateTick = Move;
 
-        _isTriggered = true;
         _rigidbody.isKinematic = false;
     }
     private void Awake()

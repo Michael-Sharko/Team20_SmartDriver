@@ -12,7 +12,6 @@ public class TriggerFallingStone : MonoBehaviour, IActivatable
 
     private Action onFalling;
     private List<Rigidbody> _stones = new();
-    private bool _isTriggered;
 
     private void Awake()
     {
@@ -29,10 +28,6 @@ public class TriggerFallingStone : MonoBehaviour, IActivatable
     }
     public void Activate()
     {
-        if (_isTriggered) return;
-
-        _isTriggered = true;
-
         onFalling?.Invoke();
 
         foreach (var stone in _stones)

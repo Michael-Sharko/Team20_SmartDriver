@@ -69,9 +69,6 @@ PrefabInstance:
       addedObject: {fileID: -6782814352704675154}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c655d88790306d540ad6c2a4ebca0c38, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6064346631300255096}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c655d88790306d540ad6c2a4ebca0c38, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2620233634702588870}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c655d88790306d540ad6c2a4ebca0c38, type: 3}
       insertIndex: -1
@@ -133,27 +130,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallAnimationSpeed: 0.25
---- !u!135 &6064346631300255096
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6161508830061858229}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 8
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &2620233634702588870
 Animator:
   serializedVersion: 5
@@ -283,13 +259,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbe6ef51de07e44b8990132ecbce319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 20
+  damage: 20
   _damageThresholdCollisionForce: 0
   _multiplierDamageThresholdCollisionForce: 0
   soundsOnDamage:
     volume: 0.4
     getSound: {fileID: 11400000, guid: f46efd85098233a4ca64bccefa4379ef, type: 2}
-  <LastCollisionForce>k__BackingField: 0
+  _lastCollisionForce: 0
 --- !u!54 &5604196830798400320
 Rigidbody:
   m_ObjectHideFlags: 0
