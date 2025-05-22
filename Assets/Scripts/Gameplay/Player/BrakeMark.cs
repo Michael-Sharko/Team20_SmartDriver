@@ -2,26 +2,15 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-
-//
-// при такой реализации просто добавить
-// GetComponentInChildren<BrakeMark>().Init(() => _isBreaking);
-// на старте машинки и усе
-//
-// думаю нет особо смысла делать из этой штуки не монобех
 [Serializable]
 public class BrakeMark
 {
-    public delegate bool WhenToMark(float minAngle, float minSpeed);
-
-    [SerializeField, Min(0)] private float minAngle = 10f;
-    [SerializeField, Min(0)] private float minSpeed = 30f;
     [SerializeField] private BrakeMarkData data;
 
     private TrailRenderer[] _renderers;
-    private WhenToMark _whenToMark;
+    private Func<bool> _whenToMark;
 
-    public void Init(MonoBehaviour behaviour, WhenToMark whenToMark)
+    public void Init(MonoBehaviour behaviour, Func<bool> whenToMark)
     {
         _renderers = behaviour.GetComponentsInChildren<TrailRenderer>();
         _whenToMark = whenToMark;
@@ -42,7 +31,7 @@ public class BrakeMark
     {
         while (true)
         {
-            if (_whenToMark(minAngle, minSpeed))
+            if (_whenToMark())
             {
                 On();
             }

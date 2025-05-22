@@ -8,10 +8,12 @@ using UnityEngine.SceneManagement;
 
 public static class SceneInContextMenu
 {
+    private const string GENERATED_SCRIPT_PATH = "/Scripts/Development/Editor/SceneInContextMenu_Generated.cs";
+
     [MenuItem("Scene/Refresh", false, 0)]
     public static void Refresh()
     {
-        var path = Application.dataPath + "/Scripts/Development/Editor/SceneInContextMenu_Generated.cs";
+        var path = Application.dataPath + GENERATED_SCRIPT_PATH;
 
         StringBuilder stringBuilder = new();
 

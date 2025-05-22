@@ -1,3 +1,4 @@
+using Scripts.Gameplay.Tags;
 using Shark.Gameplay.Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -54,6 +55,12 @@ public class GameManager : MonoBehaviour
                 _endGameManager.HideLossPanel();
 
                 showedWinPanel = true;
+
+                var a = FindObjectOfType<LevelMusicTag>();
+                if (a)
+                    a.gameObject.Off();
+                else
+                    Debug.LogError("В сцене источник звука с музыкой не помечен тегом");
             };
     }
 

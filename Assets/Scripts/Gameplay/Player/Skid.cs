@@ -4,32 +4,40 @@ namespace Shark.Gameplay.Player
 {
     public class Skid
     {
-        private Rigidbody _rigidbody;
-        private CarInput _input;
+        private readonly Rigidbody _rigidbody;
+        private readonly CarInput _input;
+        private readonly float _minAngle;
+        private readonly float _minSpeed;
 
         private Vector3 _physicMovement;
 
-        public Skid(Rigidbody rigidbody, CarInput input)
+        private bool IsCarBraking => _input.spaceInput;
+        private bool IsLowSpeed => _physicMovement.magnitude < _minSpeed;
+
+
+        public Skid(Rigidbody rigidbody, CarInput input, float minAngle, float minSpeed)
         {
             _rigidbody = rigidbody;
             _input = input;
+            _minAngle = minAngle;
+            _minSpeed = minSpeed;
         }
-        public bool IsSkid(float minAngle, float minSpeed)
+        public bool IsSkid()
         {
-            if (IsCarBraking)
-                return true;
-
             CalculatePhysicMovement();
 
-            if (IsLowSpeed(minSpeed))
+            if (IsLowSpeed)
+            {
                 return false;
+            }
 
+            if (IsCarBraking)
+                return true;
+            
             var angle = GetDeltaAngle();
 
-            return angle > minAngle;
+            return angle > _minAngle;
         }
-        private bool IsCarBraking => _input.spaceInput;
-        private bool IsLowSpeed(float minSpeed) => _physicMovement.magnitude < minSpeed;
         private float GetDeltaAngle()
         {
             var directionForwardCar = CalculateForwardCar();

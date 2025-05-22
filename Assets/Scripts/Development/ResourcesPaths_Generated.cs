@@ -17,22 +17,16 @@ public static readonly string AudioSetting = "Audio/AudioSetting";
 /// </summary>
 public static readonly string mixer = "Audio/mixer";
 }
-public static class Prefabs {
-/// <summary>
-/// prefab
-/// </summary>
-public static readonly string Sound = "Prefabs/Sound";
-/// <summary>
-/// prefab
-/// </summary>
-public static readonly string SoundWhile = "Prefabs/SoundWhile";
-}
 public static class Sounds {
 public static class Car {
 /// <summary>
 /// wav
 /// </summary>
 public static readonly string Low_Fuel = "Sounds/Car/Low Fuel";
+/// <summary>
+/// wav
+/// </summary>
+public static readonly string Skidding = "Sounds/Car/Skidding";
 }
 public static class Crash {
 /// <summary>
@@ -82,6 +76,16 @@ public static readonly string Wind_1 = "Sounds/Tumbleweed/Wind_1";
 /// </summary>
 public static readonly string Wind_2 = "Sounds/Tumbleweed/Wind_2";
 }
+public static class UI {
+/// <summary>
+/// wav
+/// </summary>
+public static readonly string Click = "Sounds/UI/Click";
+/// <summary>
+/// wav
+/// </summary>
+public static readonly string Highlighted = "Sounds/UI/Highlighted";
+}
 public static class Varan {
 /// <summary>
 /// wav
@@ -100,6 +104,10 @@ public static readonly string Varan_Detection = "Sounds/Varan/Varan Detection";
 /// wav
 /// </summary>
 public static readonly string Falling_stones_sound_test_ = "Sounds/Falling stones sound(test)";
+/// <summary>
+/// wav
+/// </summary>
+public static readonly string Moose = "Sounds/Moose";
 /// <summary>
 /// mp3
 /// </summary>
@@ -185,9 +193,8 @@ public static readonly string New_Prefab = "New Prefab";
 public static readonly System.Collections.Generic.List<string> ALL_PATHS = new() {
 "Audio/AudioSetting",
 "Audio/mixer",
-"Prefabs/Sound",
-"Prefabs/SoundWhile",
 "Sounds/Car/Low Fuel",
+"Sounds/Car/Skidding",
 "Sounds/Crash/Crash1",
 "Sounds/Crash/Crash2",
 "Sounds/Crash/Crash3",
@@ -198,10 +205,13 @@ public static readonly System.Collections.Generic.List<string> ALL_PATHS = new()
 "Sounds/PickUp/Off-Road T5",
 "Sounds/Tumbleweed/Wind_1",
 "Sounds/Tumbleweed/Wind_2",
+"Sounds/UI/Click",
+"Sounds/UI/Highlighted",
 "Sounds/Varan/Varan Attack",
 "Sounds/Varan/Varan Chase",
 "Sounds/Varan/Varan Detection",
 "Sounds/Falling stones sound(test)",
+"Sounds/Moose",
 "Sounds/Rolling stone sound(test)",
 "UI/dashboard/arrow_fuel",
 "UI/dashboard/arrow_speed",

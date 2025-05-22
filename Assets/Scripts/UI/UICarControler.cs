@@ -68,8 +68,7 @@ namespace Shark.Gameplay.UI
 
         private void OnUpdatedStrengthIcon()
         {
-            if (_strength != null)
-                _strength.UpdateStrengthView(_car.CarStrength.currentStrength, _car.CarStrength.maxStrength);
+            _strength?.UpdateStrengthView(_car.CarStrength.currentStrength, _car.CarStrength.maxStrength);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Shark.Gameplay.Player
         [SerializeField] private SandEffect sandEffect;
 
         public void Init(MonoBehaviour car, Get<float> speed, TextureUnderWheelsCheker textureChecker,
-            BrakeMark.WhenToMark whenToMark)
+            Func<bool> whenToMark)
         {
             brakeMark.Init(car, whenToMark);
             exhaustPipeEffect.Init(car.gameObject);

@@ -1,10 +1,10 @@
 ﻿using System;
+using Scripts.Gameplay.Tags;
 
 namespace Shark.Gameplay.Player
 {
     [Serializable]
-    public class DirtEffect : SurfaceParticles
+    public class DirtEffect : SurfaceParticles<DirtParticlesTag>
     {
-        protected override ParticleID GetId => ParticleID.Dirt;
     }
 }
