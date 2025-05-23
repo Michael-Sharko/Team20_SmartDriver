@@ -45206,7 +45206,7 @@ MonoBehaviour:
       volume: 1
       getSound: {fileID: 11400000, guid: a672c80b782101142bde4e19e5142286, type: 2}
     _skidSound:
-      volume: 0.2
+      volume: 0.15
       getSound: {fileID: 11400000, guid: 496ec943455538e49b50166d779c2d0f, type: 2}
   <CarEffects>k__BackingField:
     brakeMark:

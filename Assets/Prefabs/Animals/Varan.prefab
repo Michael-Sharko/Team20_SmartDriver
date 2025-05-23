@@ -298,12 +298,13 @@ MonoBehaviour:
   attackDistance: 0.4
   delayAfterAttack: 1.5
   detectionPlayerSound:
-    volume: 1
+    volume: 0.5
     getSound: {fileID: 11400000, guid: 64e418699f0957f448a41b836d4c9e77, type: 2}
   attackPlayerSound:
-    volume: 1
+    volume: 0.5
     getSound: {fileID: 11400000, guid: d9b46674cc2c7ff438215b6208e4c6e9, type: 2}
   movementSound:
+    volume: 0.5
     getSound: {fileID: 11400000, guid: c0b5a0ca05f47984cb1f2881ec5055fc, type: 2}
   whatIsPlayer:
     serializedVersion: 2

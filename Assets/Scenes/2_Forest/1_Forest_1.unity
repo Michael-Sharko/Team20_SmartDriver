@@ -1523,6 +1523,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
+      propertyPath: <CarSounds>k__BackingField._skidSound.volume
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789932440345742510, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
       propertyPath: <CarFuel>k__BackingField._fuelConsuptionMultiplier
       value: 0.25
       objectReference: {fileID: 0}
@@ -5049,7 +5053,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -5377455687939978593, guid: cda0fe62e3582ed439f01b3c4ee21580, type: 2}
   m_audioClip: {fileID: 8300000, guid: f240d364fb1338e48a9d70610dece423, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 0.04
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5773,6 +5777,10 @@ PrefabInstance:
     - target: {fileID: 1401844301803531276, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_Name
       value: Nikitka Default Scene Properties Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337862646936360913, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: finishSound.volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2728827938116112246, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchorMax.y
