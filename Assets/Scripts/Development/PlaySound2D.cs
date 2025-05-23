@@ -11,10 +11,17 @@ public static class PlaySound2D
     {
         get
         {
-            if (_source == null) Init();
+            if (_source == null)
+                _source = Init("Main");
 
             return _source;
         }
+    }
+    // по хорошему надо менеджить сорсы, а не просто выдавать новый при обращении
+    // но пока впадлу это делать
+    public static AudioSource GetNewSource(string namePostfix = "")
+    {
+        return Init(namePostfix);
     }
 
     public static void Play(AudioClip clip, float volume = 1)
@@ -22,21 +29,25 @@ public static class PlaySound2D
         Source.PlayOneShot(clip, volume);
     }
 
-    private static void Init()
+    private static AudioSource Init(string postfix)
     {
-        CreateGameObjectObject();
-        AddMixerGroup();
+        var source = CreateGameObjectObject(postfix);
+        AddMixerGroup(source);
+
+        return source;
     }
-    private static void CreateGameObjectObject()
+    private static AudioSource CreateGameObjectObject(string namePostfix)
     {
-        var sourceGO = new GameObject("PlaySound2D");
+        var sourceGO = new GameObject("PlaySound2D " + namePostfix);
         sourceGO.transform.parent = DynamicSpawn.Parent;
-        _source = sourceGO.AddComponent<AudioSource>();
-        _source.playOnAwake = false;
+        var source = sourceGO.AddComponent<AudioSource>();
+        source.playOnAwake = false;
+
+        return source;
     }
-    private static void AddMixerGroup()
+    private static void AddMixerGroup(AudioSource source)
     {
         var mixer = Resources.Load<AudioMixer>(PathResources.Audio.mixer);
-        _source.outputAudioMixerGroup = mixer.FindMatchingGroups(TARGET_MIXER_GROUP_PATH)[0];
+        source.outputAudioMixerGroup = mixer.FindMatchingGroups(TARGET_MIXER_GROUP_PATH)[0];
     }
 }
