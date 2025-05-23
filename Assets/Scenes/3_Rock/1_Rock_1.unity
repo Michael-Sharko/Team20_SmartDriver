@@ -228,12 +228,20 @@ PrefabInstance:
       propertyPath: directionAngle
       value: 229
       objectReference: {fileID: 0}
+    - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: soundOnActivate.volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7239472814793272171, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9abd9fb47e8674941a574dcc78d0d8db, type: 2}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
+      value: 54.9458
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: MinDistance
       value: 54.9458
       objectReference: {fileID: 0}
     - target: {fileID: 8424971008246119677, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
@@ -3803,12 +3811,20 @@ PrefabInstance:
       propertyPath: directionAngle
       value: 233
       objectReference: {fileID: 0}
+    - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: soundOnActivate.volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7239472814793272171, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9abd9fb47e8674941a574dcc78d0d8db, type: 2}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
+      value: 99.00348
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: MinDistance
       value: 99.00348
       objectReference: {fileID: 0}
     - target: {fileID: 8424971008246119677, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
@@ -6697,7 +6713,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9abd9fb47e8674941a574dcc78d0d8db, type: 2}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
-      value: 93.79831
+      value: 86.28583
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: MinDistance
+      value: 86.28583
       objectReference: {fileID: 0}
     - target: {fileID: 8424971008246119677, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_LocalScale.x
@@ -8060,7 +8080,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: df31d02279a076146b19b03dd37073cd, type: 2}
     - target: {fileID: 7834851103255552822, guid: 7fe53b3bf0be32042a462678048f286d, type: 3}
       propertyPath: MaxDistance
-      value: 58.541626
+      value: 57.71399
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834851103255552822, guid: 7fe53b3bf0be32042a462678048f286d, type: 3}
+      propertyPath: MinDistance
+      value: 57.71399
       objectReference: {fileID: 0}
     - target: {fileID: 8563896288914582192, guid: 7fe53b3bf0be32042a462678048f286d, type: 3}
       propertyPath: fallSpeed
@@ -9383,7 +9407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: soundOnActivate.volume
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7239472814793272171, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -9395,7 +9419,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
-      value: 98.49585
+      value: 99.296326
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: MinDistance
+      value: 2.610138
       objectReference: {fileID: 0}
     - target: {fileID: 8424971008246119677, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_LocalScale.x

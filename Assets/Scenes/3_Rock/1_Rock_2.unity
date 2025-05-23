@@ -3611,17 +3611,21 @@ PrefabInstance:
       propertyPath: directionAngle
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: soundOnActivate.volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Volume
       value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
-      value: 104.90071
+      value: 79.290985
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MinDistance
-      value: 97.89749
+      value: 79.290985
       objectReference: {fileID: 0}
     - target: {fileID: 8424971008246119677, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_LocalScale.x
@@ -6341,6 +6345,14 @@ PrefabInstance:
     - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: directionAngle
       value: 181
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: MaxDistance
+      value: 88.11972
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: MinDistance
+      value: 88.11972
       objectReference: {fileID: 0}
     - target: {fileID: 8424971008246119677, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_LocalScale.x
@@ -12611,6 +12623,10 @@ PrefabInstance:
       propertyPath: directionAngle
       value: 123
       objectReference: {fileID: 0}
+    - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: soundOnActivate.volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Volume
       value: 0.08
@@ -12621,7 +12637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MinDistance
-      value: 58.0455
+      value: 84.82187
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
@@ -13810,8 +13826,16 @@ PrefabInstance:
       propertyPath: directionAngle
       value: 178
       objectReference: {fileID: 0}
+    - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: soundOnActivate.volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
+      value: 79.6474
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: MinDistance
       value: 79.6474
       objectReference: {fileID: 0}
     - target: {fileID: 8424971008246119677, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
@@ -14858,7 +14882,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
-      value: 14.774689
+      value: 99.899216
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: MinDistance
+      value: 99.899216
       objectReference: {fileID: 0}
     - target: {fileID: 8424971008246119677, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_LocalScale.x
