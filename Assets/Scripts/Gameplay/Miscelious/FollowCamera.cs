@@ -24,7 +24,7 @@ public class FollowCamera : MonoBehaviour
         var newPosition = (objectToFollow.position);
         var newRotation = Quaternion.Slerp(
             transform.rotation,
-            Quaternion.LookRotation(objectToFollow.forward), sharpnessOfFollowing * Time.fixedDeltaTime);
+            Quaternion.LookRotation(objectToFollow.forward), sharpnessOfFollowing * Time.deltaTime);
 
         transform.SetPositionAndRotation(newPosition, newRotation);
         cts.rotation = Quaternion.LookRotation(objectToFollow.position - cts.position);
