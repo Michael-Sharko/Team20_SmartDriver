@@ -1,8 +1,5 @@
 using UnityEngine;
 
-// все события юнити будут вызываться после вызовов в других скриптах
-// т.е. все объект передвинуться и после них двинется камера
-[DefaultExecutionOrder(100)]
 public class FollowCamera : MonoBehaviour
 {
     [SerializeField] private Transform objectToFollow;
@@ -22,7 +19,7 @@ public class FollowCamera : MonoBehaviour
         cts = Camera.main.transform;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         var newPosition = (objectToFollow.position);
         var newRotation = Quaternion.Slerp(

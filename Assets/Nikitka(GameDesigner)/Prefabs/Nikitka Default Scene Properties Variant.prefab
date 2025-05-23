@@ -3449,7 +3449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3699188249537430349, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: sharpnessOfFollowing
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3805656180228056064, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_AnchorMax.y
