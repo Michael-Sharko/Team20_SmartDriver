@@ -3613,19 +3613,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: soundOnActivate.volume
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Volume
-      value: 0.08
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
-      value: 79.290985
+      value: 68.27194
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MinDistance
-      value: 79.290985
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8424971008246119677, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_LocalScale.x
@@ -4470,6 +4470,10 @@ PrefabInstance:
       propertyPath: finishMenu
       value: 
       objectReference: {fileID: 1840999603}
+    - target: {fileID: 2337862646936360913, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: finishSound.volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2337862646936360913, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: finishSound.getSound
       value: 
@@ -6346,13 +6350,21 @@ PrefabInstance:
       propertyPath: directionAngle
       value: 181
       objectReference: {fileID: 0}
+    - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: soundOnActivate.volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
       value: 88.11972
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MinDistance
-      value: 88.11972
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8424971008246119677, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_LocalScale.x
@@ -12349,7 +12361,7 @@ GameObject:
   - component: {fileID: 1719349305}
   - component: {fileID: 1719349304}
   m_Layer: 0
-  m_Name: Music
+  m_Name: Background Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12392,7 +12404,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5377455687939978593, guid: cda0fe62e3582ed439f01b3c4ee21580, type: 2}
-  m_audioClip: {fileID: 8300000, guid: f240d364fb1338e48a9d70610dece423, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 614e6c2a63a39fe4493c30f75d2e7288, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.08
   m_Pitch: 1
@@ -12625,19 +12637,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: soundOnActivate.volume
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Volume
-      value: 0.08
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
-      value: 84.82187
+      value: 72.63034
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MinDistance
-      value: 84.82187
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
@@ -13828,7 +13840,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: soundOnActivate.volume
-      value: 1
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
@@ -13836,7 +13852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MinDistance
-      value: 79.6474
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8424971008246119677, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_LocalScale.x
@@ -14880,13 +14896,21 @@ PrefabInstance:
       propertyPath: directionAngle
       value: 181
       objectReference: {fileID: 0}
+    - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: soundOnActivate.volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
       value: 99.899216
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MinDistance
-      value: 99.899216
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8424971008246119677, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_LocalScale.x
@@ -15857,63 +15881,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91a274b58e32e7a4ca9c06c9c442ba83, type: 3}
---- !u!1001 &8238254242703699661
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3989990143459270111, guid: 91a83507da7573f40abd03059e6d3e7e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 114.543
-      objectReference: {fileID: 0}
-    - target: {fileID: 3989990143459270111, guid: 91a83507da7573f40abd03059e6d3e7e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 55.008244
-      objectReference: {fileID: 0}
-    - target: {fileID: 3989990143459270111, guid: 91a83507da7573f40abd03059e6d3e7e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 565.4409
-      objectReference: {fileID: 0}
-    - target: {fileID: 3989990143459270111, guid: 91a83507da7573f40abd03059e6d3e7e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.70710623
-      objectReference: {fileID: 0}
-    - target: {fileID: 3989990143459270111, guid: 91a83507da7573f40abd03059e6d3e7e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3989990143459270111, guid: 91a83507da7573f40abd03059e6d3e7e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071074
-      objectReference: {fileID: 0}
-    - target: {fileID: 3989990143459270111, guid: 91a83507da7573f40abd03059e6d3e7e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3989990143459270111, guid: 91a83507da7573f40abd03059e6d3e7e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3989990143459270111, guid: 91a83507da7573f40abd03059e6d3e7e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3989990143459270111, guid: 91a83507da7573f40abd03059e6d3e7e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4329254783832770405, guid: 91a83507da7573f40abd03059e6d3e7e, type: 3}
-      propertyPath: m_Name
-      value: Kozel
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 91a83507da7573f40abd03059e6d3e7e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -16030,7 +15997,6 @@ SceneRoots:
   - {fileID: 933381381}
   - {fileID: 688586296}
   - {fileID: 1656142003}
-  - {fileID: 8238254242703699661}
   - {fileID: 1757343047}
   - {fileID: 259620701}
   - {fileID: 348667532}
@@ -16048,3 +16014,4 @@ SceneRoots:
   - {fileID: 367037950}
   - {fileID: 1960649159}
   - {fileID: 33477411}
+  - {fileID: 158820294}

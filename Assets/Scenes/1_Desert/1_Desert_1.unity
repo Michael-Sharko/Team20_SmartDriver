@@ -3400,7 +3400,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -5377455687939978593, guid: cda0fe62e3582ed439f01b3c4ee21580, type: 2}
   m_audioClip: {fileID: 8300000, guid: 614e6c2a63a39fe4493c30f75d2e7288, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.08
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -11133,43 +11133,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 761339739086318829, guid: 323f64e40f40b5549a01f34189f609cf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.844482
+      value: -14.59
       objectReference: {fileID: 0}
     - target: {fileID: 761339739086318829, guid: 323f64e40f40b5549a01f34189f609cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.246518
+      value: -11.33
       objectReference: {fileID: 0}
     - target: {fileID: 761339739086318829, guid: 323f64e40f40b5549a01f34189f609cf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.127716
+      value: 0.97
       objectReference: {fileID: 0}
     - target: {fileID: 761339739086318829, guid: 323f64e40f40b5549a01f34189f609cf, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.06645465
+      value: 0.32817215
       objectReference: {fileID: 0}
     - target: {fileID: 761339739086318829, guid: 323f64e40f40b5549a01f34189f609cf, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.066160895
+      value: -0.35627317
       objectReference: {fileID: 0}
     - target: {fileID: 761339739086318829, guid: 323f64e40f40b5549a01f34189f609cf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.6838745
+      value: -0.5415438
       objectReference: {fileID: 0}
     - target: {fileID: 761339739086318829, guid: 323f64e40f40b5549a01f34189f609cf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.72354835
+      value: -0.6870974
       objectReference: {fileID: 0}
     - target: {fileID: 761339739086318829, guid: 323f64e40f40b5549a01f34189f609cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -86.785
+      value: -77.966
       objectReference: {fileID: 0}
     - target: {fileID: 761339739086318829, guid: 323f64e40f40b5549a01f34189f609cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -4.959
+      value: 40.048
       objectReference: {fileID: 0}
     - target: {fileID: 761339739086318829, guid: 323f64e40f40b5549a01f34189f609cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -185.807
+      value: -161.806
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11364,7 +11364,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock01 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2644920117498910036, guid: 9076d2ccf852d3d4883bcb88dbb1dab7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
