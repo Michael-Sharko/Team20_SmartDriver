@@ -73,6 +73,16 @@ public const string Game_Complete_Sound = "Sounds/Finish/Game Complete Sound";
 public const string Level_Complete_Sound = "Sounds/Finish/Level Complete Sound";
 }
 public static class Mountains {
+public static class Goat {
+/// <summary>
+/// wav
+/// </summary>
+public const string Hill_goat_aggression = "Sounds/Mountains/Goat/Hill goat aggression";
+/// <summary>
+/// wav
+/// </summary>
+public const string Hill_goat_chasing = "Sounds/Mountains/Goat/Hill goat chasing";
+}
 /// <summary>
 /// wav
 /// </summary>
@@ -224,6 +234,8 @@ public static readonly System.Collections.Generic.List<string> ALL_PATHS = new()
 "Sounds/Crash/Crash5",
 "Sounds/Finish/Game Complete Sound",
 "Sounds/Finish/Level Complete Sound",
+"Sounds/Mountains/Goat/Hill goat aggression",
+"Sounds/Mountains/Goat/Hill goat chasing",
 "Sounds/Mountains/Falling stones",
 "Sounds/PickUp/Off-Road T5",
 "Sounds/Test/Falling stones sound(test)",
