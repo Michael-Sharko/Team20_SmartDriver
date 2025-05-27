@@ -94,7 +94,7 @@ public static class PathResources {{
             scriptBuilder.Append($@"/// <summary>
 /// {extension}
 /// </summary>
-public static readonly string {name} = ""{resourcePath}"";
+public const string {name} = ""{resourcePath}"";
 ");
         }
 
