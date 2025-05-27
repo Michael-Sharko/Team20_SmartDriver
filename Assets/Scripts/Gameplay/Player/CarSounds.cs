@@ -10,15 +10,15 @@ public class CarSounds
 
     [SerializeField] private SoundWhile _skidSound;
 
-    public void Init(MonoBehaviour coroutineOwner, AudioSource source, Get<float> currentFuel,
+    public void Init(MonoBehaviour coroutineOwner, Get<float> currentFuel,
         Func<bool> whenToSound)
     {
         _lowLevelFuelSound.Init(
             () => currentFuel.Value <= _fuelValueForActivateLowLevelFuelSound,
-            source,
+            PlaySound2D.GetNewSource("Low Level"),
             coroutineOwner);
 
-        _skidSound.Init(whenToSound, source, coroutineOwner, true, true);
+        _skidSound.Init(whenToSound, PlaySound2D.GetNewSource("Skid"), coroutineOwner, true, true);
     }
 }
 

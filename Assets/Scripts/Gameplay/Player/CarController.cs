@@ -97,7 +97,6 @@ namespace Shark.Gameplay.Player
         private void InitSounds(Skid skid)
         {
             CarSounds.Init(this,
-                GetComponent<AudioSource>(),
                 CarFuel.CurrentFuel,
                 () => skid.IsSkid());
         }
