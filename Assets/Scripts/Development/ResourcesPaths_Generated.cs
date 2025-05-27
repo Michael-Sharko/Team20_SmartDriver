@@ -30,6 +30,12 @@ public const string TransparentYellow30 = "Materials/Debug/TransparentYellow30";
 }
 }
 public static class Sounds {
+public static class All_Scene {
+/// <summary>
+/// wav
+/// </summary>
+public const string Lose = "Sounds/All Scene/Lose";
+}
 public static class Car {
 /// <summary>
 /// wav
@@ -225,6 +231,7 @@ public static readonly System.Collections.Generic.List<string> ALL_PATHS = new()
 "Audio/mixer",
 "Materials/Debug/TransparentRed30",
 "Materials/Debug/TransparentYellow30",
+"Sounds/All Scene/Lose",
 "Sounds/Car/Low Fuel",
 "Sounds/Car/Skidding",
 "Sounds/Crash/Crash1",
