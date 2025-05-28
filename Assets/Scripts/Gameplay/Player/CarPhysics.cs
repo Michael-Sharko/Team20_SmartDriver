@@ -15,7 +15,7 @@ namespace Shark.Gameplay.Player
         [SerializeField] private TouchingSlidingSurfaceController _touchingSlidingSurface;
 
         private Rigidbody _rb;
-        private CarInput _carInput;
+        private IInput _carInput;
         private TextureUnderWheelsCheker _textureChecker;
 
         private float _frontWheelsRotation;
@@ -29,7 +29,7 @@ namespace Shark.Gameplay.Player
         public float SpeedMph => Speed * 2.23694f;
 
 
-        public void Init(Rigidbody rigidbody, CarInput carInput, TextureUnderWheelsCheker textureCheker)
+        public void Init(Rigidbody rigidbody, IInput carInput, TextureUnderWheelsCheker textureCheker)
         {
             _rb = rigidbody;
             _carInput = carInput;
@@ -49,7 +49,7 @@ namespace Shark.Gameplay.Player
         }
         public void Update()
         {
-            RotateForwardWheels(_carInput.hInput);
+            RotateForwardWheels(_carInput.HInput);
 
             HandleMotor();
             HandleSteering();
@@ -64,7 +64,7 @@ namespace Shark.Gameplay.Player
 
         void HandleMotor()
         {
-            ApplyDrive(_carInput.vInput * data.motorForce);
+            ApplyDrive(_carInput.VInput * data.motorForce);
             ApplyBreaking();
         }
 
@@ -103,7 +103,7 @@ namespace Shark.Gameplay.Player
 
         private float CalculateBreakForce()
         {
-            return _carInput.spaceInput ? data.breakForce : 0f;
+            return _carInput.SpaceInput ? data.breakForce : 0f;
         }
 
         private void ApplyBreaking()

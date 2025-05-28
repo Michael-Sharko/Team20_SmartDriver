@@ -2,33 +2,33 @@
 
 namespace Shark.Gameplay.Player
 {
-    public class CarInput
+    public class CarInput : MonoBehaviour, IInput
     {
         private const string INPUT_HORIZONTAL = "Horizontal";
         private const string INPUT_VERTICAL = "Vertical";
 
-        public float hInput { get; private set; }
-        public float vInput { get; private set; }
-        public bool spaceInput { get; private set; }
+        public float HInput { get; private set; }
+        public float VInput { get; private set; }
+        public bool SpaceInput { get; private set; }
         public bool Enabled { get; set; } = true;
 
         public void Update()
         {
             if (!Enabled)
             {
-                hInput = 0;
-                vInput = 0;
-                spaceInput = false;
+                HInput = 0;
+                VInput = 0;
+                SpaceInput = false;
 
                 return;
             }
 
-            hInput = Input.GetAxis(INPUT_HORIZONTAL);
-            vInput = Input.GetAxis(INPUT_VERTICAL);
+            HInput = Input.GetAxis(INPUT_HORIZONTAL);
+            VInput = Input.GetAxis(INPUT_VERTICAL);
 
             //Debug.Log($"hInput {hInput}, vInput {vInput}");
 
-            spaceInput = Input.GetKey(KeyCode.Space);
+            SpaceInput = Input.GetKey(KeyCode.Space);
         }
     }
 }

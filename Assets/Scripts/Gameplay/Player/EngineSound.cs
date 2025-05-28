@@ -41,9 +41,9 @@ public class EngineSound : MonoBehaviour
 
     private int SoundStateDetection()
     {
-        if (carController.CarInput.vInput > 0f)
+        if (carController.CarInput.VInput > 0f)
             audioClipState = 0;
-        else if (carController.CarInput.vInput < 0f)
+        else if (carController.CarInput.VInput < 0f)
             audioClipState = 1;
         else
             audioClipState = 2;
