@@ -250,7 +250,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 25
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -285,7 +285,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -365,6 +365,12 @@ MonoBehaviour:
     idleAnimationSpeed: 1.2
     walkAnimationSpeed: 5
     attackAnimationSpeed: 4
+  agroSound:
+    volume: 1
+    getSound: {fileID: 11400000, guid: 8b46eb91f08f2414fbe4b7e66a4ee38a, type: 2}
+  chasingSound:
+    volume: 1
+    getSound: {fileID: 11400000, guid: 0c0303ae69b6b1741a2b1dc88d315c44, type: 2}
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 256

@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c354d9b5908cd8448a44d3c90326857, type: 3}
-  m_Name: FallingStones
+  m_Name: GameOver
   m_EditorClassIdentifier: 
-  soundPath: Sounds/Mountains/Falling stones
+  soundPath: Sounds/All Scene/Lose

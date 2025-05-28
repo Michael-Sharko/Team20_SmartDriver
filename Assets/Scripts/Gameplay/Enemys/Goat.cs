@@ -19,6 +19,8 @@ public class Goat : MonoBehaviour
     [SerializeField, Min(0)] private float delayAfterAttack = 1f;
     [SerializeField] private float forceToVehicleOnCollision = 10;
     [SerializeField] private GoatAnimator goatAnimator;
+    [SerializeField] private SoundOnEvent agroSound;
+    [SerializeField] private SoundWhile chasingSound;
 
     [Space]
     [SerializeField] private LayerMask whatIsPlayer;
@@ -35,6 +37,7 @@ public class Goat : MonoBehaviour
     private GameObject target;
     private NavMeshPath path;
     private bool isSeeking;
+    private bool isIdle;
     private Vector3 currentPos;
     private Vector3 previousPos;
 
@@ -49,7 +52,18 @@ public class Goat : MonoBehaviour
 
         currentSpeed = moveSpeed;
 
+        StartCoroutine(Idle());
+
         goatAnimator.Init(this);
+
+
+        var audioSource = GetComponent<AudioSource>();
+
+        bool playChasingSoundWhile() => !audioSource.isPlaying && !isIdle;
+
+        agroSound.Init(ref OnSeeking, audioSource);
+        chasingSound.Init(playChasingSoundWhile, audioSource, this);
+
 
         damageSource = GetComponent<DamageSource>();
         damageSource.damage = damage;
@@ -63,10 +77,6 @@ public class Goat : MonoBehaviour
         agent.updateUpAxis = false;
 
         target = GameObject.FindGameObjectWithTag("Player");
-
-        var audioSource = GetComponent<AudioSource>();
-
-        StartCoroutine(Idle());
     }
 
 #if UNITY_EDITOR
@@ -113,18 +123,21 @@ public class Goat : MonoBehaviour
     }
     private IEnumerator Idle()
     {
+        isIdle = true;
         OnIdle?.Invoke();
 
         seekingTrigger.gameObject.Off();
 
         yield return new WaitUntil(() => playerEnterAgroZone);
 
+        isIdle = false;
+
+        OnSeeking?.Invoke();
+
         StartCoroutine(Seek());
     }
     private IEnumerator Seek()
     {
-        OnSeeking?.Invoke();
-
         seekingTrigger.gameObject.On();
 
         // чтобы триггеры обновились, иначе начинается вакханалия

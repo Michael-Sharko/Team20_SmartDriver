@@ -8,6 +8,8 @@ using UnityEngine.Events;
 [Serializable]
 public class LossGameManager
 {
+    public event Action OnLoss;
+
     public CarController Car { set; private get; }
     public bool CarInitilized => Car != null;
     public bool IsInvoked { get; private set; }
@@ -16,6 +18,7 @@ public class LossGameManager
     [SerializeField] GameObject carPanel;
     [SerializeField] GameObject lossPanel1;
     [SerializeField] GameObject lossPanel2;
+    [SerializeField] SoundOnEvent lossSound;
 
     [Serializable]
     struct AnimationSettings
@@ -46,6 +49,7 @@ public class LossGameManager
     public void Init(MonoBehaviour coroutineOwner)
     {
         _coroutineOwner = coroutineOwner;
+        lossSound.Init(ref OnLoss);
     }
 
     private void SubscribeCarEvents()
@@ -72,6 +76,10 @@ public class LossGameManager
 
     private void HandleCarEvent(string message)
     {
+        OnLoss?.Invoke();
+
+        PlaySound2D.GetSource("Low Level").mute = true;
+
         Cursor.lockState = CursorLockMode.None;
 
         SetMessage(message);

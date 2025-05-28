@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Audio;
 
 public static class PlaySound2D
@@ -6,6 +7,7 @@ public static class PlaySound2D
     private const string TARGET_MIXER_GROUP_PATH = "Master/Sounds";
 
     private static AudioSource _source;
+    private static Dictionary<string, AudioSource> _newSources = new();
 
     public static AudioSource Source
     {
@@ -17,11 +19,22 @@ public static class PlaySound2D
             return _source;
         }
     }
-    // по хорошему надо менеджить сорсы, а не просто выдавать новый при обращении
+    // по хорошему надо запихивать в пул сорсы, а не просто выдавать новый при обращении
     // но пока впадлу это делать
-    public static AudioSource GetNewSource(string namePostfix = "")
+    public static AudioSource GetNewSource(string namePostfix)
     {
-        return Init(namePostfix);
+        var newSource = Init(namePostfix);
+
+        if (_newSources.ContainsKey(namePostfix))
+            _newSources[namePostfix] = newSource;
+        else
+            _newSources.Add(namePostfix, newSource);
+
+        return newSource;
+    }
+    public static AudioSource GetSource(string namePostfix)
+    {
+        return _newSources[namePostfix];
     }
 
     public static void Play(AudioClip clip, float volume = 1)
