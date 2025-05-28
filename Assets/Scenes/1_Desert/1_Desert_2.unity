@@ -17749,6 +17749,10 @@ PrefabInstance:
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 1268098135}
+    - target: {fileID: 141721426952989318, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: sharpnessOfFollowing
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 464221367779265995, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -17984,6 +17988,10 @@ PrefabInstance:
     - target: {fileID: 8499868082687512674, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: _nextLevelSceneName
       value: 1_Forest_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499868082687512674, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: _endGameManager.lossSound.volume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8612598139435117914, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchorMax.y
@@ -21268,7 +21276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4883668293807934659, guid: c7e645c6093c01647b816c28bf0e6f35, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.01
+      value: -4.09
       objectReference: {fileID: 0}
     - target: {fileID: 4883668293807934659, guid: c7e645c6093c01647b816c28bf0e6f35, type: 3}
       propertyPath: m_LocalPosition.z

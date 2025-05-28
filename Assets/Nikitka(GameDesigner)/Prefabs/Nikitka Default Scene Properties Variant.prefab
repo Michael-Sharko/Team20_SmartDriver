@@ -3727,6 +3727,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6463005671002787401}
     - target: {fileID: 5139959584972569001, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
+      propertyPath: _endGameManager.lossSound.volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139959584972569001, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: _endGameManager.lossSound.getSound
       value: 
       objectReference: {fileID: 11400000, guid: 64f44c20d2fd1e94f980eb3fa86bb25b, type: 2}
