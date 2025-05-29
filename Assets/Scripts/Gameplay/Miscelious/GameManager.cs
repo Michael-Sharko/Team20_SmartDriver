@@ -58,11 +58,8 @@ public class GameManager : MonoBehaviour
 
                 showedWinPanel = true;
 
-                var a = FindObjectOfType<LevelMusicTag>();
-                if (a)
-                    a.gameObject.Off();
-                else
-                    Debug.LogError("В сцене источник звука с музыкой не помечен тегом");
+                if (Tags.TryGetTag(out LevelMusicTag tag))
+                    tag.gameObject.Off();
             };
     }
 
