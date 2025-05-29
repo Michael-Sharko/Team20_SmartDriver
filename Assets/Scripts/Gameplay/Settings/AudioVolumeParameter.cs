@@ -20,7 +20,7 @@ public class AudioVolumeParameter
             {
                 return PlayerPrefs.GetFloat(key);
             }
-            return 1;
+            return 0.5f;
         }
 
         set
