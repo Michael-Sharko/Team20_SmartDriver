@@ -6,7 +6,7 @@ namespace Shark.Gameplay.Player
 {
     public class CarController : MonoBehaviour, IPlayer
     {
-        public CarInput CarInput { get; private set; }
+        public IInput CarInput { get; private set; }
         [field: SerializeField] public CarFuel CarFuel { get; private set; }
         [field: SerializeField] public CarStrength CarStrength { get; private set; }
         [field: SerializeField] public CarPhysics CarPhysics { get; private set; }
@@ -34,9 +34,11 @@ namespace Shark.Gameplay.Player
         {
             _rigidbody = GetComponent<Rigidbody>();
 
-            CarInput = new();
+            CarInput = GetComponent<IInput>();
 
-            var skid = new Skid(_rigidbody, CarInput, minAngle, minSpeed);
+            _textureChecker = new TextureUnderWheelsCheker();
+
+            var skid = new Skid(_textureChecker, _rigidbody, CarInput, minAngle, minSpeed);
 
             InitPhysics();
             InitStrength();
@@ -72,7 +74,7 @@ namespace Shark.Gameplay.Player
             CarPhysics.Init(
                 _rigidbody,
                 CarInput,
-                _textureChecker = new TextureUnderWheelsCheker());
+                _textureChecker);
             CarPhysics.ApplyCarData();
         }
         private void InitStrength()
@@ -106,19 +108,15 @@ namespace Shark.Gameplay.Player
             CarFuel.Update(CarPhysics.Speed);
             CarPhysics.Update();
         }
-        private void Update()
-        {
-            CarInput.Update();
-        }
 
         private void OnOutOfFuel()
         {
-            CarInput.Enabled = false;
+            (CarInput as MonoBehaviour).Off();
         }
 
         private void OnBroken()
         {
-            CarInput.Enabled = false;
+            (CarInput as MonoBehaviour).Off();
         }
 
         //

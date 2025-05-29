@@ -78,8 +78,6 @@ public class LossGameManager
     {
         OnLoss?.Invoke();
 
-        PlaySound2D.GetSource("Low Level").mute = true;
-
         Cursor.lockState = CursorLockMode.None;
 
         SetMessage(message);

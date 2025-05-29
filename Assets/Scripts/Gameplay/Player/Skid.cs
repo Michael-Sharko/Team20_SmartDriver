@@ -4,19 +4,21 @@ namespace Shark.Gameplay.Player
 {
     public class Skid
     {
+        private readonly TextureUnderWheelsCheker _cheker;
         private readonly Rigidbody _rigidbody;
-        private readonly CarInput _input;
+        private readonly IInput _input;
         private readonly float _minAngle;
         private readonly float _minSpeed;
 
         private Vector3 _physicMovement;
 
-        private bool IsCarBraking => _input.spaceInput;
+        private bool IsCarBraking => _input.SpaceInput;
         private bool IsLowSpeed => _physicMovement.magnitude < _minSpeed;
 
 
-        public Skid(Rigidbody rigidbody, CarInput input, float minAngle, float minSpeed)
+        public Skid(TextureUnderWheelsCheker cheker, Rigidbody rigidbody, IInput input, float minAngle, float minSpeed)
         {
+            _cheker = cheker;
             _rigidbody = rigidbody;
             _input = input;
             _minAngle = minAngle;
@@ -24,6 +26,9 @@ namespace Shark.Gameplay.Player
         }
         public bool IsSkid()
         {
+            if (_cheker.TextureUnderWheel == null)
+                return false;
+
             CalculatePhysicMovement();
 
             if (IsLowSpeed)
@@ -33,7 +38,7 @@ namespace Shark.Gameplay.Player
 
             if (IsCarBraking)
                 return true;
-            
+
             var angle = GetDeltaAngle();
 
             return angle > _minAngle;
@@ -48,7 +53,7 @@ namespace Shark.Gameplay.Player
         }
         private Vector3 CalculateForwardCar()
         {
-            var input = Mathf.Sign(_input.vInput);
+            var input = Mathf.Sign(_input.VInput);
             //Debug.Log(input);
             var directionForwardCar = _rigidbody.transform.forward * input;
             directionForwardCar.y = 0f;
