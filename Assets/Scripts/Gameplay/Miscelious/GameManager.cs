@@ -1,3 +1,4 @@
+using Assets.Scripts.Gameplay.Components.Scenes;
 using Scripts.Gameplay.Tags;
 using Shark.Gameplay.Player;
 using UnityEngine;
@@ -110,7 +111,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        SwitchScene.Switch(sceneName);
     }
 
     public void LoadMainMenuScene()
@@ -131,7 +132,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SwitchScene.Switch(SceneManager.GetActiveScene().name);
     }
 
     public void OnClickedExitButton()

@@ -1,6 +1,6 @@
 ﻿using System;
+using Assets.Scripts.Gameplay.Components.Scenes;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LevelInMainMenuUnlocker : MonoBehaviour
 {
@@ -43,6 +43,6 @@ public class LevelInMainMenuUnlocker : MonoBehaviour
     }
     private void SubscribeOnClick(LevelSelectButton widget)
     {
-        widget.OnLevelSelect += (levelName) => SceneManager.LoadScene(levelName);
+        widget.OnLevelSelect += (levelName) => SwitchScene.Switch(levelName);
     }
 }
