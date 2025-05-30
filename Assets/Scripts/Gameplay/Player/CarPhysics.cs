@@ -17,6 +17,7 @@ namespace Shark.Gameplay.Player
         private Rigidbody _rb;
         private IInput _carInput;
         private TextureUnderWheelsCheker _textureChecker;
+        private CarWheelsTouchGround _groundChecker;
 
         private float _frontWheelsRotation;
         private float _currentBreakForce;
@@ -29,11 +30,12 @@ namespace Shark.Gameplay.Player
         public float SpeedMph => Speed * 2.23694f;
 
 
-        public void Init(Rigidbody rigidbody, IInput carInput, TextureUnderWheelsCheker textureCheker)
+        public void Init(Rigidbody rigidbody, IInput carInput, TextureUnderWheelsCheker textureCheker, CarWheelsTouchGround groundChecker)
         {
             _rb = rigidbody;
             _carInput = carInput;
             _textureChecker = textureCheker;
+            _groundChecker = groundChecker;
 
             speed = new(() => Speed);
         }
@@ -128,10 +130,13 @@ namespace Shark.Gameplay.Player
         {
             var collider = wheelData.whellCollider;
 
-            if (!collider.GetGroundHit(out WheelHit hit))
-                return;
+            var isTouchingGround = collider.GetGroundHit(out WheelHit hit);
 
+            _groundChecker.Update(hit);
             _textureChecker.Update(hit);
+
+            if (!isTouchingGround)
+                return;
 
             var forwardFrictionStiffness = hit.collider.material.staticFriction * originalForwardStiffness;
             var sidewaysFrictionStiffness = hit.collider.material.staticFriction * originalSidewaysStiffness;

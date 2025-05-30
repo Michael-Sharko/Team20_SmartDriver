@@ -4,7 +4,7 @@ namespace Shark.Gameplay.Player
 {
     public class Skid
     {
-        private readonly TextureUnderWheelsCheker _cheker;
+        private readonly CarWheelsTouchGround _cheker;
         private readonly Rigidbody _rigidbody;
         private readonly IInput _input;
         private readonly float _minAngle;
@@ -16,7 +16,7 @@ namespace Shark.Gameplay.Player
         private bool IsLowSpeed => _physicMovement.magnitude < _minSpeed;
 
 
-        public Skid(TextureUnderWheelsCheker cheker, Rigidbody rigidbody, IInput input, float minAngle, float minSpeed)
+        public Skid(CarWheelsTouchGround cheker, Rigidbody rigidbody, IInput input, float minAngle, float minSpeed)
         {
             _cheker = cheker;
             _rigidbody = rigidbody;
@@ -26,7 +26,7 @@ namespace Shark.Gameplay.Player
         }
         public bool IsSkid()
         {
-            if (_cheker.TextureUnderWheel == null)
+            if (!_cheker.IsTouching)
                 return false;
 
             CalculatePhysicMovement();

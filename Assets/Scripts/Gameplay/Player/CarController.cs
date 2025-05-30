@@ -21,6 +21,7 @@ namespace Shark.Gameplay.Player
         public bool TakeDamage(float damage) => CarStrength.TakeDamage(damage);
 
         private TextureUnderWheelsCheker _textureChecker;
+        private CarWheelsTouchGround _groundChecker;
         private Rigidbody _rigidbody;
 
 
@@ -37,8 +38,9 @@ namespace Shark.Gameplay.Player
             CarInput = GetComponent<IInput>();
 
             _textureChecker = new TextureUnderWheelsCheker();
+            _groundChecker = new CarWheelsTouchGround();
 
-            var skid = new Skid(_textureChecker, _rigidbody, CarInput, minAngle, minSpeed);
+            var skid = new Skid(_groundChecker, _rigidbody, CarInput, minAngle, minSpeed);
 
             InitPhysics();
             InitStrength();
@@ -74,7 +76,8 @@ namespace Shark.Gameplay.Player
             CarPhysics.Init(
                 _rigidbody,
                 CarInput,
-                _textureChecker);
+                _textureChecker,
+                _groundChecker);
             CarPhysics.ApplyCarData();
         }
         private void InitStrength()
