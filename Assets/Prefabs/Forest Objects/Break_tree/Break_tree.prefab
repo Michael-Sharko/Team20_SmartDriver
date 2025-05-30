@@ -130,6 +130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallAnimationSpeed: 0.25
+  fallSound:
+    volume: 1
+    getSound: {fileID: 11400000, guid: afdb3bd360843f14d90c01d809fe2f36, type: 2}
 --- !u!95 &2620233634702588870
 Animator:
   serializedVersion: 5
@@ -172,9 +175,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -184,12 +187,21 @@ AudioSource:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -7.642152
+      outSlope: -7.642152
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.11620589
+    - serializedVersion: 3
+      time: 0.13809487
+      value: 0.24922705
+      inSlope: -0.3996816
+      outSlope: -0.3996816
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.2778684
     - serializedVersion: 3
       time: 1
       value: 0
@@ -207,7 +219,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -78,6 +78,16 @@ public const string Game_Complete_Sound = "Sounds/Finish/Game Complete Sound";
 /// </summary>
 public const string Level_Complete_Sound = "Sounds/Finish/Level Complete Sound";
 }
+public static class Forest {
+/// <summary>
+/// wav
+/// </summary>
+public const string Falling_Tree = "Sounds/Forest/Falling Tree";
+/// <summary>
+/// wav
+/// </summary>
+public const string Moose = "Sounds/Forest/Moose";
+}
 public static class Mountains {
 public static class Goat {
 /// <summary>
@@ -144,10 +154,6 @@ public const string Varan_Chase = "Sounds/Varan/Varan Chase";
 /// </summary>
 public const string Varan_Detection = "Sounds/Varan/Varan Detection";
 }
-/// <summary>
-/// wav
-/// </summary>
-public const string Moose = "Sounds/Moose";
 }
 public static class UI {
 public static class dashboard {
@@ -241,6 +247,8 @@ public static readonly System.Collections.Generic.List<string> ALL_PATHS = new()
 "Sounds/Crash/Crash5",
 "Sounds/Finish/Game Complete Sound",
 "Sounds/Finish/Level Complete Sound",
+"Sounds/Forest/Falling Tree",
+"Sounds/Forest/Moose",
 "Sounds/Mountains/Goat/Hill goat aggression",
 "Sounds/Mountains/Goat/Hill goat chasing",
 "Sounds/Mountains/Falling stones",
@@ -254,7 +262,6 @@ public static readonly System.Collections.Generic.List<string> ALL_PATHS = new()
 "Sounds/Varan/Varan Attack",
 "Sounds/Varan/Varan Chase",
 "Sounds/Varan/Varan Detection",
-"Sounds/Moose",
 "UI/dashboard/arrow_fuel",
 "UI/dashboard/arrow_speed",
 "UI/dashboard/bar",
