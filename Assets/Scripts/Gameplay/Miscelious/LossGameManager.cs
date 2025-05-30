@@ -14,6 +14,8 @@ public class LossGameManager
     public bool CarInitilized => Car != null;
     public bool IsInvoked { get; private set; }
 
+    [SerializeField] string fuelOutText = "Топливо закончилось!";
+    [SerializeField] string carBrokenText = "Машина сломана!";
     [SerializeField] UnityEvent OnEndGameInvoked;
     [SerializeField] GameObject carPanel;
     [SerializeField] GameObject lossPanel1;
@@ -66,12 +68,12 @@ public class LossGameManager
 
     private void HandleCarFuelRanOut()
     {
-        HandleCarEvent("Топливо закончилось!");
+        HandleCarEvent(fuelOutText);
     }
 
     private void HandleCarBroken()
     {
-        HandleCarEvent("Машина сломана!");
+        HandleCarEvent(carBrokenText);
     }
 
     private void HandleCarEvent(string message)
