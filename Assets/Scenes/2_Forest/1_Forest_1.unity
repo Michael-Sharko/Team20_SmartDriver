@@ -1412,7 +1412,7 @@ GameObject:
   - component: {fileID: 467512458}
   - component: {fileID: 467512457}
   - component: {fileID: 467512456}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5774,6 +5774,34 @@ PrefabInstance:
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 1884643802}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 779.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 25.049
+      objectReference: {fileID: 0}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 202.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.000000041100577
+      objectReference: {fileID: 0}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000014880464
+      objectReference: {fileID: 0}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.94027156
+      objectReference: {fileID: 0}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.34042534
+      objectReference: {fileID: 0}
     - target: {fileID: 1401844301803531276, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_Name
       value: Nikitka Default Scene Properties Variant
@@ -5830,6 +5858,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3801207848338370529, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1884643802}
+    - target: {fileID: 3801207848338370529, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 1884643802}
     - target: {fileID: 4097091905075246410, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 14.509033
@@ -5981,6 +6017,34 @@ PrefabInstance:
     - target: {fileID: 7533284864688960783, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 779.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 25.049
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 202.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.000000041100577
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000014880464
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9402716
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.34042534
       objectReference: {fileID: 0}
     - target: {fileID: 8499868082687512674, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: _nextLevelSceneName

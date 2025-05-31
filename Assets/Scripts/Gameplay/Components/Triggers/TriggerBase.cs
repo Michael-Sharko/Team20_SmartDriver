@@ -1,4 +1,5 @@
-﻿using Shark.Gameplay.WorldObjects;
+﻿using Scripts.Extension;
+using Shark.Gameplay.WorldObjects;
 using UnityEngine;
 
 namespace Scripts.Gameplay.Components
@@ -24,11 +25,11 @@ namespace Scripts.Gameplay.Components
                 {
                     activatable.Activate();
 
-                    Debug.Log($"Gameobject {obj.name} был стриггерен объектом {gameObject.name}!", this);
+                    Debug.Log($"{obj.name.Color(TextColor.red)} был стриггерен объектом {gameObject.name.Color(TextColor.cyan)}", this);
                 }
                 else
                 {
-                    Debug.LogError($"Gameobject {obj.name} не имеет реакции на триггер!", this);
+                    Debug.LogError($"{obj.name.Color(TextColor.red)} не имеет реакции на триггер", this);
                 }
             }
         }

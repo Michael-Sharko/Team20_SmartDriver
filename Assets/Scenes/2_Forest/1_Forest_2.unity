@@ -1150,6 +1150,26 @@ PrefabInstance:
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 2092665824}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 504
+      objectReference: {fileID: 0}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 118
+      objectReference: {fileID: 0}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.94027156
+      objectReference: {fileID: 0}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.34042537
+      objectReference: {fileID: 0}
     - target: {fileID: 1401844301803531276, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_Name
       value: Nikitka Default Scene Properties Variant
@@ -1186,6 +1206,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3801207848338370529, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 2092665824}
+    - target: {fileID: 3801207848338370529, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 2092665824}
     - target: {fileID: 4826772687598084881, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -432.03003
@@ -1284,6 +1312,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7533284864688960783, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 504
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 118
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9402716
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.34042534
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8499868082687512674, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
@@ -2484,7 +2540,7 @@ GameObject:
   - component: {fileID: 855690519}
   - component: {fileID: 855690518}
   - component: {fileID: 855690517}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}

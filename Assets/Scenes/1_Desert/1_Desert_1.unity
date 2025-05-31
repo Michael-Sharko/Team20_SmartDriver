@@ -3508,6 +3508,26 @@ PrefabInstance:
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 1462009247}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 257.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.033382
+      objectReference: {fileID: 0}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.27808
+      objectReference: {fileID: 0}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.94027156
+      objectReference: {fileID: 0}
+    - target: {fileID: 153277636373664953, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.34042537
+      objectReference: {fileID: 0}
     - target: {fileID: 511099276194443337, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3576,6 +3596,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3801207848338370529, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1462009247}
+    - target: {fileID: 3801207848338370529, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 1462009247}
     - target: {fileID: 4097091905075246410, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 7.0091553
@@ -3706,6 +3734,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7533284864688960783, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 257.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.033382
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.27808
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9402716
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.34042534
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814051611768618711, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
+      propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8499868082687512674, guid: d5c32040a27d1ad45866da3b30a2b2d9, type: 3}
@@ -15673,7 +15729,7 @@ GameObject:
   - component: {fileID: 1416396641}
   - component: {fileID: 1416396640}
   - component: {fileID: 1416396639}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sand Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20074,7 +20130,7 @@ GameObject:
   - component: {fileID: 1804211414}
   - component: {fileID: 1804211413}
   - component: {fileID: 1804211412}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
