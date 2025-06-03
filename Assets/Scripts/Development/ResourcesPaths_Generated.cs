@@ -103,22 +103,16 @@ public const string Hill_goat_chasing = "Sounds/Mountains/Goat/Hill goat chasing
 /// wav
 /// </summary>
 public const string Falling_stones = "Sounds/Mountains/Falling stones";
+/// <summary>
+/// wav
+/// </summary>
+public const string Stone_Heavy = "Sounds/Mountains/Stone Heavy";
 }
 public static class PickUp {
 /// <summary>
 /// wav
 /// </summary>
 public const string Off_Road_T5 = "Sounds/PickUp/Off-Road T5";
-}
-public static class Test {
-/// <summary>
-/// wav
-/// </summary>
-public const string Falling_stones_sound_test_ = "Sounds/Test/Falling stones sound(test)";
-/// <summary>
-/// mp3
-/// </summary>
-public const string Rolling_stone_sound_test_ = "Sounds/Test/Rolling stone sound(test)";
 }
 public static class Tumbleweed {
 /// <summary>
@@ -252,9 +246,8 @@ public static readonly System.Collections.Generic.List<string> ALL_PATHS = new()
 "Sounds/Mountains/Goat/Hill goat aggression",
 "Sounds/Mountains/Goat/Hill goat chasing",
 "Sounds/Mountains/Falling stones",
+"Sounds/Mountains/Stone Heavy",
 "Sounds/PickUp/Off-Road T5",
-"Sounds/Test/Falling stones sound(test)",
-"Sounds/Test/Rolling stone sound(test)",
 "Sounds/Tumbleweed/Wind_1",
 "Sounds/Tumbleweed/Wind_2",
 "Sounds/UI/Click",
