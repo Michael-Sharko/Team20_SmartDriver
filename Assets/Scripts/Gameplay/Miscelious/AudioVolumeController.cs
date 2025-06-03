@@ -1,13 +1,16 @@
+using System;
+using Scripts.Utils.Disposables;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class AudioVolumeController
+public class AudioVolumeController : IDisposable
 {
     private const string MIXER_PATH = "Audio/mixer";
     private const string SETTING_PATH = "Audio/AudioSetting";
 
     private readonly AudioMixer mixer;
     private readonly AudioSetting setting;
+    private readonly static CompositeDisposable subscriptions = new();
 
 
     public AudioVolumeController()
@@ -20,7 +23,12 @@ public class AudioVolumeController
             var parameter = setting.GetParameter(i);
             UpdateMixerParameter(parameter);
             parameter.OnChangeVolume += UpdateMixerParameter;
+            subscriptions.Retain(new ActionDisposable(() => parameter.OnChangeVolume -= UpdateMixerParameter));
         }
+    }
+    public void Dispose()
+    {
+        subscriptions.Dispose();
     }
 
     private void UpdateMixerParameter(AudioVolumeParameter obj)

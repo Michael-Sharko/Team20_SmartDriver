@@ -33,7 +33,7 @@ public class Goat : MonoBehaviour
     private bool isCollision;
     private NavMeshAgent agent;
     private DamageSource damageSource;
-    private new Rigidbody rigidbody;
+    private Rigidbody _rigidbody;
     private GameObject target;
     private NavMeshPath path;
     private bool isSeeking;
@@ -69,7 +69,7 @@ public class Goat : MonoBehaviour
         damageSource.damage = damage;
         damageSource.OnDealDamage += DamageSource_OnDealDamage;
 
-        rigidbody = GetComponent<Rigidbody>();
+        _rigidbody = GetComponent<Rigidbody>();
 
         agent = GetComponent<NavMeshAgent>();
         agent.updatePosition = false;
@@ -185,16 +185,16 @@ public class Goat : MonoBehaviour
         previousPos = currentPos;
 
         currentPos = Vector3.MoveTowards(
-            rigidbody.position,
+            _rigidbody.position,
             path.corners[1],
             Time.fixedDeltaTime * currentSpeed);
 
         var newRotation = Quaternion.RotateTowards(
-            rigidbody.rotation,
-            Quaternion.LookRotation(path.corners[1] - rigidbody.position),
+            _rigidbody.rotation,
+            Quaternion.LookRotation(path.corners[1] - _rigidbody.position),
             Time.fixedDeltaTime * rotationSpeed);
 
-        rigidbody.Move(currentPos, newRotation);
+        _rigidbody.Move(currentPos, newRotation);
     }
     private IEnumerator LateAfterAttack()
     {

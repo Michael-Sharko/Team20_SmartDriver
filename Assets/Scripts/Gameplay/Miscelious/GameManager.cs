@@ -1,3 +1,4 @@
+using System;
 using Assets.Scripts.Gameplay.Components.Scenes;
 using Scripts.Gameplay.Tags;
 using Shark.Gameplay.Player;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     private LossGameManager _endGameManager;
 
     private bool showedWinPanel;
+    private IDisposable audioVolumeController;
 
     private bool IsGameEnded => _endGameManager != null && _endGameManager.IsInvoked;
 
@@ -37,8 +39,12 @@ public class GameManager : MonoBehaviour
         DisableLossManagerOnGameWin();
 
         _endGameManager.Init(this);
-        new AudioVolumeController();
+        audioVolumeController = new AudioVolumeController();
         new LevelUnlocker(this);
+    }
+    private void OnDestroy()
+    {
+        audioVolumeController.Dispose();
     }
     private void IfMainMenuThen()
     {
