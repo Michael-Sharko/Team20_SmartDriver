@@ -4041,6 +4041,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   _endGameManager:
+    fuelOutText: "\u0422\u043E\u043F\u043B\u0438\u0432\u043E \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u043E\u0441\u044C!"
+    carBrokenText: "\u041C\u0430\u0448\u0438\u043D\u0430 \u0441\u043B\u043E\u043C\u0430\u043D\u0430!"
     OnEndGameInvoked:
       m_PersistentCalls:
         m_Calls: []
@@ -14803,6 +14805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2039932795}
   - component: {fileID: 2039932796}
+  - component: {fileID: 2039932797}
   m_Layer: 0
   m_Name: BackgroundMusic
   m_TagString: Untagged
@@ -14921,6 +14924,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2039932797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039932794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae4963820b4da944827539f32223c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _allSounds:
+  - loop: 0
+    clip: {fileID: 8300000, guid: be6afccf077167c4bb77e3230283ab5a, type: 3}
+  - loop: 1
+    clip: {fileID: 8300000, guid: 6948a138261261d49846e6996bced948, type: 3}
 --- !u!1 &2079039914
 GameObject:
   m_ObjectHideFlags: 0
