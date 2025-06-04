@@ -259,13 +259,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbe6ef51de07e44b8990132ecbce319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 20
+  damage: 20
   _damageThresholdCollisionForce: 0
   _multiplierDamageThresholdCollisionForce: 0
   soundsOnDamage:
-    volume: 0.4
+    volume: 0.8
     getSound: {fileID: 11400000, guid: f46efd85098233a4ca64bccefa4379ef, type: 2}
-  <LastCollisionForce>k__BackingField: 0
+  _lastCollisionForce: 0
 --- !u!23 &3792645852130346995 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 2228c1b6588153f4ab64aa2a46cd4fca, type: 3}

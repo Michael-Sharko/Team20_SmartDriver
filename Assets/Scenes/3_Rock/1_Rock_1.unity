@@ -230,7 +230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: soundOnActivate.volume
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7239472814793272171, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -238,7 +238,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9abd9fb47e8674941a574dcc78d0d8db, type: 2}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Volume
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
@@ -4297,7 +4297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: soundOnActivate.volume
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7239472814793272171, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4305,7 +4305,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9abd9fb47e8674941a574dcc78d0d8db, type: 2}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Volume
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
@@ -7445,7 +7445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: soundOnActivate.volume
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7239472814793272171, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -7453,7 +7453,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9abd9fb47e8674941a574dcc78d0d8db, type: 2}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Volume
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
@@ -10281,7 +10281,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: df31d02279a076146b19b03dd37073cd, type: 2}
     - target: {fileID: 5565036508042424626, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: soundsOnDamage.volume
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6583398928930369392, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Radius
@@ -10309,7 +10309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7016673335225121311, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: soundOnActivate.volume
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7239472814793272171, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -10317,7 +10317,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9abd9fb47e8674941a574dcc78d0d8db, type: 2}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: m_Volume
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7744552449384386534, guid: 3fb4e6e27ca309341b5a9e984f6c337a, type: 3}
       propertyPath: MaxDistance
@@ -11963,7 +11963,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -5377455687939978593, guid: cda0fe62e3582ed439f01b3c4ee21580, type: 2}
   m_audioClip: {fileID: 8300000, guid: 1069809fa4e0ae142858d2dac2ed2ff5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.06
+  m_Volume: 0.12
   m_Pitch: 1
   Loop: 1
   Mute: 0

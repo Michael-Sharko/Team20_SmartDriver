@@ -878,7 +878,7 @@ MonoBehaviour:
   _damageThresholdCollisionForce: 0
   _multiplierDamageThresholdCollisionForce: 0
   soundsOnDamage:
-    volume: 0.4
+    volume: 0.8
     getSound: {fileID: 11400000, guid: f46efd85098233a4ca64bccefa4379ef, type: 2}
   _lastCollisionForce: 0
 --- !u!1001 &6219299255537155575
@@ -1095,7 +1095,7 @@ MonoBehaviour:
   _damageThresholdCollisionForce: 0
   _multiplierDamageThresholdCollisionForce: 0
   soundsOnDamage:
-    volume: 0.4
+    volume: 0.8
     getSound: {fileID: 11400000, guid: f46efd85098233a4ca64bccefa4379ef, type: 2}
   _lastCollisionForce: 0
 --- !u!1001 &8199065521326036306
