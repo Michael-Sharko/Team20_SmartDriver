@@ -3593,9 +3593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba53d7e06f284014daafb88c3b92de11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xPosHide: 5000
-  xPosShow: -3000
-  xPosToHide: 1000
+  xPosHidden: 0
+  xPosShow: -4000
+  xPosToHide: 4000
   speed: 2
 --- !u!114 &455023671
 MonoBehaviour:

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Scripts.Extension;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,27 +7,35 @@ namespace Assets.Scripts.Gameplay.Components.Scenes
 {
     public class SceneTransition : MonoBehaviour
     {
-        [SerializeField] private float xPosHide;
+        [SerializeField] private float xPosHidden;
         [SerializeField] private float xPosShow;
         [SerializeField] private float xPosToHide;
         [SerializeField] private float speed = 5f;
 
         private AsyncOperation loadingSceneOperation;
+        private RectTransform rectTransform;
 
+        private void Awake()
+        {
+            rectTransform = GetComponent<RectTransform>();
+        }
         private IEnumerator Start()
         {
+            rectTransform.anchoredPosition = rectTransform.anchoredPosition.NewX(xPosHidden);
+
             for (int i = 0; i < 3; i++)
             {
                 yield return null;
             }
+
 
             StartCoroutine(AnimateBar(xPosShow));
         }
 
         public void SwitchScene(string sceneName)
         {
-            transform.SetX(xPosHide);
-            StartCoroutine(AnimateBar(xPosToHide));
+            rectTransform.anchoredPosition = rectTransform.anchoredPosition.NewX(xPosToHide);
+            StartCoroutine(AnimateBar(xPosHidden));
 
             loadingSceneOperation = SceneManager.LoadSceneAsync(sceneName);
 
@@ -35,12 +44,12 @@ namespace Assets.Scripts.Gameplay.Components.Scenes
         private IEnumerator AnimateBar(float toX)
         {
             var progress = 0f;
-            var startX = transform.position.x;
+            var startX = rectTransform.anchoredPosition.x;
             do
             {
                 progress += speed * Time.unscaledDeltaTime;
                 var newX = Mathf.Lerp(startX, toX, progress);
-                transform.SetX(newX);
+                rectTransform.anchoredPosition = rectTransform.anchoredPosition.NewX(newX);
 
                 yield return null;
 
