@@ -151,6 +151,8 @@ public class Goat : MonoBehaviour
 
             UpdateSpeedByRotation();
 
+            MoveToTarget();
+
             if (isCollision)
             {
                 isCollision = false;
@@ -170,31 +172,30 @@ public class Goat : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        if (isSeeking)
-            MoveToTarget();
-    }
     private void MoveToTarget()
     {
         agent.CalculatePath(targetPosition, path);
 
+        _rigidbody.angularVelocity = Vector3.zero;
+
         if (path.corners.Length <= 1)
+        {
+            _rigidbody.velocity = Vector3.zero;
             return;
+        }
 
         previousPos = currentPos;
-
-        currentPos = Vector3.MoveTowards(
-            _rigidbody.position,
-            path.corners[1],
-            Time.fixedDeltaTime * currentSpeed);
 
         var newRotation = Quaternion.RotateTowards(
             _rigidbody.rotation,
             Quaternion.LookRotation(path.corners[1] - _rigidbody.position),
-            Time.fixedDeltaTime * rotationSpeed);
+            Time.deltaTime * rotationSpeed);
 
-        _rigidbody.Move(currentPos, newRotation);
+        var speed = Time.fixedDeltaTime * currentSpeed;
+
+        _rigidbody.velocity = (path.corners[1] - _rigidbody.position).normalized * speed;
+
+        _rigidbody.MoveRotation(newRotation);
     }
     private IEnumerator LateAfterAttack()
     {

@@ -914,68 +914,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d6e5f5710dd19149ae881dae49abd57, type: 3}
---- !u!1001 &314822191
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 458635627}
-    m_Modifications:
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -93.62488
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -45.669426
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 42.05066
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5491202
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.65111506
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.3419044
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.39701086
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -99.404
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -60
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -3.2359924
-      objectReference: {fileID: 0}
-    - target: {fileID: 2964713712400060372, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_Name
-      value: RoadSign Moose (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
---- !u!4 &314822192 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-  m_PrefabInstance: {fileID: 314822191}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &315495697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3759422341185041830, guid: e92afd0f6431627489c33187cd41bf8b, type: 3}
@@ -1266,14 +1204,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1985814847}
-  - {fileID: 1736253754}
-  - {fileID: 1438230139}
-  - {fileID: 1101367408}
-  - {fileID: 1302037830}
-  - {fileID: 1181647632}
-  - {fileID: 1992050336}
-  - {fileID: 314822192}
+  - {fileID: 1489028931}
+  - {fileID: 1881788756}
+  - {fileID: 1675171974}
+  - {fileID: 1202479527}
+  - {fileID: 1967890782}
+  - {fileID: 748154524}
+  - {fileID: 877793399}
+  - {fileID: 1749763034}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &461690952 stripped
@@ -2740,6 +2678,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3759422341185041830, guid: e92afd0f6431627489c33187cd41bf8b, type: 3}
   m_PrefabInstance: {fileID: 850268814}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &748154523
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 458635627}
+    m_Modifications:
+    - target: {fileID: 1786468035222894015, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
+      propertyPath: m_Name
+      value: RoadSign Falling Tree (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -174.54828
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -24.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -260.7478
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8319541
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.55484444
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -67.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
+--- !u!4 &748154524 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
+  m_PrefabInstance: {fileID: 748154523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &753133875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3039,6 +3039,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5089975685898119799, guid: 3d6e5f5710dd19149ae881dae49abd57, type: 3}
   m_PrefabInstance: {fileID: 301467707}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &877793398
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 458635627}
+    m_Modifications:
+    - target: {fileID: 1786468035222894015, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_Name
+      value: RoadSign Slide (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -128.50824
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -45.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.277832
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.34261933
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.93947434
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -139.927
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+--- !u!4 &877793399 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+  m_PrefabInstance: {fileID: 877793398}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &884022179
 PrefabInstance:
@@ -3694,68 +3756,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3759422341185041830, guid: e92afd0f6431627489c33187cd41bf8b, type: 3}
   m_PrefabInstance: {fileID: 1775205556}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1101367407
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 458635627}
-    m_Modifications:
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -397.72986
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -45.65292
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -678.5719
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.55099666
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.6190182
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.36507142
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.42419577
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -97.308
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -75
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 6.9940033
-      objectReference: {fileID: 0}
-    - target: {fileID: 2964713712400060372, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_Name
-      value: RoadSign Moose (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
---- !u!4 &1101367408 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-  m_PrefabInstance: {fileID: 1101367407}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1109259314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3759422341185041830, guid: e92afd0f6431627489c33187cd41bf8b, type: 3}
@@ -4006,7 +4006,12 @@ MonoBehaviour:
   triggered:
   - {fileID: 1116341917}
   - {fileID: 1935203088}
---- !u!1001 &1181647631
+--- !u!4 &1200299994 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3759422341185041830, guid: e92afd0f6431627489c33187cd41bf8b, type: 3}
+  m_PrefabInstance: {fileID: 1808946536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1202479526
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -4014,47 +4019,47 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458635627}
     m_Modifications:
-    - target: {fileID: 2853733188198331980, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
+    - target: {fileID: 1786468035222894015, guid: e128ab85298d7674598c10c1859b1871, type: 3}
       propertyPath: m_Name
-      value: RoadSign Falling Tree (1)
+      value: RoadSign Moose (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -175.04828
+      value: -397.4983
       objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25.04295
+      value: -45.3
       objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -260.71783
+      value: -678.4978
       objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5406369
+      value: 0.8319541
       objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.62755406
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.36567506
+      value: -0.55484444
       objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.42446375
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -98.51
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -68.147
+      value: -67.4
       objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
@@ -4062,16 +4067,11 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
---- !u!4 &1181647632 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+--- !u!4 &1202479527 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
-  m_PrefabInstance: {fileID: 1181647631}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1200299994 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3759422341185041830, guid: e92afd0f6431627489c33187cd41bf8b, type: 3}
-  m_PrefabInstance: {fileID: 1808946536}
+  m_CorrespondingSourceObject: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+  m_PrefabInstance: {fileID: 1202479526}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1217235627 stripped
 Transform:
@@ -4296,68 +4296,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e92afd0f6431627489c33187cd41bf8b, type: 3}
---- !u!1001 &1302037829
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 458635627}
-    m_Modifications:
-    - target: {fileID: 2853733188198331980, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
-      propertyPath: m_Name
-      value: RoadSign Falling Tree
-      objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -347.58826
-      objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -45.66295
-      objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -549.8179
-      objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.23224898
-      objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.22303954
-      objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.5708873
-      objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.75524926
-      objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 16.089
-      objectReference: {fileID: 0}
-    - target: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -158.192
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
---- !u!4 &1302037830 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3229555490690018550, guid: e4b9d10d6668baf4ab43f8bc9e46a1b7, type: 3}
-  m_PrefabInstance: {fileID: 1302037829}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1306662885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4714,68 +4652,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e92afd0f6431627489c33187cd41bf8b, type: 3}
---- !u!1001 &1438230138
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 458635627}
-    m_Modifications:
-    - target: {fileID: 2400592947349698288, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_Name
-      value: RoadSign Slide (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -452.98865
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -45.664646
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -718.22876
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.06828026
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.07848054
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.65281665
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.75033927
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -82.048
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 11.942
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
---- !u!4 &1438230139 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-  m_PrefabInstance: {fileID: 1438230138}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1445838564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5008,6 +4884,104 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d6e5f5710dd19149ae881dae49abd57, type: 3}
+--- !u!1001 &1489028930
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 458635627}
+    m_Modifications:
+    - target: {fileID: 1786468035222894015, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_Name
+      value: RoadSign Slide
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.02268058
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.02268058
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.706743
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.706743
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 176.324
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -423.34418
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -45.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -787.2339
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8319541
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.55484444
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -67.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+--- !u!4 &1489028931 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+  m_PrefabInstance: {fileID: 1489028930}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1526031902
 GameObject:
   m_ObjectHideFlags: 0
@@ -5705,6 +5679,68 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e92afd0f6431627489c33187cd41bf8b, type: 3}
+--- !u!1001 &1675171973
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 458635627}
+    m_Modifications:
+    - target: {fileID: 1786468035222894015, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_Name
+      value: RoadSign Slide (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -453.0583
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -45.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -718.0178
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.100152105
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.99497217
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -168.504
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+--- !u!4 &1675171974 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8923009324540161813, guid: 1a614af43ed3613499054badc9d35685, type: 3}
+  m_PrefabInstance: {fileID: 1675171973}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1675666437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6156,68 +6192,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb5390337dc396641b4392e06aeb25a9, type: 3}
---- !u!1001 &1736253753
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 458635627}
-    m_Modifications:
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -453.45825
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -45.61295
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -767.1178
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.08677694
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.09750322
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.6591357
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.74060994
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -83.338
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -180
-      objectReference: {fileID: 0}
-    - target: {fileID: 2964713712400060372, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-      propertyPath: m_Name
-      value: RoadSign Moose
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
---- !u!4 &1736253754 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2481228056508077422, guid: 68457b70a0bc61b429fa9fd4b350260b, type: 3}
-  m_PrefabInstance: {fileID: 1736253753}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1747470171
 GameObject:
   m_ObjectHideFlags: 0
@@ -6254,6 +6228,68 @@ Transform:
   - {fileID: 1955962790}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 16.371, y: -106.02, z: 6.474}
+--- !u!1001 &1749763033
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 458635627}
+    m_Modifications:
+    - target: {fileID: 1786468035222894015, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_Name
+      value: RoadSign Moose (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -93.28821
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -45.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 41.95215
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8319541
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.55484444
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -67.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+--- !u!4 &1749763034 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+  m_PrefabInstance: {fileID: 1749763033}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1754069008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6702,6 +6738,100 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5089975685898119799, guid: 3d6e5f5710dd19149ae881dae49abd57, type: 3}
   m_PrefabInstance: {fileID: 1022188538}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1881788755
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 458635627}
+    m_Modifications:
+    - target: {fileID: 1786468035222894015, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_Name
+      value: RoadSign Moose
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.4791655
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.4791655
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5200004
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5200004
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564133375091042830, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -94.681
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -453.7198
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -45.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -766.9734
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8319541
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.55484444
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -67.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+--- !u!4 &1881788756 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8923009324540161813, guid: e128ab85298d7674598c10c1859b1871, type: 3}
+  m_PrefabInstance: {fileID: 1881788755}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1884643802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7611377358372956911, guid: e4914e4fe27687648901a7c17c1e92ea, type: 3}
@@ -6869,7 +6999,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3759422341185041830, guid: e92afd0f6431627489c33187cd41bf8b, type: 3}
   m_PrefabInstance: {fileID: 237105961}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1985814846
+--- !u!1001 &1967890781
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -6877,59 +7007,59 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 458635627}
     m_Modifications:
-    - target: {fileID: 2400592947349698288, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
+    - target: {fileID: 1786468035222894015, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
       propertyPath: m_Name
-      value: RoadSign Slide
+      value: RoadSign Falling Tree
       objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -423.3683
+      value: -347.57825
       objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -45.65295
+      value: -45.29
       objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -787.18787
+      value: -549.4578
       objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.36951235
+      value: 0.2931032
       objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.44775584
+      value: -0.03772659
       objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.53493893
+      value: -0.9551565
       objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.6138532
+      value: -0.018530812
       objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -80.986
+      value: -3.297
       objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -80.184
+      value: -145.982
       objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
+    - target: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 189.327
+      value: 3.515
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
---- !u!4 &1985814847 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
+--- !u!4 &1967890782 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-  m_PrefabInstance: {fileID: 1985814846}
+  m_CorrespondingSourceObject: {fileID: 8923009324540161813, guid: a829e6057d3bb64498e9f9c6df5cded2, type: 3}
+  m_PrefabInstance: {fileID: 1967890781}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1986163950
 PrefabInstance:
@@ -7045,72 +7175,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e92afd0f6431627489c33187cd41bf8b, type: 3}
---- !u!1001 &1992050335
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 458635627}
-    m_Modifications:
-    - target: {fileID: 2400592947349698288, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_Name
-      value: RoadSign Slide (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 99.99997
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -128.52246
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -45.737083
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.613647
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.25633818
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.2581654
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.5963981
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.7155073
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -80.336
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 22.293
-      objectReference: {fileID: 0}
-    - target: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -159.465
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
---- !u!4 &1992050336 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3034104800274181194, guid: 94efc0b953e9ac842bf721533545dec3, type: 3}
-  m_PrefabInstance: {fileID: 1992050335}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1998903659
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,8 +4,13 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 [RequireComponent(typeof(AudioSource))]
+[SelectionBase]
 public class DamageSource : MonoBehaviour, IDamageSource
 {
+    public event Action OnDealDamage;
+
+    public bool Enabled { get; set; } = true;
+
     [FormerlySerializedAs("_damage")]
     public float damage;
 
@@ -21,8 +26,6 @@ public class DamageSource : MonoBehaviour, IDamageSource
     [SerializeField, Readonly]
     private float _lastCollisionForce;
 
-    public event Action OnDealDamage;
-
     private void Awake()
     {
         soundsOnDamage.Init(ref OnDealDamage, GetComponent<AudioSource>());
@@ -36,6 +39,9 @@ public class DamageSource : MonoBehaviour, IDamageSource
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (!Enabled)
+            return;
+
         if (collision.transform.TryGetComponent(out IBreakable breakable) &&
             collision.transform.TryGetComponent(out Rigidbody rigidbody))
         {
