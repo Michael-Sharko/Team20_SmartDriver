@@ -2914,7 +2914,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251728764}
   m_LocalRotation: {x: -0, y: -0.2343841, z: -0, w: 0.9721441}
-  m_LocalPosition: {x: 0, y: 0, z: 187.79}
+  m_LocalPosition: {x: 0, y: 0, z: 187.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2922,7 +2922,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -27.111, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32.34, y: 19.2}
+  m_AnchoredPosition: {x: -32.07, y: 19.44}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &251728766
@@ -2945,8 +2945,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0415\u0437\u0434\u0430 \u0432\u043D\u0435 \u0434\u043E\u0440\u043E\u0433\u0438
-    \u0437\u0430\u043C\u0435\u0434\u043B\u044F\u0435\u0442"
+  m_text: Driving outside road slows you down
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -4352,7 +4351,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.134308, y: 11.8}
+  m_AnchoredPosition: {x: -7.134308, y: 10.28}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &324233380
@@ -4375,7 +4374,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0420\u0435\u0437\u043A\u043E\u0435 \u0442\u043E\u0440\u043C\u043E\u0436\u0435\u043D\u0438\u0435:\n\nSpace(\u041F\u0440\u043E\u0431\u0435\u043B)"
+  m_text: "Hard braking:\r\n\r\n      Space"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -4876,7 +4875,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0411\u0435\u0440\u0435\u0433\u0438\u0441\u044C \u0436\u0438\u0432\u043E\u0442\u043D\u044B\u0445!"
+  m_text: Beware of animals!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -7459,7 +7458,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0415\u0445\u0430\u0442\u044C:\n\nW A S D"
+  m_text: 'Drive:
+
+
+    W A S D'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -12593,8 +12595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0417\u043D\u0430\u043A\u0438 \u0441\u0442\u043E\u044F\u0442 \u043D\u0435
-    \u043F\u0440\u043E\u0441\u0442\u043E \u0442\u0430\u043A"
+  m_text: The signs are there for a reason
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -15730,8 +15731,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0428\u0435\u0441\u0442\u0435\u0440\u0435\u043D\u043A\u0430 \u044D\u0442\u043E
-    \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u0435"
+  m_text: Gear is health
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -15861,7 +15861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.39, y: 17.03}
+  m_AnchoredPosition: {x: 4.4, y: 17.03}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1416396638
@@ -16633,7 +16633,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u043E\u0434\u0431\u0438\u0440\u0430\u0439 \u0431\u0435\u043D\u0437\u0438\u043D"
+  m_text: Pick up gasoline
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -21314,7 +21314,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878911016}
   m_LocalRotation: {x: -0, y: 0.021308308, z: -0, w: 0.99977297}
-  m_LocalPosition: {x: 0, y: 0, z: 57}
+  m_LocalPosition: {x: 0, y: 0, z: 56.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21322,7 +21322,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 2.442, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.07, y: 19.64}
+  m_AnchoredPosition: {x: 3.38, y: 19.64}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1878911018
@@ -21345,8 +21345,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u043E\u0433\u043B\u044F\u0434\u044B\u0432\u0430\u0439 \u0437\u0430
-    \u043F\u0440\u0438\u0431\u043E\u0440\u043D\u043E\u0439 \u043F\u0430\u043D\u0435\u043B\u044C\u044E!"
+  m_text: Keep an eye on the dashboard!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}

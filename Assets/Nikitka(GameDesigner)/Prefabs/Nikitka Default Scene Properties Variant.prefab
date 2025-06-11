@@ -659,7 +659,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0417\u0410\u041D\u041E\u0412\u041E"
+  m_text: Restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -793,7 +793,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0413\u041B\u0410\u0412\u041D\u041E\u0415 \u041C\u0415\u041D\u042E"
+  m_text: Main menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0418\u0433\u0440\u0430 \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u0430!"
+  m_text: Game complete!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -1561,7 +1561,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0413\u041B\u0410\u0412\u041D\u041E\u0415 \u041C\u0415\u041D\u042E"
+  m_text: Main menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -1880,7 +1880,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0417\u0410\u041D\u041E\u0412\u041E"
+  m_text: Restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -2178,7 +2178,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u0435\u0440\u0435\u0437\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u044C"
+  m_text: Restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -2281,7 +2281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 182722741469753130, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_text
-      value: "\u0417\u0410\u041D\u041E\u0412\u041E"
+      value: Restart
       objectReference: {fileID: 0}
     - target: {fileID: 182722741469753130, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_fontSize
@@ -2669,7 +2669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2433409542285538817, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_text
-      value: "\u0412\u044B \u043F\u0440\u043E\u0438\u0433\u0440\u0430\u043B\u0438!"
+      value: You lose!
       objectReference: {fileID: 0}
     - target: {fileID: 2433409542285538817, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_fontSize
@@ -2825,31 +2825,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3495316457459432818, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 255.37001
+      value: -1.7326965
       objectReference: {fileID: 0}
     - target: {fileID: 3495316457459432818, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.413383
+      value: 15.379665
       objectReference: {fileID: 0}
     - target: {fileID: 3495316457459432818, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.1680794
+      value: -18.113194
       objectReference: {fileID: 0}
     - target: {fileID: 3495316457459432818, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9379957
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3495316457459432818, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.34336329
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3495316457459432818, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.04470026
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3495316457459432818, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.016363008
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3495316457459432818, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3013,11 +3013,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4688213112585439940, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_text
-      value: "\u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
+      value: Next Level
       objectReference: {fileID: 0}
     - target: {fileID: 4688213112585439940, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_fontSize
-      value: 38
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4688213112585439940, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_fontAsset
@@ -3037,7 +3037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4688213112585439940, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_fontSizeBase
-      value: 38
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4688213112585439940, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_sharedMaterial
@@ -3140,6 +3140,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6463005671002787401}
     - target: {fileID: 5139959584972569001, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
+      propertyPath: _endGameManager.fuelOutText
+      value: Fuel ran out!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139959584972569001, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
+      propertyPath: _endGameManager.carBrokenText
+      value: The car is broken!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139959584972569001, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: _endGameManager.lossSound.volume
       value: 0.2
       objectReference: {fileID: 0}
@@ -3225,7 +3233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5751327940978026889, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_text
-      value: "\u0413\u041B\u0410\u0412\u041D\u041E\u0415 \u041C\u0415\u041D\u042E"
+      value: Main menu
       objectReference: {fileID: 0}
     - target: {fileID: 5751327940978026889, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_fontSize
@@ -3341,7 +3349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6153321943881105070, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_text
-      value: "\u0413\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E"
+      value: Main menu
       objectReference: {fileID: 0}
     - target: {fileID: 6153321943881105070, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_fontSize
@@ -3405,7 +3413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6265022025659843428, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_text
-      value: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
+      value: Continue
       objectReference: {fileID: 0}
     - target: {fileID: 6265022025659843428, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_fontSize
@@ -3569,7 +3577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7631724211308652066, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_text
-      value: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
+      value: Settings
       objectReference: {fileID: 0}
     - target: {fileID: 7631724211308652066, guid: 375c588a9de5fe14ab06070b7148d665, type: 3}
       propertyPath: m_fontSize
@@ -4211,6 +4219,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3386149818121658372}
     m_Modifications:
+    - target: {fileID: 1826502515727815525, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
+      propertyPath: m_text
+      value: 'Sounds volume
+
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774421695389553442, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
+      propertyPath: m_text
+      value: 'Music volume
+
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 4738889555915977916, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4218,6 +4240,10 @@ PrefabInstance:
     - target: {fileID: 4738889555915977916, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6771041389915997455, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
+      propertyPath: m_text
+      value: Back
       objectReference: {fileID: 0}
     - target: {fileID: 7111712171846201964, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
       propertyPath: m_Pivot.x
@@ -4298,6 +4324,13 @@ PrefabInstance:
     - target: {fileID: 7111712171846201964, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8606141430616445287, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
+      propertyPath: m_text
+      value: 'Engine volume
+
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 8926238417277313091, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
       propertyPath: m_Name

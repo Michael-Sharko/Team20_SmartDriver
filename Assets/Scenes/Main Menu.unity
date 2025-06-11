@@ -593,7 +593,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 2\n"
+  m_text: 'Level 2
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -727,7 +729,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 4"
+  m_text: Level 4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -2722,7 +2724,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0412\u044B\u0445\u043E\u0434"
+  m_text: Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -5319,7 +5321,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
+  m_text: Settings
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -5531,7 +5533,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u0410\u0417\u0410\u0414"
+  m_text: Back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -5665,7 +5667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0410\u0412\u0422\u041E\u0420\u042B"
+  m_text: Authors
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -7875,7 +7877,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 3"
+  m_text: Level 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -8342,7 +8344,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 1\n"
+  m_text: 'Level 1
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -8687,7 +8691,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 6"
+  m_text: Level 6
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -9319,7 +9323,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 5"
+  m_text: Level 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -10261,7 +10265,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u0410\u0417\u0410\u0414"
+  m_text: Back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -11066,7 +11070,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0421\u0442\u0430\u0440\u0442"
+  m_text: Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b23923543d037d649a05ff13d50b1507, type: 2}
   m_sharedMaterial: {fileID: 9103780274543682317, guid: b23923543d037d649a05ff13d50b1507, type: 2}
@@ -12070,6 +12074,13 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1826502515727815525, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
+      propertyPath: m_text
+      value: 'Sounds volume
+
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 2113930150079891129, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -12105,6 +12116,13 @@ PrefabInstance:
     - target: {fileID: 3596635841062101568, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774421695389553442, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
+      propertyPath: m_text
+      value: 'Music volume
+
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3969932825498380844, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
       propertyPath: m_AnchorMax.y
@@ -12193,6 +12211,10 @@ PrefabInstance:
     - target: {fileID: 6657929107473071717, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6771041389915997455, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
+      propertyPath: m_text
+      value: Back
       objectReference: {fileID: 0}
     - target: {fileID: 7041164941805800024, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -12309,6 +12331,13 @@ PrefabInstance:
     - target: {fileID: 7729331393203331414, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8606141430616445287, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
+      propertyPath: m_text
+      value: 'Engine volume
+
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 8926238417277313091, guid: aa9183d8b46266048930d1bb8b2c5c1f, type: 3}
       propertyPath: m_Name
